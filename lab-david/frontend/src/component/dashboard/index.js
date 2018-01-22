@@ -7,6 +7,11 @@ import * as categoryActions from '../../action/category';
 
 
 class Dashboard extends React.Component{
+  componentWillMount() {
+    console.log('component will mount');
+    this.props.handleAJAX();
+  }
+
   render(){
     let {
       categories,
