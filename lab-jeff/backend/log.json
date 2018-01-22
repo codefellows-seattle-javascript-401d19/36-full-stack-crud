@@ -449,3 +449,15 @@
 {"message":"E11000 duplicate key error collection: testing.schools index: name_1 dup key: { : \"Michigan Tech University\" }","name":"MongoError","stack":"MongoError: E11000 duplicate key error collection: testing.schools index: name_1 dup key: { : \"Michigan Tech University\" }\n    at Function.Object.<anonymous>.MongoError.create (/Users/jeffkusowski/CF/401/labs/13-14-Relational-Modeling/lab-jeff/node_modules/mongodb-core/lib/error.js:31:11)\n    at /Users/jeffkusowski/CF/401/labs/13-14-Relational-Modeling/lab-jeff/node_modules/mongodb-core/lib/connection/pool.js:497:72\n    at authenticateStragglers (/Users/jeffkusowski/CF/401/labs/13-14-Relational-Modeling/lab-jeff/node_modules/mongodb-core/lib/connection/pool.js:443:16)\n    at Connection.messageHandler (/Users/jeffkusowski/CF/401/labs/13-14-Relational-Modeling/lab-jeff/node_modules/mongodb-core/lib/connection/pool.js:477:5)\n    at Socket.<anonymous> (/Users/jeffkusowski/CF/401/labs/13-14-Relational-Modeling/lab-jeff/node_modules/mongodb-core/lib/connection/connection.js:331:22)\n    at Socket.emit (events.js:159:13)\n    at addChunk (_stream_readable.js:265:12)\n    at readableAddChunk (_stream_readable.js:252:11)\n    at Socket.Readable.push (_stream_readable.js:209:10)\n    at TCP.onread (net.js:598:20)","ok":0,"errmsg":"E11000 duplicate key error collection: testing.schools index: name_1 dup key: { : \"Michigan Tech University\" }","code":11000,"codeName":"DuplicateKey","level":"info","timestamp":"2017-12-15T01:38:01.817Z"}
 {"level":"info","message":"Responding with a 409 status code","timestamp":"2017-12-15T01:38:01.817Z"}
 {"level":"info","message":"Server off","timestamp":"2017-12-15T01:38:01.818Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-01-22T22:23:37.282Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T22:24:21.983Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T22:24:24.531Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:13:18.921Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-01-22T23:20:01.380Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:32:43.412Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:33:29.313Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:33:51.522Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:35:40.696Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:35:46.504Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:41:33.249Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:41:36.619Z"}
