@@ -13,13 +13,13 @@ mongoose.Promise = Promise;
 
 // Middleware Requiring
 const loggerMiddleware = require('./logger-middleware');
-const schoolRouter = require('../route/school-router');
-const studentRouter = require('../route/student-router');
+const categoryRouter = require('../route/category-router');
+const expenseRouter = require('../route/expense-router');
 const errorMiddleware = require('./error-middleware');
 
 app.use(loggerMiddleware);
-app.use(schoolRouter);
-app.use(studentRouter);
+app.use(categoryRouter);
+app.use(expenseRouter);
 
 app.all('*', (request, response) => {
   logger.log('info', 'Returning a 404 from the catch-all route');
