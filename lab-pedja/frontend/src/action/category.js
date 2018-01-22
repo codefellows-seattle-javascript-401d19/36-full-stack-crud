@@ -21,15 +21,12 @@ export const destroyAction = category => ({
   payload: category,
 });
 
-// TODO: add superagent NPM
-
 export const postCountries = () => dispatch => {
   return superagent.post('http://localhost:3000/api/countries')
     .send({
-      name : 'USA',
-      keywords : ['animals', 'cute'],
+      name : 'Canada'
     })
     .then((response) => {
-      dispatch(createAction({title: response.body.name}));
+      dispatch(createAction({name: response.body.name}));
     });
 }

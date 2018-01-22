@@ -1,4 +1,3 @@
-// TODO: import main.scss
 import React  from "react";
 import ReactDom from "react-dom";
 import { createStore, applyMiddleware } from "redux";
@@ -10,9 +9,10 @@ import reducer from './reducer';
 
 import reporter from "./lib/redux-reporter";
 import session from "./lib/redux-session";
+import thunk from "./lib/redux-thunk";
 
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(reporter, session),
+  applyMiddleware(reporter, session, thunk),
 ));
 
 const container = document.createElement('div');

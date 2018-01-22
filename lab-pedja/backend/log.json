@@ -409,3 +409,68 @@
 {"message":"Cast to ObjectId failed for value \"nadsat\" at path \"_id\" for model \"countrie\"","stack":"CastError: Cast to ObjectId failed for value \"nadsat\" at path \"_id\" for model \"countrie\"\n    at new CastError (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/error/cast.js:27:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/schema/objectid.js:158:13)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/schematype.js:1088:15)\n    at ObjectId.Object.<anonymous>.ObjectId.castForQuery (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/schema/objectid.js:198:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/schematype.js:1045:15)\n    at cast (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/cast.js:269:32)\n    at model.Query.Object.<anonymous>.Query.cast (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/query.js:3302:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/query.js:1292:10)\n    at model.Query.Object.<anonymous>.Query._findOneAndRemove (/Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/mongoose/lib/query.js:2248:8)\n    at /Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/kareem/index.js:250:8\n    at /Users/predragjosifovic/Documents/codefellows/sea-401d19/lab/13-14-Relational-Modeling/lab-pedja/node_modules/kareem/index.js:23:7\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"CastError","stringValue":"\"nadsat\"","kind":"ObjectId","value":"nadsat","path":"_id","level":"info","timestamp":"2017-12-15T02:59:03.567Z"}
 {"level":"info","message":"Responding with a 404 status code","timestamp":"2017-12-15T02:59:03.567Z"}
 {"level":"info","message":"Server OFF","timestamp":"2017-12-15T02:59:03.568Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-01-22T23:33:15.314Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:33:59.397Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:33:59.436Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:34:02.400Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:34:02.411Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"USA\" }","op":{"name":"USA","_id":"5a6674ea2d7bb3797910b6a3","languages":[],"timeStamp":"2018-01-22T23:34:02.401Z","keywords":["animals","cute"],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:34:02.413Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:37:06.464Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:37:06.466Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:37:06.468Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"USA\" }","op":{"name":"USA","_id":"5a6675a22d7bb3797910b6a4","languages":[],"timeStamp":"2018-01-22T23:37:06.467Z","keywords":["animals","cute"],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:37:06.468Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:37:10.422Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:37:10.424Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"USA\" }","op":{"name":"USA","_id":"5a6675a62d7bb3797910b6a5","languages":[],"timeStamp":"2018-01-22T23:37:10.422Z","keywords":["animals","cute"],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:37:10.425Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:37:22.859Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:37:22.862Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:37:22.864Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"USA\" }","op":{"name":"USA","_id":"5a6675b22d7bb3797910b6a6","languages":[],"timeStamp":"2018-01-22T23:37:22.863Z","keywords":["animals","cute"],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:37:22.864Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:38:13.301Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:38:13.345Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:38:13.348Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"USA\" }","op":{"name":"USA","_id":"5a6675e52d7bb3797910b6a7","languages":[],"timeStamp":"2018-01-22T23:38:13.346Z","keywords":["animals","cute"],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:38:13.348Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:39:33.680Z"}
+{"level":"info","message":"Processing: GET on: /api/countries","timestamp":"2018-01-22T23:39:33.717Z"}
+{"level":"info","message":"Returning 404 from a catch-all route","timestamp":"2018-01-22T23:39:33.717Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:39:50.127Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:39:50.168Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:39:50.170Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"USA\" }","op":{"name":"USA","_id":"5a6676462d7bb3797910b6a8","languages":[],"timeStamp":"2018-01-22T23:39:50.168Z","keywords":[],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:39:50.170Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:40:06.514Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:40:06.556Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:40:06.558Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"USA\" }","op":{"name":"USA","_id":"5a6676562d7bb3797910b6a9","languages":[],"timeStamp":"2018-01-22T23:40:06.557Z","keywords":[],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:40:06.559Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:40:12.247Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:40:12.251Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:40:12.253Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"USA\" }","op":{"name":"USA","_id":"5a66765c2d7bb3797910b6aa","languages":[],"timeStamp":"2018-01-22T23:40:12.252Z","keywords":[],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:40:12.254Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:40:27.775Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:40:27.808Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:40:34.760Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:40:34.796Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:40:34.798Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"Brazil\" }","op":{"name":"Brazil","_id":"5a6676722d7bb3797910b6ac","languages":[],"timeStamp":"2018-01-22T23:40:34.797Z","keywords":[],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:40:34.798Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:41:03.008Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:41:03.010Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:41:03.012Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"Brazil\" }","op":{"name":"Brazil","_id":"5a66768f2d7bb3797910b6ad","languages":[],"timeStamp":"2018-01-22T23:41:03.011Z","keywords":[],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:41:03.012Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:41:16.896Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:41:16.899Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:42:09.225Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:42:09.230Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-22T23:42:51.213Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-22T23:42:51.215Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:42:51.217Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"Canada\" }","op":{"name":"Canada","_id":"5a6676fb2d7bb3797910b6b0","languages":[],"timeStamp":"2018-01-22T23:42:51.216Z","keywords":[],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:42:51.217Z"}

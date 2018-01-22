@@ -3,6 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('./logger');
+const cors = require('cors');
 
 const app = express();
 let isServerOn = false;
@@ -16,6 +17,7 @@ mongoose.Promise = Promise;
 // SETTING UP ROUTES
 // ---------------------------------------------
 app.use(require('./logger-middleware'));
+app.use(cors());
 
 app.use(require('../route/country-router'));
 app.use(require('../route/language-router'));
