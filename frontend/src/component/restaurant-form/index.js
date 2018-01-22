@@ -4,7 +4,7 @@ let emptyState = {
   name: '',
   cuisine: '',
   city: '',
-  rating: 0,
+  rating: '',
 };
 
 class RestaurantForm extends React.Component{
@@ -40,29 +40,30 @@ class RestaurantForm extends React.Component{
           type='text'
           name='name'
           value={this.state.name}
-          placeholder='label'
+          placeholder='restaurant name'
           onChange={this.handleChange}
         />
         <input
           type='text'
           name='cuisine'
           value={this.state.cuisine}
-          placeholder='label'
+          placeholder='cuisine'
           onChange={this.handleChange}
         />
         <input
           type='text'
           name='city'
           value={this.state.city}
-          placeholder='label'
+          placeholder='city'
           onChange={this.handleChange}
         />
         <input
           type='number'
           step='1'
+          max='5'
           name='rating'
           value={this.state.rating}
-          placeholder='budget'
+          placeholder='rating'
           onChange={this.handleChange}
         />
         <button type='submit'> {buttonText} </button>
