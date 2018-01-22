@@ -1,0 +1,90 @@
+.dashboard {
+  .clear-all {
+    float: right;
+    margin-right: 5%;
+  }
+
+  .category-form, .expense-form {
+    margin-left: 5%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+
+    input {
+      margin-right: 2.5%;
+      width: 30%;
+    }
+  }
+
+  .category-item {
+    border-bottom: 1px solid black;
+  }
+
+  .category-item, .expense-item {
+    padding-bottom: 1em;
+
+    h2, h3, h4 {
+      display: inline-block;
+    }
+
+    h2, h3 {
+      font-weight: bold;
+      margin-right: 5%;
+      padding-left: 5%;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    h3 {
+      font-size: 1.25em;
+    }
+  }
+
+  .expense-item {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .destroy {
+    margin-left: 5%;
+  }
+
+  .category:first-child {
+    border-top: 1px solid black;
+  }
+
+  .categories {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 370px) {
+  .dashboard {
+    text-align: center;
+
+    .category-form, .category-form {
+      margin-left: 0;
+
+      input {
+        display: block;
+        margin: .5em auto;
+        width: 90%;
+      }
+    }
+
+    .clear-all {
+      float: none;
+      margin-top: 1em;
+      margin-right: 0;
+    }
+    
+    .destroy {
+      margin-left: 0;
+    }
+
+    h3 {
+      margin-left: 0;
+    }
+  }
+}

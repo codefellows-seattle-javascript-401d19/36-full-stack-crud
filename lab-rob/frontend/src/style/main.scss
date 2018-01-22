@@ -1,0 +1,26 @@
+@import '../lib/reset.css';
+@import url('https://fonts.googleapis.com/css?family=Abel|Supermercado+One');
+
+* {
+  font-family: 'Abel', sans-serif;
+}
+
+h1 {
+  font-family: 'Supermercado One', cursive;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
