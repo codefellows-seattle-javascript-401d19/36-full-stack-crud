@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sedillon93/36-full-stack-crud/issues"
   },
-  "homepage": "https://github.com/sedillon93/36-full-stack-crud#readme"
+  "homepage": "https://github.com/sedillon93/36-full-stack-crud#readme",
+  "dependencies": {
+    "cors": "^2.8.4"
+  }
 }
