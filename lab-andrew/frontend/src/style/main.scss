@@ -1,0 +1,141 @@
+$dark: midnightblue;
+$gold: rgb(180, 129, 0);
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+@media only screen and (max-width: 759px){
+  h1 {
+  font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-top: 1%;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    margin-top: 3%;
+  }
+
+  h4 {
+    font-size: 1.5em;
+    margin-bottom: 3%;
+  }
+}
+
+body {
+  font-family: 'Lato';
+  color: $dark;
+  text-align: center;
+  margin: 0 auto;
+  background: lightblue;
+  width: 95%;
+}
+
+div {
+  margin-top: 2%;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 3%;
+}
+
+h2 {
+  margin-top: 1%;
+}
+
+h3 {
+  margin-top: 3%;
+}
+
+h4 {
+  margin-bottom: 3%;
+}
+
+button, input {
+  margin: 0 3%;
+  margin-bottom: 3%;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.submit-button {
+  margin-bottom: 3%;
+}
+
+.create-form {
+  input {
+    margin-bottom: 1%;
+  }
+  button {
+    margin-bottom: 1%;
+  }
+}
+
+.landing {
+  h2 {
+    margin-bottom: 1%;
+  }
+}
+
+.delete-button {
+  color: rgb(207, 38, 38);
+  margin-bottom: 3%;
+}
+
+.category-item {
+  border: 2px solid $dark;
+  width: 95%;
+  margin: calc(5% / 3);
+  float: left;
+  padding-top: 1%;
+  h2 {
+    margin: 3% auto;
+  }
+}
+
+.expense {
+  border: 1px solid $gold;
+  margin: 10% auto;
+  width: 75%;
+  padding: 5%;
+}
+
+.item-text {
+  color: $gold;
+}
+
+@media only screen and (min-width: 760px) {
+  .category-item {
+    width: 45%;
+  }
+  h1 {
+  font-size: 1.625em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  h4 {
+    font-size: 1.125em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .category-item {
+    width: calc((100% / 3) - 3.9%);
+  }
+}
