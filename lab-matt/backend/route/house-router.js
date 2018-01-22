@@ -2,7 +2,6 @@
 
 const {Router} = require('express');
 const jsonParser = require('express').json();
-// const jsonParser = require('body-parser').json();
 const httpError = require('http-errors');
 
 const House = require('../model/house');
@@ -36,7 +35,6 @@ houseRouter.get('/api/house', (request, response, next) => {
   return House.find({})
     .limit(10)
     .then(allHouses => {
-      // log('info', `==HOUSES ARRAY==: ${allHouses}`);
       if (allHouses.length === 0) {
         throw httpError(404, 'no houses listed');
       }
