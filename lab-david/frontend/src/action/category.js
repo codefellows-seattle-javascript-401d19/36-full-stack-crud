@@ -30,7 +30,7 @@ export const removeAction = (category) => ({
 export const getExpenses = () => (dispatch) => {
   console.log('DISPATCH', dispatch);
   console.log('DOING AJAX');
-  return superagent.get('http://localhost:3000/api/expenses')
+  return superagent.get('http://localhost:3000/api/categories')
     .then((response) => {
       console.log('AJAX DONE', response);
       let count = response.body.count;

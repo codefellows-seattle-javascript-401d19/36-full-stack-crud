@@ -1,7 +1,7 @@
 {
   "name": "lab-david",
   "version": "1.0.0",
-  "description": "This is a server built from express and MongoDB that uses a MongoDB model to save api hits. It is setup as an inventory of resumes.",
+  "description": "This is a server built from express and MongoDB that uses a MongoDB model to save api hits. It is setup as an inventory of categories.",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -23,7 +23,8 @@
   "scripts": {
     "test": "jest -i --coverage",
     "dbon": "mkdir -p ./db && mongod --dbpath ./db",
-    "dboff": "killall mongod"
+    "dboff": "killall mongod",
+    "start" : "node index.js"
   },
   "keywords": [],
   "author": "",

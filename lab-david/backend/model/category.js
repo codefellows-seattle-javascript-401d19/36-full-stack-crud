@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 
-const resumeSchema = mongoose.Schema({
+const categorySchema = mongoose.Schema({
   name : {
     type : String,
     required : true,
@@ -14,9 +14,9 @@ const resumeSchema = mongoose.Schema({
   timeStamp : {type : Date,
     default : () => new Date() },
   projects : [{type: mongoose.Schema.Types.ObjectId,
-    ref : 'project'}],
+    ref : 'expense'}],
 },{
   usePushEach : true,
 });
 
-module.exports = mongoose.model('resume', resumeSchema);
+module.exports = mongoose.model('category', categorySchema);

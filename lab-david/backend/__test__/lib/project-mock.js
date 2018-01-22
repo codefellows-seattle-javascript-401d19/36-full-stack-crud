@@ -1,7 +1,7 @@
 'use strict';
 
 const faker = require('faker');
-const resumeMock = require('./resume-mock');
+const categoryMock = require('./category-mock');
 const Project = require('../../model/project');
 
 const projectMock = module.exports = {};
@@ -9,9 +9,9 @@ const projectMock = module.exports = {};
 projectMock.create = () => {
   let mock = {};
 
-  return resumeMock.create()
-    .then(resume => {
-      mock.resume = resume;
+  return categoryMock.create()
+    .then(category => {
+      mock.category = category;
 
       return new Project({
         title : faker.company.bsNoun(2),
@@ -20,7 +20,7 @@ projectMock.create = () => {
         languages : faker.database.engine(3),
       
         description : faker.company.catchPhrase(10).split(' '),
-        resume : resume._id,
+        category : category._id,
       }).save();
     })
     .then(project => {
@@ -32,9 +32,9 @@ projectMock.create = () => {
 projectMock.createMany = (creationCount) => {
   let mock = {};
   
-  return resumeMock.create()
-    .then(resume => {
-      mock.resume = resume;
+  return categoryMock.create()
+    .then(category => {
+      mock.category = category;
   
       return Promise.all(new Array(creationCount)
         .fill(0)
@@ -46,7 +46,7 @@ projectMock.createMany = (creationCount) => {
             languages : faker.database.engine(3).split(' '),
             
             description : faker.company.catchPhrase(10).split(' '),
-            resume : resume._id,
+            category : category._id,
           }).save();
         }));
     })
@@ -58,5 +58,5 @@ projectMock.createMany = (creationCount) => {
 
 projectMock.remove = () => Promise.all([
   Project.remove({}),
-  resumeMock.remove(),
+  categoryMock.remove(),
 ]);

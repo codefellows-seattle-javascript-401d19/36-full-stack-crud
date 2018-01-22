@@ -1,20 +1,20 @@
 'use strict';
 
 const faker = require('faker');
-const Resume = require('../../model/resume');
+const Category = require('../../model/category');
 
-const resumeMock = module.exports = {};
+const categoryMock = module.exports = {};
 
-resumeMock.create = () => {
-  return new Resume({
+categoryMock.create = () => {
+  return new Category({
     name : faker.internet.userName(1),
     age : faker.random.number(1),
   }).save();
 };
 
-resumeMock.createMany = (creationCount) => {
+categoryMock.createMany = (creationCount) => {
   return Promise.all(new Array(creationCount).fill(0)
-    .map(() => resumeMock.create()));
+    .map(() => categoryMock.create()));
 };
 
-resumeMock.remove = () => Resume.remove({});
+categoryMock.remove = () => Category.remove({});

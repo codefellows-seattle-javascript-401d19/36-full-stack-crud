@@ -20,7 +20,7 @@ projectRoute.post('/api/projects', jsonParser, (request,response,next) => {
 
 projectRoute.get('/api/projects/:id', (request,response,next) => {
   return Project.findById(request.params.id)
-    .populate('resume')
+    .populate('category')
     .then(project => {
       if(!project){
         throw httpErrors(404,`project not found`);

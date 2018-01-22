@@ -7,7 +7,7 @@ const faker = require('faker');
 const server = require('../lib/server');
 
 const projectMock = require('./lib/project-mock');
-const resumeMock = require('./lib/resume-mock');
+const categoryMock = require('./lib/category-mock');
 
 const apiURL = `http://localhost:${process.env.PORT}/api/projects`;
 
@@ -18,17 +18,17 @@ describe('/api/projects', () => {
 
   describe('POST /api/projects', () => {
     test('should respond with a project and a 200 status code if there is no error', () => {
-      let tempResumeMock = null;
-      return resumeMock.create()
+      let tempCategoryMock = null;
+      return categoryMock.create()
         .then(mock => {
-          tempResumeMock = mock;
+          tempCategoryMock = mock;
 
           let projectToPost = {
             title : faker.company.bsNoun(2),
             year : 2017,
             languages : faker.database.engine(3).split(' '),
             description : faker.company.catchPhrase(10).split(' '),
-            resume : mock._id,
+            category : mock._id,
           };
           return superagent.post(`${apiURL}`)
             .send(projectToPost)
@@ -41,14 +41,14 @@ describe('/api/projects', () => {
         });
     });
 
-    test('should respond with a 404 if the resume id is not present', () => {
+    test('should respond with a 404 if the category id is not present', () => {
       return superagent.post(apiURL)
         .send({
           title : 'Awesome Project',
           year : '2017',
           languages : 'CSS',
           description : faker.company.catchPhrase(10).split(' '),
-          resume : 'FAKE_ID',
+          category : 'FAKE_ID',
         })
         .then(Promise.reject)
         .catch(response => {
@@ -108,9 +108,9 @@ describe('/api/projects', () => {
           expect(response.body.name).toEqual(tempMock.project.name);
           expect(response.body.year).toEqual(tempMock.project.year);
 
-          expect(response.body.resume._id).toEqual(tempMock.resume._id.toString());
-          expect(response.body.resume.age).toEqual(tempMock.resume.age);
-          expect(JSON.stringify(response.body.resume.languages)).toEqual(JSON.stringify(tempMock.resume.languages));
+          expect(response.body.category._id).toEqual(tempMock.category._id.toString());
+          expect(response.body.category.age).toEqual(tempMock.category.age);
+          expect(JSON.stringify(response.body.category.languages)).toEqual(JSON.stringify(tempMock.category.languages));
         });
     });
     test('should respond with a 404 status code if the id is incorrect', () => {
