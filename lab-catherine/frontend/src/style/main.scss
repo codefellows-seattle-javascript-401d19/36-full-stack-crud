@@ -1,0 +1,129 @@
+@import "reset";
+@import "base";
+
+// $color-primary: cornSilk;
+// $color-secondary: goldenRod;
+// $color-tertiary: cornSilk;
+// $color-landing: darkSlateGray;
+// $spacing: 1em;
+// $edges: 10px;
+
+// html, body, div, span, applet, object, iframe,
+// h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+// a, abbr, acronym, address, big, cite, code,
+// del, dfn, em, img, ins, kbd, q, s, samp,
+// small, strike, strong, sub, sup, tt, var,
+// b, u, i, center,
+// dl, dt, dd, ol, ul, li,
+// fieldset, form, label, legend,
+// table, caption, tbody, tfoot, thead, tr, th, td,
+// article, aside, canvas, details, embed, 
+// figure, figcaption, footer, header, hgroup, 
+// menu, nav, output, ruby, section, summary,
+// time, mark, audio, video {
+// 	margin: 0;
+// 	padding: 0;
+// 	border: 0;
+// 	font-size: 100%;
+// 	font: inherit;
+//   vertical-align: baseline;
+// }
+
+// * {
+//   box-sizing: border-box;
+//   max-width: 100%;
+// }
+
+// body {
+//   color: $color-secondary;
+//   background-color: $color-primary;
+//   font-size: 1em;
+//   font-family: Helvetica;
+//   margin-left: 40px;
+// }
+
+// h1 {
+//   text-align: center;
+//   font-size: 20px;
+// }
+
+// h2 {
+//   // list-style: none;
+//   font-size: 15px;
+//   color: $color-landing;
+// }
+
+// a, a:visited {
+//   text-decoration: none;
+//   color: $color-secondary;
+// }
+
+// a:hover {
+//   background-color: $color-tertiary;
+//   color: $color-primary;
+// }
+
+// button, input {
+//   background-color: $color-tertiary;
+//   border: none;
+//   color: $color-landing;
+//   text-align: center;
+//   padding: 10px 25px;
+//   text-decoration: none;
+//   display: block;
+//   margin: 0 auto;
+//   font-size: 16px;
+//   border-radius: $edges;
+//   box-shadow: 2px 2px 2px rgb(0, 0, 0);
+//   margin-bottom: 10px;
+// }
+
+// button:hover {
+//   color: $color-tertiary;
+//   background-color: $color-landing;
+// }
+
+// .new-item, .update-category, .expense-form {
+//   background-color: goldenRod;  
+//   padding: 10px;
+//   border-radius: $edges;
+//   border: 2px solid black;
+//   width: 20%;
+//   margin: 0;
+//   float: left;
+//   height: 170px;
+// }
+
+// .update-category {
+//   margin-right: 10px;
+// }
+
+// .category-item {
+//   background-color: rgb(241, 127, 162);
+//   padding: 20px;
+//   border-radius: $edges;
+//   height: 200px;
+//   margin: 10px;
+//   margin-right: 0;
+// }
+
+// form {
+//   background-color: $color-landing;
+//   padding: 40px 20px;
+//   border-radius: $edges;
+//   color: $color-landing;
+//   border: 2px solid $color-secondary;
+//   margin: 20px;
+//   overflow-wrap: break-word;
+// }
+
+// .create-category>button, input {
+//   width: 100%;
+// }
+
+// .expense-form {
+//   background-color: lightblue;
+//   width: 300px;
+//   margin-top: 0;
+//   margin: 10px;
+// }
