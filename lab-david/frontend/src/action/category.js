@@ -27,10 +27,10 @@ export const removeAction = (category) => ({
 });
 
 // asynch action creator
-export const getNotes = () => (dispatch) => {
+export const getExpenses = () => (dispatch) => {
   console.log('DISPATCH', dispatch);
   console.log('DOING AJAX');
-  return superagent.get('http://localhost:3000/api/notes')
+  return superagent.get('http://localhost:3000/api/expenses')
     .then((response) => {
       console.log('AJAX DONE', response);
       let count = response.body.count;
