@@ -11,7 +11,7 @@ const Dashboard = ({ categories, categoryCreate }) => {
       <CategoryForm onComplete={categoryCreate} />
       {
         categories.map(category => {
-          return <div key={category.id}>
+          return <div key={category.uuid}>
             <CategoryItem category={category} />
           </div>;
         })

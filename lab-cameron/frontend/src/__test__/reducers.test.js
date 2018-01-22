@@ -17,7 +17,7 @@ describe('reducers tests', () => {
           payload: {
             name: 'Test',
             budget: '100',
-            id: '123',
+            uuid: '123',
             timestamp: new Date(),
           },
         };
@@ -36,7 +36,7 @@ describe('reducers tests', () => {
           payload: {
             name: 'Test',
             budget: '100',
-            id: '123',
+            uuid: '123',
             timestamp: new Date(),
           },
         };
@@ -48,7 +48,7 @@ describe('reducers tests', () => {
           payload: {
             name: 'New Test',
             budget: '200',
-            id: '123',
+            uuid: '123',
             timestamp: new Date(),
           },
         };
@@ -68,7 +68,7 @@ describe('reducers tests', () => {
           payload: {
             name: 'Test',
             budget: '100',
-            id: '123',
+            uuid: '123',
             timestamp: new Date(),
           },
         };
@@ -80,7 +80,7 @@ describe('reducers tests', () => {
           payload: {
             name: 'New Test',
             budget: '200',
-            id: '123',
+            uuid: '123',
             timestamp: new Date(),
           },
         };
@@ -102,7 +102,7 @@ describe('reducers tests', () => {
           payload: {
             name: 'New Test',
             budget: '200',
-            id: '123',
+            uuid: '123',
             timestamp: new Date(),
           },
         };
@@ -120,7 +120,7 @@ describe('reducers tests', () => {
           payload: {
             name: 'Test',
             budget: '100',
-            id: '123',
+            uuid: '123',
             timestamp: new Date(),
           },
         };
@@ -132,7 +132,7 @@ describe('reducers tests', () => {
           payload: {
             name: 'New Test',
             budget: '200',
-            id: '123',
+            uuid: '123',
             timestamp: new Date(),
           },
         };
@@ -152,7 +152,7 @@ describe('reducers tests', () => {
             name: 'Test',
             price: '100',
             categoryId: '123',
-            id: '456',
+            uuid: '456',
             timestamp: new Date(),
           },
         };
@@ -162,7 +162,7 @@ describe('reducers tests', () => {
         expect(updatedState['123'][0].name).toEqual('Test');
         expect(updatedState['123'][0].price).toEqual('100');
         expect(updatedState['123'][0].categoryId).toEqual('123');
-        expect(updatedState['123'][0].id).toEqual('456');
+        expect(updatedState['123'][0].uuid).toEqual('456');
         expect(updatedState['123'][0].timestamp).toBeTruthy();
       });
     });
@@ -176,7 +176,7 @@ describe('reducers tests', () => {
             name: 'Test',
             price: '100',
             categoryId: '123',
-            id: '456',
+            uuid: '456',
             timestamp: new Date(),
           },
         };
@@ -189,7 +189,7 @@ describe('reducers tests', () => {
             name: 'New Test',
             price: '200',
             categoryId: '123',
-            id: '456',
+            uuid: '456',
             timestamp: new Date(),
           },
         };
@@ -209,7 +209,7 @@ describe('reducers tests', () => {
             name: 'Test',
             price: '100',
             categoryId: '123',
-            id: '456',
+            uuid: '456',
             timestamp: new Date(),
           },
         };
@@ -222,7 +222,7 @@ describe('reducers tests', () => {
             name: 'Test',
             price: '100',
             categoryId: '123',
-            id: '456',
+            uuid: '456',
             timestamp: new Date(),
           },
         };

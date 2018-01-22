@@ -29,7 +29,7 @@ class CategoryItem extends Component {
       categoryUpdate,
     } = this.props;
 
-    const categoryExpenses = expenses[category.id];
+    const categoryExpenses = expenses[category.uuid];
 
     const editingJSX =
       <CategoryForm
@@ -58,7 +58,7 @@ class CategoryItem extends Component {
         <ExpenseForm category={category} onComplete={expenseCreate} />
         {
           categoryExpenses.map(expense => {
-            return <div key={expense.id}>
+            return <div key={expense.uuid}>
               <ExpenseItem expense={expense} />
             </div>;
           })

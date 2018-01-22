@@ -5,7 +5,7 @@ export const createAction = ({ name, price, categoryId }) => ({
   payload: {
     name,
     price,
-    id: uuidv1(),
+    uuid: uuidv1(),
     categoryId,
     timestamp: new Date(),
   },
