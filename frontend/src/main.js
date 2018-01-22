@@ -12,7 +12,7 @@ import reporter from './lib/redux-reporter';
 
 
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(reporter, session)
+  applyMiddleware(reporter, session, thunk)
 ));
 
 const container = document.createElement('div');

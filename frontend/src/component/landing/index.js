@@ -6,6 +6,12 @@ import * as category from '../../action/category';
 import './landing.scss';
 
 class Landing extends React.Component{
+
+  componentWillMount() {
+    console.log('component will mount')
+    this.props.handleAJAX()
+  }
+  
   render() {
     let {
       categories,
