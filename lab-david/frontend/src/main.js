@@ -13,9 +13,11 @@ import './style/main.scss';
 
 import session from './lib/redux-session';
 import reporter from './lib/redux-reporter';
+import thunk from './lib/redux-thunk';
+
 
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(reporter, session),
+  applyMiddleware(reporter, session, thunk),
 ));
 
 const container = document.createElement('div');
