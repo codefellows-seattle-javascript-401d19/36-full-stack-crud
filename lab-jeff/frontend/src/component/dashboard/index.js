@@ -1,44 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CategoryForm from '../category-form';
-import CategoryItem from '../category-item';
-import * as categoryActions from '../../action/category';
+import SchoolForm from '../school-form';
+import SchoolItem from '../school-item';
+import * as schoolActions from '../../action/school';
 
 class Dashboard extends React.Component {
+  componentWillMount() {
+    console.log('component will mount');
+    this.props.handleAJAX();
+  }
+
   render() {
-    let {
-      categories,
-      categoryCreate,
-      categoryUpdate,
-      categoryRemove,
-    } = this.props;
+    let { schools, schoolCreate, schoolUpdate, schoolRemove, handleAJAX } = this.props;
 
     return (
-      <div className='dashboard'>
-        <CategoryForm onComplete={categoryCreate} />
-        <div className="categories">
-          {
-            categories.map((category, i) =>
-              <CategoryItem category={category} key={i} />
-            )
-          }
-        </div>
+      <div className="dashboard">
+        <button onClick={handleAJAX}> AJAX Stuff </button>
+        <SchoolForm onComplete={schoolCreate} />
+        <div className="schools">{schools.map((school, i) => <SchoolItem school={school} key={i} />)}</div>
       </div>
     );
   }
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = state => {
   return {
-    categories: state.categories,
+    schools: state.schools,
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = dispatch => {
   return {
-    categoryCreate: (data) => dispatch(categoryActions.createAction(data)),
-    categoryUpdate: (data) => dispatch(categoryActions.updateAction(data)),
-    categoryRemove: (data) => dispatch(categoryActions.removeAction(data)),
+    schoolCreate: data => dispatch(schoolActions.createAction(data)),
+    schoolUpdate: data => dispatch(schoolActions.updateAction(data)),
+    schoolRemove: data => dispatch(schoolActions.removeAction(data)),
+    handleAJAX: () => dispatch(schoolActions.getSchools()),
   };
 };
 

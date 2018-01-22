@@ -2,15 +2,15 @@ import React from 'react';
 
 let emptyState = {
   name: '',
-  price: '',
+  budget: '',
 };
 
-class ExpenseForm extends React.Component {
+class SchoolForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.expense || emptyState;
+    this.state = this.props.school || emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(SchoolForm.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
         this[functionName] = this[functionName].bind(this);
@@ -28,24 +28,19 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let schoolID = this.props.school ? this.props.school.id : this.props.expense.schoolID;
-
-    this.props.onComplete({
-      ...this.state,
-      schoolID,
-    });
+    this.props.onComplete(this.state);
     this.setState(emptyState);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.expense) this.setState(nextProps.expense);
+    if (nextProps.school) this.setState(nextProps.school);
   }
 
   render() {
-    let buttonText = this.props.expense ? 'update expense' : 'create expense';
+    let buttonText = this.props.school ? 'update school' : 'create school';
 
     return (
-      <form className="expense-form" onSubmit={this.handleSubmit}>
+      <form className="school-form" onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="name"
@@ -54,16 +49,16 @@ class ExpenseForm extends React.Component {
           onChange={this.handleChange}
         />
         <input
-          type="number"
-          name="price"
-          placeholder="price"
-          value={this.state.price}
+          type="text"
+          name="city"
+          placeholder="city"
+          value={this.state.budget}
           onChange={this.handleChange}
         />
-        <button type="submit"> {buttonText} </button>
+        <button type="submit">{buttonText} </button>
       </form>
     );
   }
 }
 
-export default ExpenseForm;
+export default SchoolForm;

@@ -1,9 +1,9 @@
 const uuidv1 = require('uuid/v1');
 
-export const createAction = ({ categoryID, name, price }) => ({
+export const createAction = ({ schoolID, name, price }) => ({
   type: 'EXPENSE_CREATE',
   payload: {
-    categoryID,
+    schoolID,
     name,
     price,
     id: uuidv1(),
@@ -11,12 +11,12 @@ export const createAction = ({ categoryID, name, price }) => ({
   },
 });
 
-export const updateAction = (expense) => ({
+export const updateAction = expense => ({
   type: 'EXPENSE_UPDATE',
   payload: expense,
 });
 
-export const removeAction = (expense) => ({
+export const removeAction = expense => ({
   type: 'EXPENSE_REMOVE',
   payload: expense,
 });
