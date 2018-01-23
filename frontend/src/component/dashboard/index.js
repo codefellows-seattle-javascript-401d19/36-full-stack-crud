@@ -5,12 +5,17 @@ import RestaurantItem from '../restaurant-item';
 import * as restaurant from '../../action/restaurant';
 
 class Dashboard extends React.Component{
+  componentWillMount(){
+    this.props.getRestaurants();
+  }
+
   render(){
     let {
       restaurants,
       restaurantCreate,
       restaurantUpdate,
       restaurantDestroy,
+      getRestaurants,
     } = this.props;
 
     return(
@@ -31,6 +36,7 @@ let mapDispatchToProps = (dispatch) => {
     restaurantCreate: (data) => {dispatch(restaurant.create(data));},
     restaurantUpdate: (data) => {dispatch(restaurant.update(data));},
     restaurantDestroy: (data) => {dispatch(restaurant.destroy(data));},
+    getRestaurants: () => {dispatch(restaurant.getRestaurants());},
   };
 };
 

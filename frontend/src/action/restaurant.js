@@ -1,3 +1,5 @@
+import superagent from 'superagent';
+
 export const create = ({name, cuisine, city, rating}) => ({
   type: 'RESTAURANT_CREATE',
   payload: {
@@ -17,3 +19,11 @@ export const destroy = (restaurant) => ({
   type: 'RESTAURANT_DESTROY',
   payload: restaurant,
 });
+
+export const getRestaurants = () => (dispatch) => {
+  return superagent.get('http://localhost:3000/api/restaurants')
+    .then(response => {
+      console.log(response);
+      // dispatch(create({response}));
+    });
+};

@@ -18,6 +18,21 @@ restaurantRouter.post('/api/restaurants', jsonParser, (request, response, next) 
     .catch(next);
 });
 
+
+// --------------------------------------------------
+restaurantRouter.get(`/api/restaurants`, (request, response, next) => {
+  return Restaurant.find({})
+    .then(restaurants => {
+      if(!restaurants){
+        throw httpErrors(404, `Sending a 404 status because no restaurants were found`);
+      }
+      return response.json(restaurants);
+    })
+    .catch(next);
+});
+// --------------------------------------------------
+
+
 restaurantRouter.get(`/api/restaurants/:id`, (request, response, next) => {
   return Restaurant.findById(request.params.id)
     .populate('cuisine')
