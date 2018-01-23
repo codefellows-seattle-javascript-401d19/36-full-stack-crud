@@ -23,11 +23,11 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
+    let countryID = this.props.country ? this.props.country.id : this.props.expense.countryID;
 
     this.props.onComplete({
       ...this.state,
-      categoryID,
+      countryID,
     });
 
     this.setState(emptyState);

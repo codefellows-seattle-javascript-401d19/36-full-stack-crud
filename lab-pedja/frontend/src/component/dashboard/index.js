@@ -1,39 +1,36 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import CategoryForm from "../category-form";
-import CategoryItem from "../category-item";
-import * as category from '../../action/category';
+import CountryForm from "../country-form";
+import CountryItem from "../country-item";
+import * as country from '../../action/country';
 
 class Dashboard extends React.Component {
   
-  // componentDidMount() {
-  //   this.props.handleAJAX();
-  // }
+  componentDidMount() {
+    this.props.countriesGetAjax();
+  }
   
   render() {
     
     let {
-      categories,
-      categoryCreate,
-      categoryUpdate,
-      categoryDestroy,
+      countries,
+      countryUpdate,
       countryCreateAjax,
       countryDestroyAjax,
+      countriesGetAjax,
     } = this.props;
     
     return (
       <div className="dashboard">
-        <button onClick={countryCreateAjax}> Ajax Create Country </button>
-        <button onClick={countryDestroyAjax}> Ajax Destroy Country </button>
-        <CategoryForm onComplete={categoryCreate} />
-        <div className="categories">
-          {categories.map((category, index) => (
-            <CategoryItem 
+        <CountryForm onComplete={countryCreateAjax} />
+        <div className="countries">
+          {countries.map((country, index) => (
+            <CountryItem 
               key={index} 
-              category={category}
-              destroyCategory={categoryDestroy} 
-              updateCategory={categoryUpdate}
+              country={country}
+              destroyCountry={countryDestroyAjax} 
+              updateCountry={countryUpdate}
             />
           ))}
         </div>
@@ -44,17 +41,16 @@ class Dashboard extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    categories : state.categories,
+    countries : state.countries,
   }
 };
 
 let mapDispatchToProps = (dispatch) => {
   return{
-    categoryCreate: (data) => dispatch(category.createAction(data)),
-    categoryUpdate: (data) => dispatch(category.updateAction(data)),
-    categoryDestroy: (data) => dispatch(category.destroyAction(data)),
-    countryCreateAjax: () => dispatch(category.postCountry()),
-    countryDestroyAjax: () => dispatch(category.deleteCountry()),
+    countryUpdate: (data) => dispatch(country.updateAction(data)),
+    countryCreateAjax: (data) => dispatch(country.postCountry(data)),
+    countryDestroyAjax: (data) => dispatch(country.deleteCountry(data)),
+    countriesGetAjax: () => dispatch(country.getAction()),
   }
 };
 

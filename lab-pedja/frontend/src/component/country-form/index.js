@@ -5,12 +5,12 @@ let emptyState = {
   budget: '',
 }
 
-class CategoryForm extends React.Component {
+class CountryForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.category ? this.props.category : emptyState;
+    this.state = this.props.country ? this.props.country : emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(CountryForm.prototype);
     for(let functionName of memberFunctions){
       if(functionName.startsWith('handle')){
         this[functionName] = this[functionName].bind(this);
@@ -39,8 +39,8 @@ class CategoryForm extends React.Component {
 //--------------------------------------------------
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.category)  
-      this.setState(nextProps.category);
+    if(nextProps.country)  
+      this.setState(nextProps.country);
   }
 
 //--------------------------------------------------
@@ -48,14 +48,14 @@ class CategoryForm extends React.Component {
 //--------------------------------------------------
 
   render() {
-    let buttonText = this.props.category ? 'update category' : 'create category';
+    let buttonText = this.props.country ? 'update country' : 'create country';
 
     return (
-      <form onSubmit={this.handleSubmit} className="category-form">
+      <form onSubmit={this.handleSubmit} className="country-form">
         <input
           type="text"
           name="name"
-          placeholder="category name"
+          placeholder="country name"
           value={this.state.name}
           onChange={this.handleChange}
         />
@@ -72,4 +72,4 @@ class CategoryForm extends React.Component {
   }
 }
 
-export default CategoryForm;
+export default CountryForm;

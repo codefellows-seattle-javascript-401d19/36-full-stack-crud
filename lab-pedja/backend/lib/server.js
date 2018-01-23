@@ -20,7 +20,6 @@ app.use(require('./logger-middleware'));
 app.use(cors());
 
 app.use(require('../route/country-router'));
-app.use(require('../route/language-router'));
 
 app.all('*', (request, response) => {
   logger.log('info', 'Returning 404 from a catch-all route');

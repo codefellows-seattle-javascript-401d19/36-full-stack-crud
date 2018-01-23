@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
-import categories from "./categories";
+import countries from "./countries";
 import expenses from "./expenses";
 
 export default combineReducers({
-  categories,
+  countries,
   expenses,
 })

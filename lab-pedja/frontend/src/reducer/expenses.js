@@ -1,39 +1,40 @@
 let emptyState = {};
 
 export default (state = emptyState, {type, payload}) => {
-  let categoryID, categoryExpenses, updatedExpenses;
+  let countryID, countryExpenses, updatedExpenses;
 
   switch(type){
 
-    case 'CATEGORY_CREATE':
+    case 'COUNTRY_CREATE':
       return {...state, [payload.id] : []};
 
-    case 'CATEGORY_DESTROY':
+    case 'COUNTRY_DESTROY':
       let updatedState = {...state};
       delete updatedState[payload.id];
 
       return updatedState;
 
     case 'EXPENSE_CREATE':
-      categoryID = payload.categoryID;
-      categoryExpenses = state[categoryID];
-      updatedExpenses = [...categoryExpenses, payload];
+      countryID = payload.countryID;
+      countryExpenses = state[countryID];
+      updatedExpenses = [...countryExpenses, payload];
 
-      return {...state, [categoryID] : updatedExpenses};
+      return {...state, [countryID] : updatedExpenses};
 
     case 'EXPENSE_UPDATE':
-      categoryID = payload.categoryID;
-      categoryExpenses = state[categoryID];
-      updatedExpenses = categoryExpenses.map(card => card.id === payload.id ? payload : card)
+      countryID = payload.countryID;
+      countryExpenses = state[countryID];
+      updatedExpenses = countryExpenses.map(card => card.id === payload.id ? payload : card)
 
-      return {...state, [categoryID] : updatedExpenses};
+      return {...state, [countryID] : updatedExpenses};
 
     case 'EXPENSE_DESTROY':
-    categoryID = payload.categoryID;
-    categoryExpenses = state[categoryID];
-    updatedExpenses = categoryExpenses.filter(card => card.id !== payload.id);
+    countryID = payload.countryID;
+    countryExpenses = state[countryID];
+    updatedExpenses = countryExpenses.filter(card => card.id !== payload.id);
 
-    return {...state, [categoryID] : updatedExpenses};
+    return {...state, [countryID] : updatedExpenses};
+    return {...state, [countryID] : updatedExpenses};
 
     default:
       return state;
