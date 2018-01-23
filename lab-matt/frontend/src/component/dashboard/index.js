@@ -9,7 +9,6 @@ class Dashboard extends React.Component {
     let { categories, categoryCreate, getCategories } = this.props;
     return (
       <div className='dashboard'>
-        <button onClick={getCategories}> GET AJAX </button>
         <CategoryForm onComplete={categoryCreate} />
         {
           categories.map((category, index) => {
@@ -30,7 +29,6 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: (data) => dispatch(category.createAction(data)),
-    getCategories: () => dispatch(category.getCategories()),
   };
 };
 

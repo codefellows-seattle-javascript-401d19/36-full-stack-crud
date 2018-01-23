@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 import Dashboard from '../dashboard/index';
+import * as category from '../../action/category';
+
 
 class App extends React.Component {
   render() {
@@ -21,6 +24,19 @@ class App extends React.Component {
       </div>
     );
   }
+
+  componentWillMount() {
+    console.log('MOUNTING DATABASE');
+    
+    this.props.getCategories();
+  }
+
 }
 
-export default App;
+let mapDispatchToProps = (dispatch) => {
+  return {
+    getCategories: () => dispatch(category.getCategories()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);

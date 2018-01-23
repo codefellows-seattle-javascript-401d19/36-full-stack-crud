@@ -22,11 +22,11 @@ export const removeAction = (category) => ({
   payload: category,
 });
 
-export const getCategories = () => (dispatch) => {
-  console.log('DISPATCHING');
+export const getCategories = () => (store) => {
+  console.log('DISPATCHING', store);
   return superagent.get(API_URL)
     .then(response => {
-      console.log('AJAX DONE');
-      dispatch(createAction({title: 'AJAX IT UP!'}));
+      console.log('AJAX DONE', response.body);
+      store.dispatch(createAction({title: 'AJAX IT UP!'}));
     });
 };
