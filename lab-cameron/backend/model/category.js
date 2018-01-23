@@ -25,4 +25,4 @@ const categorySchema = mongoose.Schema({
   usePushEach: true,
 });
 
-module.exports = mongoose.model('school', categorySchema);
+module.exports = mongoose.model('category', categorySchema);

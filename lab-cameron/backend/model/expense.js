@@ -16,6 +16,7 @@ const expenseSchema = mongoose.Schema({
   uuid: {
     type: String,
     required: true,
+    unique: true,
   },
   timestamp: {
     type: Date,
@@ -46,10 +47,10 @@ expenseSchema.post('remove', (document, done) => {
   return Category.findById(document.category)
     .then(categoryFound => {
       if (!categoryFound) {
-        throw httpErrors(404, 'school not found');
+        throw httpErrors(404, 'category not found');
       }
 
-      categoryFound.students = categoryFound.students.filter(expense => {
+      categoryFound.expenses = categoryFound.expenses.filter(expense => {
         return expense._id.toString() !== document._id.toString();
       });
       return categoryFound.save();

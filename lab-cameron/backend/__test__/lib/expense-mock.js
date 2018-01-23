@@ -20,8 +20,8 @@ expenseMock.create = () => {
         category: category._id,
       }).save();
     })
-    .then(student => {
-      mock.student = student;
+    .then(expense => {
+      mock.expense = expense;
       return mock;
     });
 };
