@@ -8,8 +8,6 @@ export default (state = emptyState, { type, payload }) => {
       return state.map(category => category.uuid === payload.uuid ? payload : category);
     case 'CATEGORY_DESTROY':
       return state.filter(category => category.uuid !== payload.uuid);
-    case 'GET_CATEGORIES':
-      return payload;
     default:
       return state;
   }

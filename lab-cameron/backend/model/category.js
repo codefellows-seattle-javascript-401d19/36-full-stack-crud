@@ -14,7 +14,6 @@ const categorySchema = mongoose.Schema({
   },
   uuid: {
     type: String,
-    required: true,
   },
   timeStamp: {
     type: Date,

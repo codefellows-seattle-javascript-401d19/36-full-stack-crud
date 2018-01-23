@@ -24,9 +24,34 @@ export const removeAction = category => ({
 export const getCategorys = () => dispatch => {
   return superagent.get(`http://localhost:3000/api/categorys`)
     .then(response => {
-      dispatch(createAction({
-        type: 'GET_CATEGORIES',
-        payload: response.body,
-      }));
+      return response.body.forEach(category => {
+        return dispatch(createAction({
+          name: category.name,
+          budget: category.budget,
+          uuid: category.uuid,
+          timestamp: category.timestamp,
+        }));
+      });
+    });
+};
+
+export const createCategory = category => dispatch => {
+  return superagent.post('http://localhost:3000/api/categorys')
+    .send(category)
+    .then(response => {
+      dispatch(createAction(response.body));
+    });
+};
+
+// delete incompleted
+
+// update id's will need to be consistent
+
+export const updateCategory = category => dispatch => {
+  console.log(category);
+  return superagent.put(`http://localhost:3000/api/categorys/${category._id}`)
+    .send(category)
+    .then(response => {
+      dispatch(updateAction(category));
     });
 };

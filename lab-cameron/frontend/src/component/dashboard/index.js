@@ -7,8 +7,10 @@ import * as expense from '../../action/expense';
 
 class Dashboard extends Component {
   componentWillMount() {
-    this.props.initializeCategories();
-    this.props.initializeExpenses();
+    this.props.initializeCategories()
+      .then(() => {
+        this.props.initializeExpenses();
+      });
   }
 
   render() {
@@ -38,7 +40,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    categoryCreate: data => dispatch(category.createAction(data)),
+    categoryCreate: data => dispatch(category.createCategory(data)),
     initializeCategories: () => dispatch(category.getCategorys()),
     initializeExpenses: () => dispatch(expense.getExpenses()),
   };

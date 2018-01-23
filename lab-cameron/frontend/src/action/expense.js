@@ -25,9 +25,15 @@ export const removeAction = expense => ({
 export const getExpenses = () => dispatch => {
   return superagent.get(`http://localhost:3000/api/expenses`)
     .then(response => {
-      dispatch(createAction({
-        type: 'GET_EXPENSES',
-        payload: response.body,
-      }));
+      return response.body.forEach(expense => {
+        console.log(expense);
+        return dispatch(createAction({
+          name: expense.name,
+          price: expense.price,
+          uuid: expense.uuid,
+          categoryId: expense.categoryId,
+          timestamp: expense.timestamp,
+        }));
+      });
     });
 };
