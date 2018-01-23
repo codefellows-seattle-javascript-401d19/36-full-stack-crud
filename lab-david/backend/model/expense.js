@@ -45,8 +45,8 @@ expenseSchema.post('remove', (document, done) => {
       if(!categoryLocated)
         throw httpErrors(404, 'category not located');
 
-      categoryLocated.expenses = categoryLocated.expenses.filter(project => {
-        return project._id.toString() !== document._id.toString();
+      categoryLocated.expenses = categoryLocated.expenses.filter(expense => {
+        return expense._id.toString() !== document._id.toString();
       });
       return categoryLocated.save();
     })
@@ -54,4 +54,4 @@ expenseSchema.post('remove', (document, done) => {
     .catch(done);
 });
 
-module.exports = mongoose.model('project', expenseSchema);
+module.exports = mongoose.model('expense', expenseSchema);

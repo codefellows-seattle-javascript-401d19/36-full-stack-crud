@@ -2,18 +2,18 @@
 
 const faker = require('faker');
 const categoryMock = require('./category-mock');
-const Project = require('../../model/project');
+const Expense = require('../../model/expense');
 
-const projectMock = module.exports = {};
+const expenseMock = module.exports = {};
 
-projectMock.create = () => {
+expenseMock.create = () => {
   let mock = {};
 
   return categoryMock.create()
     .then(category => {
       mock.category = category;
 
-      return new Project({
+      return new Expense({
         title : faker.company.bsNoun(2),
         year : 2017,
       
@@ -23,13 +23,13 @@ projectMock.create = () => {
         category : category._id,
       }).save();
     })
-    .then(project => {
-      mock.project = project;
+    .then(expense => {
+      mock.expense = expense;
       return mock;
     });
 };
 
-projectMock.createMany = (creationCount) => {
+expenseMock.createMany = (creationCount) => {
   let mock = {};
   
   return categoryMock.create()
@@ -39,7 +39,7 @@ projectMock.createMany = (creationCount) => {
       return Promise.all(new Array(creationCount)
         .fill(0)
         .map(() => {
-          return new Project({
+          return new Expense({
             title : faker.company.bsNoun(2),
             year : faker.date.soon,
             
@@ -50,13 +50,13 @@ projectMock.createMany = (creationCount) => {
           }).save();
         }));
     })
-    .then(project => {
-      mock.project = project;
-      return project;
+    .then(expense => {
+      mock.expense = expense;
+      return expense;
     });
 };
 
-projectMock.remove = () => Promise.all([
-  Project.remove({}),
+expenseMock.remove = () => Promise.all([
+  Expense.remove({}),
   categoryMock.remove(),
 ]);

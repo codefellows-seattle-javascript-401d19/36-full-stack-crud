@@ -6,7 +6,7 @@ const superagent = require('superagent');
 const faker = require('faker');
 const server = require('../lib/server');
 
-const projectMock = require('./lib/project-mock');
+const expenseMock = require('./lib/expense-mock');
 const categoryMock = require('./lib/category-mock');
 
 const apiURL = `http://localhost:${process.env.PORT}/api/expenses`;
@@ -14,16 +14,16 @@ const apiURL = `http://localhost:${process.env.PORT}/api/expenses`;
 describe('/api/expenses', () => {
   beforeAll(server.start);
   afterAll(server.stop);
-  afterEach(projectMock.remove);
+  afterEach(expenseMock.remove);
 
   describe('POST /api/expenses', () => {
-    test('should respond with a project and a 200 status code if there is no error', () => {
+    test('should respond with a expense and a 200 status code if there is no error', () => {
       let tempCategoryMock = null;
       return categoryMock.create()
         .then(mock => {
           tempCategoryMock = mock;
 
-          let projectToPost = {
+          let expenseToPost = {
             title : faker.company.bsNoun(2),
             year : 2017,
             languages : faker.database.engine(3).split(' '),
@@ -31,12 +31,12 @@ describe('/api/expenses', () => {
             category : mock._id,
           };
           return superagent.post(`${apiURL}`)
-            .send(projectToPost)
+            .send(expenseToPost)
             .then(response => {
               expect(response.status).toEqual(200);
               expect(response.body._id).toBeTruthy();
-              expect(response.body.name).toEqual(projectToPost.name);
-              expect(response.body.year).toEqual(projectToPost.year);
+              expect(response.body.name).toEqual(expenseToPost.name);
+              expect(response.body.year).toEqual(expenseToPost.year);
             });
         });
     });
@@ -44,7 +44,7 @@ describe('/api/expenses', () => {
     test('should respond with a 404 if the category id is not present', () => {
       return superagent.post(apiURL)
         .send({
-          title : 'Awesome Project',
+          title : 'Awesome Expense',
           year : '2017',
           languages : 'CSS',
           description : faker.company.catchPhrase(10).split(' '),
@@ -56,13 +56,13 @@ describe('/api/expenses', () => {
         });
     });
 
-    test('should respond with a 400 code if we send an incomplete project', () => {
-      let projectToPost = {
+    test('should respond with a 400 code if we send an incomplete expense', () => {
+      let expenseToPost = {
         title : faker.lorem.words(2),
         year : faker.date.soon,        
       };
       return superagent.post(`${apiURL}`)
-        .send(projectToPost)
+        .send(expenseToPost)
         .then(Promise.reject)
         .catch(response => {
           expect(response.status).toEqual(400);
@@ -72,9 +72,9 @@ describe('/api/expenses', () => {
 
   describe('DELETE /api/expenses/:id', () => {
     test('should respond with a 204 if there are no errors', () => {
-      return projectMock.create()
+      return expenseMock.create()
         .then(mock => {
-          return superagent.delete(`${apiURL}/${mock.project._id}`);
+          return superagent.delete(`${apiURL}/${mock.expense._id}`);
         })
         .then(response => {
           expect(response.status).toEqual(204);
@@ -95,18 +95,18 @@ describe('/api/expenses', () => {
       
       let tempMock = null;
 
-      return projectMock.create()
+      return expenseMock.create()
         .then(mock => {
           tempMock = mock;
-          return superagent.get(`${apiURL}/${mock.project._id}`);
+          return superagent.get(`${apiURL}/${mock.expense._id}`);
         })
         .then(response => {
           expect(response.status).toEqual(200);
 
-          expect(response.body._id).toEqual(tempMock.project._id.toString());
+          expect(response.body._id).toEqual(tempMock.expense._id.toString());
 
-          expect(response.body.name).toEqual(tempMock.project.name);
-          expect(response.body.year).toEqual(tempMock.project.year);
+          expect(response.body.name).toEqual(tempMock.expense.name);
+          expect(response.body.year).toEqual(tempMock.expense.year);
 
           expect(response.body.category._id).toEqual(tempMock.category._id.toString());
           expect(response.body.category.age).toEqual(tempMock.category.age);

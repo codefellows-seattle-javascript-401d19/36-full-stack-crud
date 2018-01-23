@@ -16,7 +16,7 @@ mongoose.Promise = Promise;
 app.use(require('./logger-middleware'));
 
 app.use(require('../route/category-route'));
-app.use(require('../route/project-route'));
+app.use(require('../route/expense-route'));
 
 
 app.all('*', (request, response) => {

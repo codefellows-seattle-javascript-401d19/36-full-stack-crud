@@ -38,12 +38,12 @@ describe('/api/categories', () => {
         });
     });
 
-    test('should respond with a 409 code if we send a category with a project property, which is a unique property, that already exists', () => {
+    test('should respond with a 409 code if we send a category with a expense property, which is a unique property, that already exists', () => {
       return categoryMock.create()
         .then(category => {
           return superagent.post(apiURL)
             .send({
-              project : category.project,
+              expense : category.expense,
               name : category.name,
               age : category.age,
               _id : category._id,

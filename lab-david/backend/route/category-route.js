@@ -42,7 +42,7 @@ categoryRoute.delete('/api/categories/:id',(request,response,next) => {
   return Category.findByIdAndRemove(request.params.id)
     .then(category => {
       if(!category){
-        throw httpErrors(404,`project was not found. go back to start, do not collect $200.`);
+        throw httpErrors(404,`expense was not found. go back to start, do not collect $200.`);
       }
       return response.sendStatus(204);
     }).catch(next);
