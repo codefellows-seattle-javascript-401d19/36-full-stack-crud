@@ -75,7 +75,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  expenseCreate: data => dispatch(expenseActions.createAction(data)),
+  expenseCreate: data => dispatch(expenseActions.createExpense(data)),
   categoryUpdate: data => dispatch(categoryActions.updateCategory(data)),
   categoryRemove: data => dispatch(categoryActions.deleteCategory(data)),
 });
