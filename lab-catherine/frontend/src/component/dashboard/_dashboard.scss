@@ -1,0 +1,46 @@
+@import 'vars';
+
+.landing {
+  .continent-form:first-child {
+    padding: $pad;
+    border: 1px solid $color-secondary;
+    margin-bottom: $pad;
+  }
+
+  .continent-container {
+    height: calc(100vh - 8em);
+    border: 1px solid $color-secondary;
+    padding: $pad;
+
+    .continent {
+      padding-bottom: $pad;
+      margin-bottom: $pad;
+    }
+  }
+}
+
+.ajax-button {
+  background-color: lightcoral;
+}
+
+.ajax-button:hover {
+  background-color: salmon;
+  color: cornsilk;
+}
+
+@media screen and (min-width: 700px){
+  .continent-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    .continent {
+      white-space: normal;
+      display: inline-block;
+      width: 250px;
+      height: 100%;
+      margin: 0;
+      margin-right: $pad;
+    }
+  }
+}
