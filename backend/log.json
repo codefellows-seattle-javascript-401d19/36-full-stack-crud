@@ -197,3 +197,12 @@
 {"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:17:15.684Z"}
 {"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:19:21.731Z"}
 {"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:19:24.383Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:22:23.944Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:22:39.157Z"}
+{"level":"info","message":"Turning the server on! Listening on port 3000","timestamp":"2018-01-23T01:27:03.093Z"}
+{"level":"info","message":"Turning the server on! Listening on port 3000","timestamp":"2018-01-23T01:27:15.027Z"}
+{"level":"info","message":"Turning the server on! Listening on port 3000","timestamp":"2018-01-23T01:28:36.246Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:33:11.527Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:33:13.334Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:34:57.503Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:35:03.566Z"}

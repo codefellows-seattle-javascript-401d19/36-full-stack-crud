@@ -27,8 +27,8 @@ class RestaurantForm extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps){
-      this.setState(nextProps);
+    if(nextProps.restaurant){
+      this.setState(nextProps.restaurant);
     }
   }
 

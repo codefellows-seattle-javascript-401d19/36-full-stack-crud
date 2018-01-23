@@ -14,9 +14,9 @@ export default (state = emptyState, action) => {
         }
       });
     case 'RESTAURANT_DESTROY':
-      return state.filter(category => {
-        if(category.id !== payload.id){
-          return category;
+      return state.filter(restaurant => {
+        if(restaurant.id !== payload.id){
+          return restaurant;
         }
       });
     default:

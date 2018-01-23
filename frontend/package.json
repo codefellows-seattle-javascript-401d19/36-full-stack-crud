@@ -11,8 +11,6 @@
   "scripts": {
     "test": "jest -i --coverage",
     "lint": "eslint ./",
-    "dbon": "mkdir -p ./db && mongod --dbpath ./db",
-    "dboff": "killall mongod",
     "watch": "webpack-dev-server --inline --hot",
     "build": "webpack"
   },

@@ -18,8 +18,6 @@ restaurantRouter.post('/api/restaurants', jsonParser, (request, response, next) 
     .catch(next);
 });
 
-
-// --------------------------------------------------
 restaurantRouter.get(`/api/restaurants`, (request, response, next) => {
   return Restaurant.find({})
     .then(restaurants => {
@@ -30,8 +28,6 @@ restaurantRouter.get(`/api/restaurants`, (request, response, next) => {
     })
     .catch(next);
 });
-// --------------------------------------------------
-
 
 restaurantRouter.get(`/api/restaurants/:id`, (request, response, next) => {
   return Restaurant.findById(request.params.id)
