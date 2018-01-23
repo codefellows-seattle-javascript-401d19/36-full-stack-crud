@@ -14,7 +14,7 @@ let httpServer = null;
 mongoose.Promise = Promise;
 
 app.use(require('./logger-middleware'));
-app.use(require('../route/brewery-router'));
+app.use(require('../route/category-router'));
 app.use(require('../route/beer-router'));
 
 app.all('*', (request, response) => {

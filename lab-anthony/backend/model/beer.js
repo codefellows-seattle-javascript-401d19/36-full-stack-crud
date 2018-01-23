@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Brewery = require('./brewery');
+const Category = require('./category');
 const httpErrors = require('http-errors');
 
 const beerSchema = mongoose.Schema({
@@ -9,7 +9,7 @@ const beerSchema = mongoose.Schema({
   style: {type: String, required: true, minlength: 1},
   abv: {type: String, required: false, minlength: 1},
   timestamp: {type: Date, default: () => new Date()},
-  brewery : {
+  category : {
     type : mongoose.Schema.Types.ObjectId,
     required : true,
     ref : 'brewerie',
@@ -18,25 +18,25 @@ const beerSchema = mongoose.Schema({
 
 beerSchema.pre('save', function(done){
   console.log('saving beer');
-  return Brewery.findById(this.brewery)
-    .then(breweryFound => {
-      console.log('breweryfound', breweryFound);
-      if(!breweryFound)
-        throw httpErrors(404, 'brewery not found');
+  return Category.findById(this.category)
+    .then(categoryFound => {
+      console.log('categoryfound', categoryFound);
+      if(!categoryFound)
+        throw httpErrors(404, 'category not found');
 
-      breweryFound.beers.push(this._id);
-      return breweryFound.save();
+      categoryFound.beers.push(this._id);
+      return categoryFound.save();
     })
     .then(() => done())
     .catch(done);
 });
 
 beerSchema.post('remove', (document, done) => {
-  return Brewery.findById(document.brewery)
-    .then(breweryFound => {
-      if(!breweryFound)
-        throw httpErrors(404,'brewery not found');
-      breweryFound.beers = breweryFound.beers.filter(beer => {
+  return Category.findById(document.category)
+    .then(categoryFound => {
+      if(!categoryFound)
+        throw httpErrors(404,'category not found');
+      categoryFound.beers = categoryFound.beers.filter(beer => {
         return beer._id.toString() !== document._id.toString();
       });
       return breweryFound.save();

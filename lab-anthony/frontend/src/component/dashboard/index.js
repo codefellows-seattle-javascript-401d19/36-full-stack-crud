@@ -38,7 +38,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return{
     categoryCreate: (data) => dispatch(category.createAction(data)),
-    handleAJAX: () => dispatch(category.getBeers()),
+    handleAJAX: () => dispatch(category.getCategories()),
   };
 };
 
