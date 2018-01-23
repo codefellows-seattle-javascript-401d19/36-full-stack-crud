@@ -1,0 +1,244 @@
+@import url(https://fonts.googleapis.com/css?family=Abel|Supermercado+One);/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}* {
+  font-family: 'Abel', sans-serif;
+}
+
+h1 {
+  font-family: 'Supermercado One', cursive;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+nav ul {
+  margin: 0 auto;
+}
+
+nav li {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 2px;
+  height: 1.5em;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+nav li:first-child {
+  margin-left: 25%;
+  margin-right: 10%;
+}
+
+nav li:hover {
+  background: #b5b5b5;
+}
+
+nav li:active {
+  background: #727272;
+  color: white;
+}
+
+nav a {
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+@media (max-width: 370px) {
+  nav li {
+    width: 75px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  nav li:first-child {
+    margin: 0 auto 1em;
+  }
+}
+
+.landing {
+  text-align: center;
+}
+
+.landing h2 {
+  font-size: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+.dashboard .clear-all {
+  float: right;
+  margin-right: 5%;
+}
+
+.dashboard .category-form,
+.dashboard .expense-form {
+  margin-left: 5%;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.dashboard .category-form input,
+.dashboard .expense-form input {
+  margin-right: 2.5%;
+  width: 30%;
+}
+
+.dashboard .category-item {
+  border-bottom: 1px solid black;
+}
+
+.dashboard .category-item,
+.dashboard .expense-item {
+  padding-bottom: 1em;
+}
+
+.dashboard .category-item h2,
+.dashboard .category-item h3,
+.dashboard .category-item h4,
+.dashboard .expense-item h2,
+.dashboard .expense-item h3,
+.dashboard .expense-item h4 {
+  display: inline-block;
+}
+
+.dashboard .category-item h2,
+.dashboard .category-item h3,
+.dashboard .expense-item h2,
+.dashboard .expense-item h3 {
+  font-weight: bold;
+  margin-right: 5%;
+  padding-left: 5%;
+}
+
+.dashboard .category-item h2,
+.dashboard .expense-item h2 {
+  font-size: 1.5em;
+}
+
+.dashboard .category-item h3,
+.dashboard .expense-item h3 {
+  font-size: 1.25em;
+}
+
+.dashboard .expense-item {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.dashboard .destroy {
+  margin-left: 5%;
+}
+
+.dashboard .category:first-child {
+  border-top: 1px solid black;
+}
+
+.dashboard .categories {
+  margin-bottom: 1em;
+}
+
+@media (max-width: 370px) {
+  .dashboard {
+    text-align: center;
+  }
+
+  .dashboard .category-form,
+  .dashboard .category-form {
+    margin-left: 0;
+  }
+
+  .dashboard .category-form input,
+  .dashboard .category-form input {
+    display: block;
+    margin: .5em auto;
+    width: 90%;
+  }
+
+  .dashboard .clear-all {
+    float: none;
+    margin-top: 1em;
+    margin-right: 0;
+  }
+
+  .dashboard .destroy {
+    margin-left: 0;
+  }
+
+  .dashboard h3 {
+    margin-left: 0;
+  }
+}
+
+.category-complete h2,
+.category-complete h3 {
+  cursor: pointer;
+}
+
+.expense-item h3,
+.expense-item h4 {
+  cursor: pointer;
+}
+

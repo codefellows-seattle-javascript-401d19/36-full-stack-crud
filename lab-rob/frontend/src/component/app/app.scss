@@ -1,0 +1,52 @@
+nav {
+  ul {
+    margin: 0 auto;
+  }
+
+  li {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 1.5em;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  li:first-child {
+    margin-left: 25%;
+    margin-right: 10%;
+  }
+
+  li:hover {
+    background: rgb(181, 181, 181);
+  }
+  
+  li:active {
+    background: rgb(114, 114, 114);
+    color: white;
+  }
+
+  a {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    height: 1.5em;
+    line-height: 1.5em;    
+  }
+}
+
+@media (max-width: 370px) {
+  nav {
+    li {
+      width: 75px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    li:first-child {
+      margin: 0 auto 1em;
+    }
+  }
+}
