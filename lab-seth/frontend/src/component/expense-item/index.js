@@ -24,7 +24,7 @@ class ExpenseItem extends React.Component {
 
   render() {
     let {
-      expense, // this is coming from the actual props
+      expense, 
       expenseRemove,
       expenseUpdate,
     } = this.props;
@@ -43,8 +43,6 @@ class ExpenseItem extends React.Component {
     );
   }
 }
-
-// let mapStateToProps = (state) => ({});
 
 let mapDispatchToProps = (dispatch) => ({
   expenseRemove: (data) => dispatch(expense.removeAction(data)),
