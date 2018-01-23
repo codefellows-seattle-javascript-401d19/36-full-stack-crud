@@ -1,4 +1,7 @@
 import uuid from 'uuid/v1';
+import superagent from 'superagent';
+
+const apiUrl = 'http://localhost:3000';
 
 export const createAction = ({name, budget}) => ({
   type: 'CATEGORY_CREATE',
@@ -28,3 +31,10 @@ export const reloadAction = catagories => ({
   type: 'CATEGORY_RELOAD',
   payload: catagories,
 });
+
+export const getCategoriesAction = () => (store) => {
+  return superagent.get(`${apiUrl}/api/shows?populate=true`)
+    .then(response => {
+      console.log(response.body);
+    });
+};

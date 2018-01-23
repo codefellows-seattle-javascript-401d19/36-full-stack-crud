@@ -1,9 +1,11 @@
 'use strict';
 
+const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('./logger');
 const app = express();
+
 
 const PORT = process.env.PORT;
 
@@ -11,6 +13,8 @@ let isServerOn = false;
 let httpServer = null;
 
 mongoose.Promise = Promise;
+
+app.use(cors());
 
 app.use(require('./logger-middleware'));
 app.use(require('../route/show-router'));

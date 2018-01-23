@@ -20,38 +20,14 @@ showRouter.post('/api/shows', jsonParser, (request, response, next) => {
     .catch(next);
 });
 
+const getAllShows = (populateQuery) => populateQuery === 'true' ? Show.find({}).populate('episodes') : Show.find({});
+
 showRouter.get('/api/shows', (request, response, next) => {
-  let page = Number(request.query.page);
-
-  if(!page || isNaN(page))
-    return next(httpErrors(400, 'No/improper query string provided for GET.'));
-
-  if(page < 1)
-    return next(httpErrors(404, 'Requested 0 or negative page number.'));
-
-  let totalShows, totalPages;
-  
-  return Show.find({})
-    .count()
-    .then(count => {
-      totalShows = count;
-      totalPages = Math.ceil(count / SHOWS_PER_PAGE);
-
-      return Show.find({})
-        .skip(SHOWS_PER_PAGE * (page - 1))
-        .limit(SHOWS_PER_PAGE);
-    })
+  return getAllShows(request.query.populate)
     .then(shows => {
-      logger.info(`Returning page ${page} of ${totalPages}.`);
+      logger.info(`Returning all shows.`);
 
-      let responseData = {
-        totalShows: totalShows,
-        totalPages: totalPages,
-        shows: shows,
-      };
-      if(shows.length === 0)
-        throw httpErrors(404, 'Page too high.');
-      return response.json(responseData);
+      return response.json({shows});
     })
     .catch(next);
 });

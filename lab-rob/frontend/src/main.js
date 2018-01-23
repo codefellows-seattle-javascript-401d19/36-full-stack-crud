@@ -10,9 +10,10 @@ import App from './component/app';
 import reducer from './reducer';
 import reporter from './middleware/redux-reporter';
 import session from './middleware/redux-session';
+import thunk from './middleware/redux-thunk';
 
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(reporter, session)
+  applyMiddleware(reporter, session, thunk)
 ));
 
 let container = document.createElement('main');

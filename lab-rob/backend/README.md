@@ -48,9 +48,9 @@ Throws an error if any of the required properties are missing.
 
 Adds a new tv show to the database. Returns the added show object with `timestamp`, `_id`, and `episodes` properties.
 
-#### `GET /api/shows?page=<page number>`
+#### `GET /api/shows`
 
-Get an array of 10 shows in the database, based off of page number. If the page is higher than the total pages, or less than 1, a 404 error is thrown.
+Get an array of all shows in the database.
 
 #### `GET /api/shows/<show id>?populate=<boolean>`
 
@@ -83,7 +83,7 @@ If a you change the `title` to a title that is already in the database a 409 sta
 
 #### `POST /api/episodes`
 
-Send a JSON object with the properties `name` (String, required, unique), `number` (Number, required), `duration` (Number, optional), `stars` (number, optional 0 - 5), `actors` (Array, strings, optional), `show` (ObjectID, required, unique)
+Send a JSON object with the properties `name` (String, required, unique), `number` (Number, required), `duration` (Number, optional), `stars` (number, optional 0 - 5), `actors` (Array, strings, optional), `show` (ObjectID, required)
 
 Throws an error if any of the required properties are missing.
 

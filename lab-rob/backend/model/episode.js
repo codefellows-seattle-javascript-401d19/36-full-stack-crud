@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Show = require('./show');
+const Category = require('./show');
 const httpErrors = require('http-errors');
 
 const episodeSchema = mongoose.Schema({
@@ -33,17 +33,17 @@ const episodeSchema = mongoose.Schema({
 });
 
 episodeSchema.pre('save', function(done) {
-  return Show.findById(this.show)
+  return Category.findById(this.show)
     .then(showFound => {
       if(!showFound)
-        throw httpErrors(404, 'Show not found.');
+        throw httpErrors(404, 'Category not found.');
       return done();
     })
     .catch(done);
 });
 
 episodeSchema.post('save', (document, done) => {
-  return Show.findById(document.show)
+  return Category.findById(document.show)
     .then(showFound => {
       showFound.episodes.push(document._id);
       return showFound.save();
@@ -53,10 +53,10 @@ episodeSchema.post('save', (document, done) => {
 });
 
 episodeSchema.post('remove', (document, done) => {
-  return Show.findById(document.show)
+  return Category.findById(document.show)
     .then(showFound => {
       if(!showFound)
-        throw httpErrors(404, 'Show not found.');
+        throw httpErrors(404, 'Category not found.');
       showFound.episodes = showFound.episodes
         .filter(episode => episode._id.toString() !== document._id.toString());
       return showFound.save();
