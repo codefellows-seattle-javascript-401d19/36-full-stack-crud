@@ -1,0 +1,167 @@
+{"level":"info","message":"Processing : GET on : /api/categorys","timestamp":"2018-01-22T22:43:09.954Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-22T22:43:09.955Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T22:45:29.179Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T22:51:22.925Z"}
+{"level":"info","message":"Processing : GET on : /api/categorys","timestamp":"2018-01-22T22:51:29.040Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-22T22:51:29.046Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-22T22:52:07.650Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-22T22:52:07.658Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T23:26:26.211Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T23:43:03.624Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T23:45:56.317Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T23:59:18.989Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T23:59:20.852Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T23:59:48.938Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T23:59:51.653Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-22T23:59:53.757Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-22T23:59:53.766Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-22T23:59:56.083Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T00:00:38.517Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T00:01:22.252Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:01:30.342Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:01:30.357Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:03:37.278Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:03:37.281Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:04:59.515Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:04:59.517Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:14:21.611Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:14:21.612Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:18:40.536Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:18:40.537Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T00:21:02.451Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:24:40.253Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:24:40.275Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:26:22.376Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:26:22.378Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:26:37.539Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:26:37.540Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T00:29:31.357Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:29:31.358Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T01:20:28.757Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T01:20:32.526Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T01:20:32.541Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T01:40:34.773Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T01:40:34.776Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T01:41:39.551Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T01:41:39.553Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T01:43:42.706Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T01:43:42.711Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T01:48:45.973Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T01:48:45.975Z"}
+{"level":"info","message":"Processing : GET on : /api/expenses","timestamp":"2018-01-23T01:51:58.380Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T01:51:58.384Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T02:03:26.367Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T02:04:18.775Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T02:04:39.039Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:05:52.170Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:05:52.189Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:15:27.839Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:15:27.848Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:17:42.429Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:17:42.431Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:18:47.740Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:18:47.741Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:19:26.349Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:19:26.350Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T02:21:04.431Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:25:10.500Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:25:10.554Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:37:40.819Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:37:40.821Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:38:53.790Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:38:53.794Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:40:47.023Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:40:47.028Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T02:45:57.995Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:47:06.175Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:47:06.181Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T02:47:14.187Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-23T02:47:14.209Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.categories index: name_1 dup key: { : \"SampleBudget\" }","op":{"name":"SampleBudget","_id":"5a66a232b0ef4c46006c5ec3","expenses":[],"period":"month","budget":999,"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-23T02:47:14.212Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T02:47:35.509Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-23T02:47:35.514Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.categories index: name_1 dup key: { : \"SampleBudget\" }","op":{"name":"SampleBudget","_id":"5a66a247b0ef4c46006c5ec4","expenses":[],"period":"month","budget":999,"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-23T02:47:35.515Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:47:54.256Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:47:54.263Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T02:48:00.504Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-23T02:48:00.509Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.categories index: name_1 dup key: { : \"SampleBudget\" }","op":{"name":"SampleBudget","_id":"5a66a260b0ef4c46006c5ec5","expenses":[],"period":"month","budget":999,"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-23T02:48:00.513Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:48:37.794Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:48:37.796Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T02:48:46.018Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:51:45.695Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:51:45.697Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:52:12.577Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:52:12.580Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T02:52:21.076Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T02:53:16.958Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T02:53:16.961Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T02:53:34.199Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T03:08:54.998Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T03:08:55.002Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T03:11:30.848Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T03:44:43.874Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T03:44:43.897Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T03:46:54.243Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T03:46:54.246Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T03:51:26.156Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T03:51:26.158Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T03:56:25.569Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T03:56:25.572Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T03:56:58.804Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T03:56:58.810Z"}
+{"level":"info","message":"server is listening on port 7000","timestamp":"2018-01-23T03:57:03.843Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T03:57:08.297Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T03:57:08.316Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T03:59:56.065Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T03:59:56.070Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:01:45.870Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:01:45.872Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:02:02.525Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:02:02.528Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:02:27.125Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:02:27.128Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:02:49.213Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:02:49.214Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:02:54.135Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:02:54.138Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:06:28.158Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:06:28.161Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:10:53.281Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:10:53.283Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:12:53.993Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:12:53.996Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:13:39.423Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:13:39.427Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:17:12.920Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:17:12.922Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:27:30.977Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:27:30.982Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:27:58.255Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:27:58.256Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:28:18.361Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:28:18.364Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:29:30.235Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:29:30.237Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:29:36.697Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:29:36.701Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:31:35.040Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:31:35.044Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:31:53.154Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:31:53.159Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:32:16.430Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:32:16.434Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T04:39:57.875Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:40:01.612Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:40:01.614Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T04:40:22.346Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:40:50.752Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:40:50.754Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T04:41:08.372Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T05:05:22.476Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T05:05:22.480Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T05:05:44.398Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T05:05:44.400Z"}
