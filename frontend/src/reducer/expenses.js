@@ -5,11 +5,11 @@ export default (state = emptyState, { type, payload }) => {
 
   switch (type) {
     case 'CATEGORY_CREATE':
-      return {...state, [payload.id] : []};
+      return {...state, [payload.uuid] : []};
 
     case 'CATEGORY_DESTROY':
       let updatedState = {...state};
-      delete updatedState[payload.id];
+      delete updatedState[payload.uuid];
       
       return updatedState;
 
@@ -23,14 +23,14 @@ export default (state = emptyState, { type, payload }) => {
     case 'EXPENSE_UPDATE':
       categoryID = payload.categoryID;
       categoryExpenses = state[categoryID];
-      updatedExpenses = categoryExpenses.map(expense => expense.id === payload.id ? payload : item);
+      updatedExpenses = categoryExpenses.map(expense => expense.uuid === payload.uuid ? payload : item);
 
       return {...state, [categoryID] : updatedExpenses};
 
     case 'EXPENSE_DESTROY':
       categoryID = payload.categoryID;
       categoryExpenses = state[categoryID];
-      updatedExpenses = categoryExpenses.filter(expense => expense.id !== payload.id);
+      updatedExpenses = categoryExpenses.filter(expense => expense.uuid !== payload.uuid);
 
       return {...state, [categoryID] : updatedExpenses};
     

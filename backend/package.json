@@ -1,7 +1,7 @@
 {
   "name": "lab-seth",
   "version": "1.0.0",
-  "description": "This is a server built from express and MongoDB that uses a MongoDB model to save api hits. It is setup as in inventory of planets.",
+  "description": "This is a server built from express and MongoDB that uses a MongoDB model to save api hits. It is setup as in inventory of expenses.",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jest -i --coverage",
     "dbon": "mkdir -p ./db && mongod --dbpath ./db",
-    "dboff": "killall mongod"
+    "dboff": "killall mongod",
+    "start": "nodemon --ignore log.json --ignore __test__/"
   },
   "author": "Seth Donohue",
   "license": "MIT",

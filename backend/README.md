@@ -1,16 +1,16 @@
 # Mongo Double Resource
 
-This is a simple HTTP server which follows REST constraints, that allows users to input a url to GET, PUT, or DELETE a planet and a hoststar from a Mongo Database! It contains tests to make sure that the RESTful operations worked properly.
+This is a simple HTTP server which follows REST constraints, that allows users to input a url to GET, PUT, or DELETE a expense and a category from a Mongo Database! It contains tests to make sure that the RESTful operations worked properly.
 
 ## Routes Explanation
 
-### URL: /api/planet?id={**_id_**}  & /api/hoststar?id={**_id_**}
+### URL: /api/expense?id={**_id_**}  & /api/category?id={**_id_**}
 
 #### GET: 
   - If a valid **id** is given:
     - Server response: _object with that Item's properties as key:value pairs from the database and a 200 status code_
   - If **_NO id or an incorrect id_** is given:
-    - Server response: 404 Error saying planet is not found.
+    - Server response: 404 Error saying expense is not found.
 #### POST: 
   - If valid **information** is given:
     - Server response: _stores the new Item in the database and sends a 200 status code_
@@ -23,7 +23,7 @@ This is a simple HTTP server which follows REST constraints, that allows users t
     - Server response: _400 error_ stating that body and content are rquired.
 #### DELETE: 
   - If a valid **id** is given:
-    - Server response: _deletes the planet from the database and sends a 204 status_
+    - Server response: _deletes the expense from the database and sends a 204 status_
   - If the **_id is incorrect or was not given_**:
     - Server response: _404 error_ Item Not Found
 
@@ -65,59 +65,59 @@ VScode
 ## Features
 
 - It uses Winston Logger to keep track of logs.
-- GET, POST, PUT, DELETE routes for newly discovered exo-planets and hoststars
+- GET, POST, PUT, DELETE routes for newly discovered exo-expenses and categorys
 - Uses Faker to fake information for testing purposes
 
 ## Code Example
 
 ### Routes Example
 ```
-planetRouter.post('/api/planets', jsonParser, (request,response, next) => {  
+expenseRouter.post('/api/expenses', jsonParser, (request,response, next) => {  
   if(!request.body.name || !request.body.content) {
     return next(httpErrors(400, 'body and content are required'));
   }
 
-  return new Planet(request.body).save()
-    .then(planet => response.json(planet)) //this sends a 200
+  return new Expense(request.body).save()
+    .then(expense => response.json(expense)) //this sends a 200
     .catch(next);
 });
 
-planetRouter.get('/api/planets/:id', (request,response,next) => {
-  return Planet.findById(request.params.id)
-    .then(planet => {
-      if(!planet){
-        throw httpErrors(404, 'Planet not found');
+expenseRouter.get('/api/expenses/:id', (request,response,next) => {
+  return Expense.findById(request.params.id)
+    .then(expense => {
+      if(!expense){
+        throw httpErrors(404, 'Expense not found');
       }
       logger.log('info', 'GET - Returning a 200 status code');
-      return response.json(planet);
+      return response.json(expense);
     }).catch(next);
 });
 
 
-hoststarRouter.delete('/api/hoststars/:id', (request, response, next) => {
-  return Hoststar.findByIdAndRemove(request.params.id)
-    .then(hoststar => {
-      if (!hoststar) {
-        throw httpErrors(404, 'hoststar not found');
+categoryRouter.delete('/api/categorys/:id', (request, response, next) => {
+  return category.findByIdAndRemove(request.params.id)
+    .then(category => {
+      if (!category) {
+        throw httpErrors(404, 'category not found');
       }
       logger.log('info', 'GET - Returning a 204 status code');
       return response.sendStatus(204);
     }).catch(next);
 });
 
-hoststarRouter.put('/api/hoststars/:id', jsonParser, (request, response, next) => {
+categoryRouter.put('/api/categorys/:id', jsonParser, (request, response, next) => {
   let options = { runValidators: true, new: true };
-  if (!request.body.name || !request.body.numberOfPlanets) {
+  if (!request.body.name || !request.body.budget) {
     return next(httpErrors(400, 'Body and Name are required'));
   }
 
-  return Hoststar.findByIdAndUpdate(request.params.id, request.body, options)
-    .then(hoststar => {
-      if (!hoststar) {
-        throw httpErrors(404, 'hoststar not found');
+  return category.findByIdAndUpdate(request.params.id, request.body, options)
+    .then(category => {
+      if (!category) {
+        throw httpErrors(404, 'category not found');
       }
       logger.log('info', 'GET - Returning a 200 status code');
-      return response.json(hoststar);
+      return response.json(category);
     }).catch(next);
 });
 

@@ -7,7 +7,7 @@ export const createAction = ({name, budget, period}) => ({
     name,
     budget,
     period,
-    id: uuid(),
+    uuid: uuid(),
     timeStamp: new Date(),
   },
 });
@@ -19,16 +19,18 @@ export const removeAction = (category) => ({
   type: 'CATEGORY_DESTROY',
   payload: category,
 });
+ 
 
 // asynchronous action creators
-export const getBudget = () => (dispatch) => {
+export const getExpenses = () => (dispatch) => {
   console.log('DISPATCH:', dispatch);
   console.log('DOING AJAX');
-  return superagent.get('http://localhost:3000/api/notes')
+  return superagent.get('http://localhost:7000/api/expenses')
     .then((response) => {
       console.log('AJAX DONE', response);
       let count = response.body.count;
       let data = response.body.data;
-      dispatch(createAction({ title: 'Celebration!' }));
+      dispatch(createAction({ name: 'Sample', budget: 50, period: 'month' }));
     });
 };
+

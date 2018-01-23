@@ -6,7 +6,7 @@ export const createAction = ({ name, price, categoryID }) => ({
     name,
     price,
     categoryID,
-    id: uuid(),
+    uuid: uuid(),
     timeStamp: new Date(),
   },
 });

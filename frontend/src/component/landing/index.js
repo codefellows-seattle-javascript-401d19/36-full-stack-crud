@@ -3,13 +3,14 @@ import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
 import * as category from '../../action/category';
+
 import './landing.scss';
 
 class Landing extends React.Component{
 
   componentWillMount() {
-    console.log('component will mount')
-    this.props.handleAJAX()
+    console.log('component will mount');
+    this.props.handleAJAX();
   }
   
   render() {
@@ -18,6 +19,7 @@ class Landing extends React.Component{
       categoryCreate,
       categoryUpdate,
       categoryDestroy,
+      handleAJAX,
     } = this.props;
 
     return (
@@ -51,6 +53,7 @@ let mapDispatchToProps = (dispatch) => {
     categoryCreate: (data) => dispatch(category.createAction(data)),
     categoryUpdate: (data) => dispatch(category.updateAction(data)),
     categoryDestroy: (data) => dispatch(category.removeAction(data)),
+    handleAJAX: () => dispatch(category.getExpenses()),
   }
 };
 

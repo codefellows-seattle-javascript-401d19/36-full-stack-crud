@@ -4,35 +4,35 @@ require('./lib/setup');
 
 const superagent = require('superagent');
 const server = require('../lib/server');
-const hoststarMock = require('./lib/hoststar-mock');
+const categoryMock = require('./lib/category-mock');
 
-const apiURL = `http://localhost:${process.env.PORT}/api/hoststars`;
+const apiURL = `http://localhost:${process.env.PORT}/api/categorys`;
 
-describe('/api/hoststars', () => {
+describe('/api/categorys', () => {
   beforeAll(server.start);
   afterAll(server.stop);
-  afterEach(hoststarMock.remove);
+  afterEach(categoryMock.remove);
 
-  describe('POST /api/hoststars', () => {
-    test('This POST should return a 200 and a hoststar if there are no errors', () => {
+  describe('POST /api/categorys', () => {
+    test('This POST should return a 200 and a category if there are no errors', () => {
       return superagent.post(apiURL)
         .send({
           name: 'K-1234',
-          numberOfPlanets: 3,
+          budget: 3,
         })
         .then(response => {
           expect(response.status).toEqual(200);
-          expect(response.body.numberOfPlanets).toEqual(3);
+          expect(response.body.budget).toEqual(3);
         });
     });
 
     test('This POST should return a 409 due to a duplicate name', () => {
-      return hoststarMock.create()
-        .then(hoststar => {
+      return categoryMock.create()
+        .then(category => {
           return superagent.post(apiURL)
             .send({
-              name: hoststar.name,
-              numberOfPlanets: 4,
+              name: category.name,
+              budget: 4,
             });
         })
         .then(Promise.reject)
@@ -46,19 +46,19 @@ describe('/api/hoststars', () => {
 
   });
 
-  describe('GET /api/hoststars/:id', () => {
-    test('This GET should respond with a 200 status and a hoststar if there are no errors', () => {
-      let tempHoststarMock = null;
+  describe('GET /api/categorys/:id', () => {
+    test('This GET should respond with a 200 status and a category if there are no errors', () => {
+      let tempcategoryMock = null;
 
-      return hoststarMock.create()
-        .then(hoststar => {
-          tempHoststarMock = hoststar;
-          return superagent.get(`${apiURL}/${hoststar.id}`);
+      return categoryMock.create()
+        .then(category => {
+          tempcategoryMock = category;
+          return superagent.get(`${apiURL}/${category.id}`);
         })
         .then(response => {
           expect(response.status).toEqual(200);
-          expect(JSON.stringify(response.body.numberOfPlanets))
-            .toEqual(JSON.stringify(tempHoststarMock.numberOfPlanets));
+          expect(JSON.stringify(response.body.budget))
+            .toEqual(JSON.stringify(tempcategoryMock.budget));
         });
     });
 
@@ -71,18 +71,18 @@ describe('/api/hoststars', () => {
 
   //TODO: ADD ENTIRE PUT TEST
 
-  describe('PUT /api/hoststars/', () => {
+  describe('PUT /api/categorys/', () => {
     test('This PUT should respond with a 200 status if there are no errors', () => {
 
-      return hoststarMock.create()
-        .then(hoststar => {
-          console.log(hoststar._id);
-          return superagent.put(`${apiURL}/${hoststar._id}`)
-            .send({ numberOfPlanets: 6 });
+      return categoryMock.create()
+        .then(category => {
+          console.log(category._id);
+          return superagent.put(`${apiURL}/${category._id}`)
+            .send({ budget: 6 });
         })
         .then(response => {
           expect(response.status).toEqual(200);
-          expect(response.body.numberOfPlanets).toEqual(6);
+          expect(response.body.budget).toEqual(6);
         });
     });
     //TODO: ADD 400 TEST

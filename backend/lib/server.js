@@ -15,8 +15,8 @@ mongoose.Promise = Promise;
 app.use(cors());
 
 app.use(require('./logger-middleware'));
-app.use(require('../route/hoststar-router'));
-app.use(require('../route/planet-router'));
+app.use(require('../route/category-router'));
+app.use(require('../route/expense-router'));
 
 app.all('*', (request, response) => {
   logger.log('info', 'Returning a 404 from the catch-all route');
