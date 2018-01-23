@@ -27,6 +27,7 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log(this.props.category.id)
     let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
 
     this.props.onComplete({

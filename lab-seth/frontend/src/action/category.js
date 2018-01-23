@@ -31,7 +31,7 @@ export const postCategories = (data) => (dispatch) => {
       console.log('CATEGORY POST Response:', response);
       let data = response.body;
       if (data) {
-        dispatch(createAction({ name: data.name, budget: data.budget, period: data.period, id: data.id }));
+        dispatch(createAction({ name: data.name, budget: data.budget, period: data.period, id: data._id }));
       }
       else {
         console.log('NO RESPONSE DATA SENT BACK FROM DB');

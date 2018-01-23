@@ -154,3 +154,14 @@
 {"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:31:53.159Z"}
 {"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:32:16.430Z"}
 {"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:32:16.434Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T04:39:57.875Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:40:01.612Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:40:01.614Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T04:40:22.346Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T04:40:50.752Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:40:50.754Z"}
+{"level":"info","message":"Processing : POST on : /api/categories","timestamp":"2018-01-23T04:41:08.372Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T05:05:22.476Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T05:05:22.480Z"}
+{"level":"info","message":"Processing : GET on : /api/categories","timestamp":"2018-01-23T05:05:44.398Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T05:05:44.400Z"}
