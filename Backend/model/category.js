@@ -14,7 +14,6 @@ const categorySchema = mongoose.Schema({
     required: true,
     maxlength: 15,
   },
-  tags: [{ type: String }],
   expenses: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'expense'}],
@@ -31,4 +30,4 @@ const categorySchema = mongoose.Schema({
 
 //A more explicit example is category, which must have its reference defined as 'categorie' since Mongoose will render it as 'categories';
 
-module.exports = mongoose.model('category', categorySchema);
+module.exports = mongoose.model('categorie', categorySchema);

@@ -43,10 +43,10 @@ expenseSchema.post('remove', (document, done) => {
   return Category.findById(document.category)
     .then(categoryFound => {
       if (!categoryFound) 
-        throw httpErrors(404, 'discipline not found');
+        throw httpErrors(404, 'category not found');
 
-      categoryFound.cyclists = categoryFound.cyclists.filter( cyclist => {
-        return cyclist._id.toString() !== document._id.toString();
+      categoryFound.expense = categoryFound.expense.filter( expense => {
+        return expense._id.toString() !== document._id.toString();
       });
       return categoryFound.save();
     })

@@ -7,7 +7,7 @@ const Category = require('../model/category');
 
 const categoryRouter = module.exports = new Router();
 
-categoryRouter.post('/api/categorys', jsonParser, (request, response, next) => {
+categoryRouter.post('/api/categories', jsonParser, (request, response, next) => {
   if(!request.body.name) 
     return next(httpErrors(400, 'category requires a name.'));
 	
@@ -16,7 +16,7 @@ categoryRouter.post('/api/categorys', jsonParser, (request, response, next) => {
     .catch(next);
 });
 
-categoryRouter.put('/api/categorys/:id', jsonParser, (request, response, next) => {
+categoryRouter.put('/api/categories/:id', jsonParser, (request, response, next) => {
   let options = {new: true, runValidators: true};
 
   return Category.findByIdAndUpdate(request.params.id, request.body, options)
@@ -28,17 +28,28 @@ categoryRouter.put('/api/categorys/:id', jsonParser, (request, response, next) =
     .catch(next);
 });
 
-categoryRouter.get('/api/categorys/:id', (request, response, next) => {
-  return Category.findById(request.params.id)
+categoryRouter.get('/api/categories', (request, response, next) => {
+  return Category.find({})
+    .populate('expense')
     .then(category => {
-      if(!category)
-        throw httpErrors(404, 'category not foundwith this id');
+      if (!category)
+        throw httpErrors(404, 'category not found');
       return response.json(category);
     })
     .catch(next);
 });
 
-categoryRouter.delete('/api/categorys/:id', (request, response, next) => {
+categoryRouter.get('/api/categories/:id', (request, response, next) => {
+  return Category.findById(request.params.id)
+    .then(category => {
+      if(!category)
+        throw httpErrors(404, 'category not found with this id');
+      return response.json(category);
+    })
+    .catch(next);
+});
+
+categoryRouter.delete('/api/categories/:id', (request, response, next) => {
   return Category.findByIdAndRemove(request.params.id)
     .then(category => {
       if (!category)

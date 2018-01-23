@@ -12,8 +12,6 @@ const httpErrors = require('http-errors');
 
 const expenseRouter = module.exports = new Router();
 
-
-
 //the next callback does not return a promise; this was introduce prior to that functionality
 expenseRouter.post('/api/expenses', jsonParser, (request, response, next) => {
   if(!request.body.description || !request.body.price) {
@@ -24,48 +22,20 @@ expenseRouter.post('/api/expenses', jsonParser, (request, response, next) => {
     .catch(error => next(error));
 });
 
-//TODO fix this to reflect "next" syntax
 expenseRouter.get('/api/expenses', (request, response, next) => {
-  const PAGE_SIZE = 5;
-
-  let {page = '0'} = request.query;
-  page = Number(page);
-
-  if(isNaN(page))
-    page = 0;
-
-  page = page < 0 ? 0 : page;
-
-  let allExpenses = null;
-
+  
   return Expense.find({})
-    .skip(page * PAGE_SIZE)
-    .limit(PAGE_SIZE)
     .then(expenses => {
-      allExpenses = expenses;
-      return Expense.find({}).count();
+      console.log('Expenses from get route', expenses);
+      return response.json(expenses);
     })
-    .then(expenseCount => {
-      let responseData = {
-        count: expenseCount,
-        data: allExpenses,
-      };
-
-      let lastPage = Math.floor(expenseCount / PAGE_SIZE);
-
-      response.links({
-        next: `http://localhost:${process.env.PORT}/api/expenses?page=${page === lastPage ? lastPage : page + 1}`,
-        prev: `http://localhost:${process.env.PORT}/api/expenses?page=${page < 1 ? 0 : page - 1}`,
-        last: `http://localhost:${process.env.PORT}/api/expenses?page=${lastPage}`,
-      });
-      return response.json(responseData);
-    });
+    .catch(next);
 });
 
 
 expenseRouter.get('/api/expenses/:id', (request, response, next) => {
   return Expense.findById(request.params.id)
-    .populate('discipline')
+    .populate('category')
     .then(expense => {
       if(!expense) {
         throw httpErrors(404, 'Expense not found with this id');

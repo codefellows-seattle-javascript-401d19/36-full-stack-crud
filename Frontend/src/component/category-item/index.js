@@ -73,7 +73,7 @@ let mapStateToProps = (state) => ({
 });
 
 let mapDispatchToProps = (dispatch) => ({	
-	expenseCreate: (data) => dispatch(expenseActions.createAction(data)),
+	expenseCreate: (data) => dispatch(expenseActions.postExpenses(data)),
 	categoryUpdate: (data) => dispatch(categoryActions.updateAction(data)),
 	categoryRemove: (data) => dispatch(categoryActions.removeAction(data)),
 });

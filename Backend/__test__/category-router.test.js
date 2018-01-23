@@ -4,21 +4,21 @@ require('./lib/setup');
 
 const superagent = require('superagent');
 const server = require('../lib/server');
-const disciplineMock = require('./lib/discipline-mock');
+const categoryMock = require('./lib/category-mock');
 
-const apiURL = `http://localhost:${process.env.PORT}/api/disciplines`;
+const apiURL = `http://localhost:${process.env.PORT}/api/categories`;
 
-describe('/api/disciplines', () => {
+describe('/api/categories', () => {
   beforeAll(server.start);
   afterAll(server.stop);
-  afterEach(disciplineMock.remove);
+  afterEach(categoryMock.remove);
 
-  describe('POST /api/disciplines', () => {
+  describe('POST /api/categories', () => {
     test('POST - should respond with a 200 status code if there is no error', () => {
       return superagent.post(`${apiURL}`)
         .send({
           name: 'Randonneur',
-          tags: ['Fleche', 'Brevet', 'Slow and steady'],
+          budget: ['Fleche', 'Brevet', 'Slow and steady'],
         })
         .then(response => {
           console.log(response.body);
@@ -28,12 +28,12 @@ describe('/api/disciplines', () => {
     });
  
 
-    test('POST - should respond with a 400 status code if the discipline is incomplete', () => {
-      let disciplineToPost = {
-        cyclists: ['Lars Boom', 'Lars Van der Haar', 'Zdenek Stybar'],
+    test('POST - should respond with a 400 status code if the category is incomplete', () => {
+      let categoryToPost = {
+        expenses: ['Lars Boom', 'Lars Van der Haar', 'Zdenek Stybar'],
       };
       return superagent.post(`${apiURL}`)
-        .send(disciplineToPost)
+        .send(categoryToPost)
         .then(Promise.reject)
         .catch(response => {
           expect(response.status).toEqual(400);
@@ -61,7 +61,7 @@ describe('/api/disciplines', () => {
 
  
 
-  describe('GET /api/disciplines/:id', () => {
+  describe('GET /api/categories/:id', () => {
     test('GET - should respond with a 200 status code if there is no error', () => {
       let tempDisciplineMock;
 

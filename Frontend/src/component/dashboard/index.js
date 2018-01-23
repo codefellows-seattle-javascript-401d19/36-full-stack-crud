@@ -10,10 +10,9 @@ class Dashboard extends React.Component {
 
 	componentWillMount () {
 		console.log('component will mount');
-		this.props.handleAJAXGet();
+		this.props.handleAJAXCategoryGet();
+		// this.props.handleAJAXExpenseGet();
 	}
-
-
 
 	render() {
 		let { 
@@ -21,8 +20,11 @@ class Dashboard extends React.Component {
 			categoryCreate,
 			categoryUpdate,
 			categoryRemove,
-			handleAJAXGet,
-			handleAJAXPost,
+			handleAJAXCategoryGet,
+			handleAJAXExpenseGet,
+			handleAJAXCategoryPost,
+			handleAJAXCategoryDelete,
+			handleAJAXExpenseDelete,
 		} = this.props;
 
 	
@@ -49,14 +51,17 @@ class Dashboard extends React.Component {
 let mapStateToProps = (state) => {
 	return {
 		categories: state.categories,
+		expenses: state.expenses,
 	}
 };
 
 let mapDispatchToProps = (dispatch) => {
 	return {
-		categoryCreate: (data) => dispatch(categoryActions.createAction(data)),
-		handleAJAXGet: () => dispatch(categoryActions.getExpenses()),
-		handleAJAXPost: (data) => dispatch(expenseActions.postExpenses(data)),
+		categoryCreate: (data) => dispatch(categoryActions.postCategories(data)),
+		handleAJAXCategoryGet: () => dispatch(categoryActions.getCategories()),
+		handleAJAXExpenseGet: () => dispatch(expenseActions.getExpenses()),
+		handleAJAXExpenseDelete: (data) => dispatch(expenseActions.postExpenses(data)),
+		handleAJAXCategoryDelete: (data) => dispatch(categoryActions.postCategories(data)),
 	}
 };
 
