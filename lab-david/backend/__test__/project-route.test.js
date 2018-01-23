@@ -9,14 +9,14 @@ const server = require('../lib/server');
 const projectMock = require('./lib/project-mock');
 const categoryMock = require('./lib/category-mock');
 
-const apiURL = `http://localhost:${process.env.PORT}/api/projects`;
+const apiURL = `http://localhost:${process.env.PORT}/api/expenses`;
 
-describe('/api/projects', () => {
+describe('/api/expenses', () => {
   beforeAll(server.start);
   afterAll(server.stop);
   afterEach(projectMock.remove);
 
-  describe('POST /api/projects', () => {
+  describe('POST /api/expenses', () => {
     test('should respond with a project and a 200 status code if there is no error', () => {
       let tempCategoryMock = null;
       return categoryMock.create()
@@ -70,7 +70,7 @@ describe('/api/projects', () => {
     });
   });
 
-  describe('DELETE /api/projects/:id', () => {
+  describe('DELETE /api/expenses/:id', () => {
     test('should respond with a 204 if there are no errors', () => {
       return projectMock.create()
         .then(mock => {
@@ -90,7 +90,7 @@ describe('/api/projects', () => {
     });
   });
 
-  describe('GET /api/projects/:id', () => {
+  describe('GET /api/expenses/:id', () => {
     test('should respond with a 200 status if there is no error', () => {
       
       let tempMock = null;

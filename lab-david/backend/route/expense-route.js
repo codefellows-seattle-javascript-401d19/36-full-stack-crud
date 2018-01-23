@@ -8,7 +8,7 @@ const httpErrors = require('http-errors');
 
 const projectRoute = module.exports = new Router();
 
-projectRoute.post('/api/projects', jsonParser, (request,response,next) => {
+projectRoute.post('/api/expenses', jsonParser, (request,response,next) => {
   if(!request.body.year || !request.body.title) {
     return next(httpErrors(400, 'year and title are required'));
   }
@@ -18,7 +18,7 @@ projectRoute.post('/api/projects', jsonParser, (request,response,next) => {
     .catch(error => next(error));
 });
 
-projectRoute.get('/api/projects/:id', (request,response,next) => {
+projectRoute.get('/api/expenses/:id', (request,response,next) => {
   return Project.findById(request.params.id)
     .populate('category')
     .then(project => {
@@ -31,7 +31,7 @@ projectRoute.get('/api/projects/:id', (request,response,next) => {
     .catch(next);
 });
 
-projectRoute.delete('/api/projects/:id',(request,response,next) => {
+projectRoute.delete('/api/expenses/:id',(request,response,next) => {
   return Project.findByIdAndRemove(request.params.id)
     .then(project => {
       if(!project){
@@ -42,7 +42,7 @@ projectRoute.delete('/api/projects/:id',(request,response,next) => {
     }).catch(next);
 });
 
-projectRoute.put('/api/projects/:id', jsonParser,(request,response,next) => {
+projectRoute.put('/api/expenses/:id', jsonParser,(request,response,next) => {
   let options = {runValidators : true, new : true};
 
   return Project.findByIdAndUpdate(request.params.id,request.body,options)

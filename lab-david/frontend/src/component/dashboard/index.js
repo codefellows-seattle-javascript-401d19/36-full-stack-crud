@@ -18,10 +18,12 @@ class Dashboard extends React.Component{
       categoryCreate,
       categoryUpdate,
       categoryRemove,
+      handleAJAX,
     } = this.props;
 
     return(
       <div className='dashboard'>
+        <button onClick={handleAJAX}> AJAX test </button>
         <div className='dashboard-banner'>
         </div>
         <CategoryForm onComplete={categoryCreate} />

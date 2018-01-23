@@ -13,7 +13,7 @@ const categorySchema = mongoose.Schema({
   },
   timeStamp : {type : Date,
     default : () => new Date() },
-  projects : [{type: mongoose.Schema.Types.ObjectId,
+  expenses : [{type: mongoose.Schema.Types.ObjectId,
     ref : 'expense'}],
 },{
   usePushEach : true,
