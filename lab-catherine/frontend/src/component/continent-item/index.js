@@ -61,8 +61,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => ({
   forestCreate: (data) => dispatch(forestActions.createAction(data)),
-  continentUpdate: (data) => dispatch(continentActions.updateAction(data)),
-  continentDestroy: (data) => dispatch(continentActions.destroyAction(data)),
+  continentUpdate: (data) => dispatch(continentActions.updateContinents(data)),
+  continentDestroy: (data) => dispatch(continentActions.destroyContinents(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContinentItem);

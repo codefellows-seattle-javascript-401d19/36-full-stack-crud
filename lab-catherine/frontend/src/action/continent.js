@@ -48,3 +48,27 @@ export const postContinents = (continent) => (dispatch) => {
     })
     .catch(error => console.log(error.message));
 };
+
+export const updateContinents = (continent) => (dispatch) => {
+  return superagent.put(`http://localhost:3000/api/continents/${continent.id}`)
+    .send({name: continent.name, population: continent.population})
+    .then((response) => {
+      console.log('AJAX DONE', response);
+      dispatch(updateAction({
+        name: response.body.name, 
+        population: response.body.population,
+        id: response.body._id,
+      }));
+    })
+    .catch(error => console.log(error.message));
+};
+
+export const destroyContinents = (continent) => (dispatch) => {
+  return superagent.delete(`http://localhost:3000/api/continents/${continent.id}`)
+    .send({name: continent.name, population: continent.population})
+    .then((response) => {
+      console.log('AJAX DONE', response);
+      dispatch(destroyAction(continent));
+    })
+    .catch(error => console.log(error.message));
+};

@@ -3529,3 +3529,41 @@
 {"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:32:14.056Z"}
 {"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:32:16.227Z"}
 {"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:32:23.418Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:33:41.560Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:34:13.912Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:34:20.498Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:34:34.347Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:34:40.969Z"}
+{"level":"info","message":"Processing : POST on : /api/continents","timestamp":"2018-01-23T02:40:05.035Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-23T02:40:05.036Z"}
+{"message":"continent model requires a name","stack":"BadRequestError: continent model requires a name\n    at continentRouter.post (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/route/continent-router.js:12:17)\n    at Layer.handle [as handle_request] (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/express/lib/router/route.js:137:13)\n    at /Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/raw-body/index.js:224:16)\n    at done (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1062:12)\n    at process._tickCallback (internal/process/next_tick.js:152:19)","name":"BadRequestError","level":"info","timestamp":"2018-01-23T02:40:05.036Z"}
+{"level":"info","message":"Responding with a 400 status and message: continent model requires a name","timestamp":"2018-01-23T02:40:05.037Z"}
+{"level":"info","message":"Processing : POST on : /api/continents","timestamp":"2018-01-23T02:40:12.675Z"}
+{"level":"info","message":"Processing : POST on : /api/continents","timestamp":"2018-01-23T02:40:41.783Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-23T02:40:41.784Z"}
+{"message":"continent model requires a name","stack":"BadRequestError: continent model requires a name\n    at continentRouter.post (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/route/continent-router.js:12:17)\n    at Layer.handle [as handle_request] (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/express/lib/router/route.js:137:13)\n    at /Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/raw-body/index.js:224:16)\n    at done (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/Users/catherinelooper/codefellows/401/lab-assignments/36-full-stack-crud/lab-catherine/backend/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1062:12)\n    at process._tickCallback (internal/process/next_tick.js:152:19)","name":"BadRequestError","level":"info","timestamp":"2018-01-23T02:40:41.784Z"}
+{"level":"info","message":"Responding with a 400 status and message: continent model requires a name","timestamp":"2018-01-23T02:40:41.784Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:40:48.806Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:41:14.215Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:41:17.525Z"}
+{"level":"info","message":"Processing : POST on : /api/continents","timestamp":"2018-01-23T02:41:18.305Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-23T02:41:18.316Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.continents index: name_1 dup key: { : \"cat\" }","op":{"name":"cat","population":89,"_id":"5a66a0ce54231e7fc1e6347b","forests":[],"timeStamp":"2018-01-23T02:41:18.306Z","keywords":[],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-23T02:41:18.317Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:49:12.043Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:50:03.235Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:50:46.388Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:51:13.029Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:51:29.930Z"}
+{"level":"info","message":"Processing : DELETE on : /api/continents","timestamp":"2018-01-23T02:51:34.447Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T02:51:34.447Z"}
+{"level":"info","message":"Processing : PUT on : /api/continents/5a669eab54231e7fc1e63479","timestamp":"2018-01-23T02:51:41.842Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:51:44.171Z"}
+{"level":"info","message":"Processing : PUT on : /api/continents/5a66a08c54231e7fc1e6347a","timestamp":"2018-01-23T02:52:03.194Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:52:07.177Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:52:45.114Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:52:51.395Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:53:00.783Z"}
+{"level":"info","message":"Processing : DELETE on : /api/continents/5a669eab54231e7fc1e63479","timestamp":"2018-01-23T02:53:01.723Z"}
+{"level":"info","message":"Processing : DELETE on : /api/continents/5a66a08c54231e7fc1e6347a","timestamp":"2018-01-23T02:53:03.432Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:53:06.758Z"}
