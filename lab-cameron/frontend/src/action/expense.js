@@ -1,4 +1,5 @@
 import uuidv1 from 'uuid/v1';
+import superagent from 'superagent';
 
 export const createAction = ({ name, price, categoryId }) => ({
   type: 'EXPENSE_CREATE',
@@ -20,3 +21,10 @@ export const removeAction = expense => ({
   type: 'EXPENSE_DELETE',
   payload: expense,
 });
+
+export const getExpenses = () => dispatch => {
+  return superagent.get(`http://localhost:3000/api/expenses`)
+    .then(response => {
+      console.log('DONE', response);
+    });
+};

@@ -8,18 +8,16 @@ import { Provider } from 'react-redux';
 
 import App from './component/app';
 import reducer from './reducer';
-import { loadState } from './lib/load-state';
+import { loadSessionState } from './lib/load-session-state';
 
 import session from './lib/redux-session';
 import reporter from './lib/redux-reporter';
-
-const persistedState = loadState();
+import thunk from './lib/redux-thunk';
 
 const store = createStore(
   reducer,
-  persistedState,
   composeWithDevTools(
-    applyMiddleware(session, reporter)
+    applyMiddleware(session, reporter, thunk)
   )
 );
 

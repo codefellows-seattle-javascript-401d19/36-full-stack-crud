@@ -41,6 +41,14 @@ categoryRouter.get('/api/categorys/:id', (request, response, next) => {
     .catch(next);
 });
 
+categoryRouter.get('/api/categorys', (request, response, next) => {
+  Category.find({})
+    .then(categories => {
+      return response.json(categories);
+    })
+    .catch(next);
+});
+
 
 categoryRouter.delete('/api/categorys/:id', (request, response, next) => {
   Category.findByIdAndRemove(request.params.id)

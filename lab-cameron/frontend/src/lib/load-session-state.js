@@ -6,12 +6,11 @@ export const loadState = () => {
     const expense = JSON.parse(serializedExpense);
 
     const returnState = { category, expense };
-    console.log(returnState);
 
     if (returnState.category === null && returnState.expense === null) {
       return undefined;
     }
-    
+
     return returnState;
   } catch(error) {
     return undefined;

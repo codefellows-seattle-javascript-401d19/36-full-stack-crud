@@ -12,11 +12,13 @@ let httpServer = null;
 mongoose.Promise = Promise;
 
 // Middleware Requiring
+const cors = require('cors');
 const loggerMiddleware = require('./logger-middleware');
 const categoryRouter = require('../route/category-router');
 const expenseRouter = require('../route/expense-router');
 const errorMiddleware = require('./error-middleware');
 
+app.use(cors());
 app.use(loggerMiddleware);
 app.use(categoryRouter);
 app.use(expenseRouter);
