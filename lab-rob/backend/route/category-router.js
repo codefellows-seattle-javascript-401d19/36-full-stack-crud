@@ -9,11 +9,20 @@ const logger = require('../lib/logger');
 
 const categoryRouter = module.exports = new Router();
 
+const repackCategory = category => ({
+  category: {
+    name: category.name,
+    budget: category.budget,
+    timestamp: category.timestamp,
+    id: category._id.toString(),
+  },
+});
+
 categoryRouter.post('/api/categories', jsonParser, (request, response, next) => {
   return new Category(request.body).save()
     .then(category => {
       logger.info('New category added to the database. Responding with a 200 status and the document.');
-      return response.json(category);
+      return response.json(repackCategory(category));
     })
     .catch(next);
 });

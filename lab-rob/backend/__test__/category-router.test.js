@@ -23,10 +23,10 @@ describe('category-router.js', () => {
         })
         .then(response => {
           expect(response.status).toEqual(200);
-          expect(response.body.name).toEqual('Category 1');
-          expect(response.body.budget).toEqual(500);
-          expect(response.body._id).toBeTruthy();
-          expect(response.body.timestamp).toBeTruthy();
+          expect(response.body.category.name).toEqual('Category 1');
+          expect(response.body.category.budget).toEqual(500);
+          expect(response.body.category.id).toBeTruthy();
+          expect(response.body.category.timestamp).toBeTruthy();
         });
     });
 
