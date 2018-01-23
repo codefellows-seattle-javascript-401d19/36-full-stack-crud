@@ -17,9 +17,6 @@ const categorySchema = mongoose.Schema({
     type: String,
     default: 'month',
   },
-  uuid: {
-    type: String,
-  },
   expenses: [{
     type: mongoose.Schema.Types.ObjectId, //needs to be an array to that expense id's can be pushed into here from expenses.js model
     required: true,

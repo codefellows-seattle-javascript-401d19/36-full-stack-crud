@@ -6,7 +6,7 @@ export const createAction = ({ name, budget, period, id}) => ({
     name,
     budget,
     period,
-    id: id,
+    id,
     timeStamp: new Date(),
   },
 });
@@ -31,7 +31,7 @@ export const postCategories = (data) => (dispatch) => {
       console.log('CATEGORY POST Response:', response);
       let data = response.body;
       if (data) {
-        dispatch(createAction({ name: data.name, budget: data.budget, period: data.period, id: data._id }));
+        dispatch(createAction({ name: data.name, budget: data.budget, period: data.period, id: data.id }));
       }
       else {
         console.log('NO RESPONSE DATA SENT BACK FROM DB');
@@ -49,6 +49,7 @@ export const getCategories = () => (dispatch) => {
       let data = response.body;
       if (data) {
         data.map(category => {
+          console.log('EACH CATEGORY:', category);
           dispatch(createAction({ name: category.name, budget: category.budget, period: category.period, id: category._id }));
         });
       }

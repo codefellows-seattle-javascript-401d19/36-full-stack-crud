@@ -35,7 +35,7 @@ class CategoryItem extends React.Component {
       categoryDestroy
     } = this.props;
 
-    let categoryExpenses = expenses[category.uuid];
+    let categoryExpenses = expenses[category._id];
 
     let contentJSX =
       <div>
