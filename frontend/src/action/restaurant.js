@@ -33,9 +33,7 @@ export const getRestaurants = () => (dispatch) => {
 
 export const addRestaurant = (restaurant) => (dispatch) => {
   return superagent.post('http://localhost:3000/api/restaurants')
-    // .then(console.log(restaurant))
     .send(restaurant)
-    .withCredentials()
     .then(response => {
       dispatch(create({response}));
     });
