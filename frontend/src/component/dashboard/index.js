@@ -16,11 +16,12 @@ class Dashboard extends React.Component{
       restaurantUpdate,
       restaurantDestroy,
       getRestaurants,
+      addRestaurant,
     } = this.props;
 
     return(
       <div>
-        <RestaurantForm onComplete={restaurantCreate}/>
+        <RestaurantForm onComplete={addRestaurant}/>
         <RestaurantItem restaurants={restaurants} restaurantUpdate={restaurantUpdate} restaurantDestroy={restaurantDestroy}/>
       </div>
     );
@@ -37,6 +38,7 @@ let mapDispatchToProps = (dispatch) => {
     restaurantUpdate: (data) => {dispatch(restaurant.update(data));},
     restaurantDestroy: (data) => {dispatch(restaurant.destroy(data));},
     getRestaurants: () => {dispatch(restaurant.getRestaurants());},
+    addRestaurant: (data) => {dispatch(restaurant.addRestaurant(data));},
   };
 };
 
