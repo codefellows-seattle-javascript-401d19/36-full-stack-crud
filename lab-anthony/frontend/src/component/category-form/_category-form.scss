@@ -1,0 +1,7 @@
+@import 'module';
+
+.category-form {
+  @include normalize;
+
+  input { margin-bottom: $pad; }
+}
