@@ -1,22 +1,28 @@
-# Codefellows javascript 401 lab 31 - REACT Redux - Categories
+# Codefellows javascript 401 lab 36 - REACT Redux - Crud
 
 ## Purpose
 
-Learn to use React with Redux by creating an API which allows a user to create an expense category with a name and budget. Within an expense category, the user can create expense items.  All the items are displayed in a list. Each item has a button that allows the user to delete it.  Doubleclicking an item allows the user to edit it.
+Learn to use React with Redux by creating an API which allows a user to create a school with a name and city. All the items are displayed in a list. Each item has a button that allows the user to delete it. Doubleclicking an item allows the user to edit it.
 
-## To use
+## To use front end
 
+From within the frontend folder:
 Install dependencies:
 `npm install`
 Run webpack dev server:
 `npm run watch`
 Open your browser at localhost:8080.
 
-Type a name for your category into the name box. Enter a budget for your item into the $0.00 box. Click Create Category.
+## To use the back end
 
-Within the expense, type a name for an individual expense.  Enter the amount of the expense.  Click Create Expense.
+From within the backend folder:
+Install dependencies:
+`npm install`
+`npm run dbon`
+`npm run start`
+Type a name for your school into the name box. Enter a city for your school into the city box. Click Create School.
 
-Each item will be added to a list below the entry form.   Click the delete button to delete an item.  Doubleclick an item to edit it.
+Each item will be added to a list below the entry form. Click the delete button to delete an item. Doubleclick an item to edit it.
 
 ## Dependencies
 
@@ -24,5 +30,3 @@ React - https://reactjs.org
 Babel - https://babeljs.io
 Webpack - https://webpack.js.org
 Redux - https://redux.js.org/
-
-
