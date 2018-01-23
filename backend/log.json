@@ -186,3 +186,9 @@
 {"level":"info","message":"Turning the server on! Listening on port undefined","timestamp":"2018-01-23T01:04:56.989Z"}
 {"level":"info","message":"Turning the server on! Listening on port 3000","timestamp":"2018-01-23T01:05:48.175Z"}
 {"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:05:57.698Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:08:25.317Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:08:52.110Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:09:36.837Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:10:46.320Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:11:09.060Z"}
+{"level":"info","message":"Processing a GET request to the url /api/restaurants","timestamp":"2018-01-23T01:14:35.678Z"}

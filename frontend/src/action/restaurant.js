@@ -23,7 +23,8 @@ export const destroy = (restaurant) => ({
 export const getRestaurants = () => (dispatch) => {
   return superagent.get('http://localhost:3000/api/restaurants')
     .then(response => {
-      console.log(response);
-      // dispatch(create({response}));
+      if(response.body.length > 0){
+        dispatch(create({response}));
+      }
     });
 };
