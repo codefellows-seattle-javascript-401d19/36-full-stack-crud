@@ -26,7 +26,6 @@ class SynthCompanyItem extends React.Component {
 
   createSynth(synth) {
     this.props.synthCreate(synth);
-    // this.props.postAJAX();
     this.setState({adding: false});
   }
 

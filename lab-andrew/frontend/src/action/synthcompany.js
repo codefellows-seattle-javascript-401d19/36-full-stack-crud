@@ -67,7 +67,7 @@ export const deleteSynthCompany = (synthCompany) => dispatch => {
   return superagent.delete(`http://localhost:3000/api/company/${synthCompany.id}`)
     .then(response => {
       console.log(response);
-      return dispatch(removeAction({synthCompany}));
+      return dispatch(removeAction(synthCompany));
     })
     .catch(err => console.log(err.message));
 };

@@ -6,8 +6,12 @@ export default (state = emptyState, {type, payload}) => {
       return [...state, payload];
     case 'SYNTHCOMPANY_UPDATE':
       return state.map(synthCompany => synthCompany.id === payload.id ? payload : synthCompany);
-    case 'SYNTHCOMPANY_REMOVE':
-      return state.filter(synthCompany => synthCompany.id !== payload.id);
+    case 'SYNTHCOMPANY_REMOVE': {
+      let newState = state.filter(synthCompany => {
+        return synthCompany.id !== payload.id;
+      });
+      return newState;
+    }
     case 'SYNTHCOMPANY_CLEAR':
       return emptyState;
     default:
