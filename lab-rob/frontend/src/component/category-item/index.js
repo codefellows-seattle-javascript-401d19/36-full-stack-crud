@@ -7,7 +7,7 @@ import autoBind from '../../lib/auto-bind';
 import CategoryForm from '../category-form';
 import ExpenseItem from '../expense-item';
 import ExpenseForm from '../expense-form';
-import {updateAction, destroyAction} from '../../action/category';
+import {updateInDatabaseAction, destroyAction} from '../../action/category';
 import {createAction, clearAction} from '../../action/expense';
 
 class CategoryItem extends React.Component {
@@ -61,7 +61,8 @@ class CategoryItem extends React.Component {
 
     let categoryExpenses = expenses[category.id];
 
-    if(categoryExpenses.length === 0)
+    // first check needed because if a category doesn't have any expenses then on page reload its id won't be in the expenses array
+    if(!categoryExpenses || categoryExpenses.length === 0)
       return null;
 
     return (
@@ -100,7 +101,7 @@ let mapStateToProps = state => ({
 });
 
 let mapDispatchToProps = dispatch => ({
-  categoryUpdate: (data) => dispatch(updateAction(data)),
+  categoryUpdate: (data) => dispatch(updateInDatabaseAction(data)),
   categoryDestroy: (data) => dispatch(destroyAction(data)),
   expenseCreate: (data) => dispatch(createAction(data)),
   expenseClear: (data) => dispatch(clearAction(data)),

@@ -37,7 +37,6 @@ export const reloadAction = expenses => ({
 export const reloadFromDatabaseAction = () => (store) => {
   return superagent.get(`${apiUrl}/api/expenses`)
     .then(response => {
-      console.log(response);
       let {expenses} = response.body;
 
       let mappedExpenses = {};

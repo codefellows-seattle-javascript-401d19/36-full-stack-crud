@@ -3,14 +3,9 @@ import superagent from 'superagent';
 
 const apiUrl = 'http://localhost:3000';
 
-export const createAction = ({name, budget}) => ({
+export const createAction = category => ({
   type: 'CATEGORY_CREATE',
-  payload: {
-    name,
-    budget,
-    timestamp: new Date(),
-    id: uuid(),
-  },
+  payload: category,
 });
 
 export const updateAction = category => ({
@@ -36,7 +31,27 @@ export const reloadFromDatabaseAction = () => (store) => {
   return superagent.get(`${apiUrl}/api/categories`)
     .then(response => {
       let {categories} = response.body;
-      console.log('cats', response.body);
+
       store.dispatch(reloadAction(categories));
+    });
+};
+
+export const createInDatabaseAction = (category) => (store) => {
+  return superagent.post(`${apiUrl}/api/categories`)
+    .send(category)
+    .then(response => {
+      let {category} = response.body;
+
+      store.dispatch(createAction(category));
+    });
+};
+
+export const updateInDatabaseAction = (category) => (store) => {
+  return superagent.put(`${apiUrl}/api/categories/${category.id}`)
+    .send(category)
+    .then(response => {
+      let {category} = response.body;
+
+      store.dispatch(updateAction(category));
     });
 };

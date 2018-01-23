@@ -3,7 +3,7 @@ import './dashboard.scss';
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {createAction, clearAction} from '../../action/category';
+import {createInDatabaseAction, clearAction} from '../../action/category';
 import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
 
@@ -36,7 +36,7 @@ let mapStateToProps = state => ({
 });
 
 let mapDispatchToProps = dispatch => ({
-  categoryCreate: (data) => dispatch(createAction(data)),
+  categoryCreate: (data) => dispatch(createInDatabaseAction(data)),
   categoryClear: (data) => dispatch(clearAction()),
 });
 
