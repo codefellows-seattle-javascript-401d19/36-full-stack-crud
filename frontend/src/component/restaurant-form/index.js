@@ -10,7 +10,7 @@ let emptyState = {
 class RestaurantForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.restaurant || emptyState;
+    this.state = this.props.restaurants || emptyState;
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
