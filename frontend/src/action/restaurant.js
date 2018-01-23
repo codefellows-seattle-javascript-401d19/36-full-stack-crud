@@ -1,4 +1,5 @@
 import superagent from 'superagent';
+import uuid from 'uuid/v1';
 
 export const create = ({name, cuisine, city, rating}) => ({
   type: 'RESTAURANT_CREATE',
@@ -7,6 +8,7 @@ export const create = ({name, cuisine, city, rating}) => ({
     cuisine,
     city,
     rating,
+    id: uuid(),
   },
 });
 
