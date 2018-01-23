@@ -42,7 +42,7 @@ categoryRouter.get('/api/categorys/:id', (request, response, next) => {
 });
 
 
-categoryRouter.delete('/api/category/:id', (request, response, next) => {
+categoryRouter.delete('/api/categorys/:id', (request, response, next) => {
   Category.findByIdAndRemove(request.params.id)
     .then(category => {
       if (!category) {
