@@ -42,9 +42,13 @@ export const createCategory = category => dispatch => {
     });
 };
 
-// delete incompleted
-
-// update id's will need to be consistent
+export const deleteCategory = category => dispatch => {
+  return superagent.delete(`http://localhost:3000/api/categorys/${category._id}`)
+    .send(category)
+    .then(response => {
+      dispatch(removeAction(category));
+    });
+};
 
 export const updateCategory = category => dispatch => {
   console.log(category);

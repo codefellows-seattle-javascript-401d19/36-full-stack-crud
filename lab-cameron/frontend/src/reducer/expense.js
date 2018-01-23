@@ -29,13 +29,6 @@ export default (state = emptyState, { type, payload }) => {
       updatedExpenses = categoryExpenses.filter(expense => expense._id !== payload._id);
 
       return {...state, [categoryId]: updatedExpenses};
-    case 'INITIALIZE_EXPENSES':
-      categoryId = payload._id;
-      categoryExpenses = state[categoryId];
-      console.log(categoryExpenses);
-      updatedExpenses = [...categoryExpenses, payload];
-
-      return {...state, [categoryId]: updatedExpenses};
     default:
       return state;
   }

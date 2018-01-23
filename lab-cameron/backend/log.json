@@ -1090,3 +1090,49 @@
 {"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:10:08.382Z"}
 {"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:10:08.386Z"}
 []
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:11:37.716Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:11:37.848Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:11:37.850Z"}
+[]
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:13:33.328Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:13:33.448Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:13:33.449Z"}
+[]
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:20:39.705Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:20:39.890Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:20:39.893Z"}
+[]
+{"level":"info","message":"Processing: PUT on: /api/categorys/5a6768fbc9d8002803a4d1d0","timestamp":"2018-01-23T17:20:44.705Z"}
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:22:13.487Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:22:13.671Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:22:13.672Z"}
+[]
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:22:34.149Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:22:34.310Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:22:34.312Z"}
+[]
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:23:20.610Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:23:20.727Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:23:20.728Z"}
+[]
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:23:40.217Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:23:40.340Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:23:40.342Z"}
+[]
+{"level":"info","message":"Processing: DELETE on: /api/categorys/5a6768fbc9d8002803a4d1d0","timestamp":"2018-01-23T17:23:41.243Z"}
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:23:42.636Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:23:42.731Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:23:42.735Z"}
+[]
+{"level":"info","message":"Processing: POST on: /api/categorys","timestamp":"2018-01-23T17:23:49.253Z"}
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:23:52.131Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:23:52.252Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:23:52.253Z"}
+[]
+{"level":"info","message":"Processing: DELETE on: /api/categorys/5a676fa5ebf80f2ed32d9ff2","timestamp":"2018-01-23T17:23:53.039Z"}
+{"level":"info","message":"Processing: GET on: /api/categorys","timestamp":"2018-01-23T17:23:54.351Z"}
+{"level":"info","message":"Processing: GET on: /api/expenses","timestamp":"2018-01-23T17:23:54.451Z"}
+{"level":"info","message":"GET - returning a 200 status code","timestamp":"2018-01-23T17:23:54.453Z"}
+[]
+{"level":"info","message":"Processing: POST on: /api/categorys","timestamp":"2018-01-23T17:23:58.205Z"}
+{"level":"info","message":"Processing: POST on: /api/categorys","timestamp":"2018-01-23T17:24:03.427Z"}
