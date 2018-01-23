@@ -40,7 +40,7 @@ categoryRouter.get('/api/category', (request, response, next) => {
 });
 
 categoryRouter.get('/api/category/:id', (request, response, next) => {
-  return Categorys.findById(request.params.id)
+  return Category.findById(request.params.id)
     .then(category => {
       log('info', `==CATEGORY==: ${category}`);
       if (!category) {
