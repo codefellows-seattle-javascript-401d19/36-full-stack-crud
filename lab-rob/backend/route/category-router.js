@@ -10,45 +10,41 @@ const logger = require('../lib/logger');
 const categoryRouter = module.exports = new Router();
 
 const repackCategory = category => ({
-  category: {
-    name: category.name,
-    budget: category.budget,
-    timestamp: category.timestamp,
-    id: category._id.toString(),
-  },
+  name: category.name,
+  budget: category.budget,
+  timestamp: category.timestamp,
+  id: category._id.toString(),
 });
 
 categoryRouter.post('/api/categories', jsonParser, (request, response, next) => {
   return new Category(request.body).save()
     .then(category => {
       logger.info('New category added to the database. Responding with a 200 status and the document.');
-      return response.json(repackCategory(category));
+      return response.json({category: repackCategory(category)});
     })
     .catch(next);
 });
 
-const getAllCategories = (populateQuery) => populateQuery === 'true' ? Category.find({}).populate('expenses') : Category.find({});
-
 categoryRouter.get('/api/categories', (request, response, next) => {
-  return getAllCategories(request.query.populate)
+  return Category.find({})
     .then(categories => {
       logger.info(`Returning all categories.`);
+
+      categories = categories.map(category => repackCategory(category));
 
       return response.json({categories});
     })
     .catch(next);
 });
 
-const getCategories = (populateQuery, categoryId) => populateQuery === 'true' ? Category.findById(categoryId).populate('expenses') : Category.findById(categoryId);
-
 categoryRouter.get('/api/categories/:id', (request, response, next) => {
-  return getCategories(request.query.populate, request.params.id)
+  return Category.findById(request.params.id)
     .then(category => {
       if(!category)
         throw httpErrors(404, `No category with id ${request.params.id}.`);
 
       logger.info('Category found. Responding with a 200 status and the object.');
-      return response.json({category});
+      return response.json({category: repackCategory(category)});
     })
     .catch(next);
 });
@@ -79,7 +75,7 @@ categoryRouter.put('/api/categories/:id', jsonParser, (request, response, next) 
         throw httpErrors(404, `No category with id ${request.params.id}.`);
 
       logger.info('Category found. Responding with a 200 status and the updated entry.');
-      return response.json({category});
+      return response.json({category: repackCategory(category)});
     })
     .catch(next);
 });

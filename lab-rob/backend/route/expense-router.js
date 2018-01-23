@@ -8,12 +8,33 @@ const Expense = require('../model/expense');
 
 const expenseRouter = module.exports = new Router();
 
+const repackExpense = expense => ({
+  name: expense.name,
+  price: expense.price,
+  categoryId: expense.category.toString(),
+  timestamp: expense.timestamp,
+  id: expense._id.toString(),
+});
+
 expenseRouter.post('/api/expenses', jsonParser, (request, response, next) => {
   return new Expense(request.body).save()
     .then(expense => {
       logger.info('Expense added, responding with a 200 status and the document.');
-      return response.json({expense});
-    }).catch(next);
+      return response.json({expense: repackExpense(expense)});
+    })
+    .catch(next);
+});
+
+expenseRouter.get('/api/expenses', (request, response, next) => {
+  return Expense.find({})
+    .then(expenses => {
+      expenses = expenses.map(expense => repackExpense(expense));
+
+      logger.info('GET - responding with all expenses.');
+
+      return response.json({expenses});
+    })
+    .catch(next);
 });
 
 expenseRouter.get('/api/expenses/:id', (request, response, next) => {
@@ -24,7 +45,7 @@ expenseRouter.get('/api/expenses/:id', (request, response, next) => {
         return response.sendStatus(404);
       }
 
-      return response.json({expense});
+      return response.json({expense: repackExpense(expense)});
     })
     .catch(next);
 });
@@ -54,7 +75,7 @@ expenseRouter.put('/api/expenses/:id', jsonParser, (request, response, next) => 
       }
       
       logger.info('Show found. Responding with a 200 status.');
-      return response.json({expense});
+      return response.json({expense: repackExpense(expense)});
     }).catch(next);
 });
 

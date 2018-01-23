@@ -30,7 +30,7 @@ describe('category-router.js', () => {
         });
     });
 
-    test('should respond with a 400 status if schema validation fails, for example a missing title.', () => {
+    test('should respond with a 400 status if schema validation fails, for example a missing name.', () => {
       return superagent.post(__API_URL__)
         .send({
           budget: 500,
@@ -53,7 +53,7 @@ describe('category-router.js', () => {
           expect(response.status).toEqual(200);
           expect(response.body.category.name).toEqual(myCategory.name);
           expect(response.body.category.budget).toEqual(myCategory.budget);
-          expect(response.body.category._id).toEqual(myCategory._id.toString());
+          expect(response.body.category.id).toEqual(myCategory._id.toString());
         });
     });
 

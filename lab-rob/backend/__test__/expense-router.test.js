@@ -30,8 +30,8 @@ describe('expense-router.js', () => {
           expect(response.body.expense.name).toEqual(myExpense.name);
           expect(response.body.expense.price).toEqual(myExpense.price);
           expect(response.body.expense.timestamp).toBeTruthy();
-          expect(response.body.expense._id).toBeTruthy();
-          expect(response.body.expense.category.toString()).toEqual(myExpense.category.toString());
+          expect(response.body.expense.id).toBeTruthy();
+          expect(response.body.expense.categoryId).toEqual(myExpense.category.toString());
         });
     });
 
@@ -121,8 +121,8 @@ describe('expense-router.js', () => {
           expect(response.body.expense.name).toEqual(myMock.expense.name);
           expect(response.body.expense.price).toEqual(myMock.expense.price);
           expect(response.body.expense.timestamp).toBeTruthy();
-          expect(response.body.expense._id).toBeTruthy();
-          expect(response.body.expense.category.toString()).toEqual(myMock.expense.category.toString());
+          expect(response.body.expense.id).toBeTruthy();
+          expect(response.body.expense.categoryId).toEqual(myMock.expense.category.toString());
         });
     });
 
