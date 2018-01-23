@@ -65,6 +65,19 @@ categoryRouter.delete('/api/categories/:id', (request, response, next) => {
     .catch(next);
 });
 
+categoryRouter.delete('/api/categories', (request, response, next) => {
+  return Category.remove({})
+    .then(() => {
+      logger.info('All categories removed. Removing all expenses.');        
+      return Expense.remove({});
+    })
+    .then(() => {
+      logger.info('Expenses removed, responding with a 204.');
+      return response.sendStatus(204);
+    })
+    .catch(next);
+});
+
 categoryRouter.put('/api/categories/:id', jsonParser, (request, response, next) => {
   if(!Object.keys(request.body).length)
     return next(httpErrors(400, 'Bad Request. No Body.'));

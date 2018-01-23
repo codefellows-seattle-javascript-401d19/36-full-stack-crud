@@ -55,3 +55,18 @@ export const updateInDatabaseAction = (category) => (store) => {
       store.dispatch(updateAction(category));
     });
 };
+
+export const destroyInDatabaseAction = (category) => (store) => {
+  return superagent.delete(`${apiUrl}/api/categories/${category.id}`)
+    .then(() => {
+      store.dispatch(destroyAction(category));
+    });
+};
+
+export const clearDatabaseAction = () => (store) => {
+  return superagent.delete(`${apiUrl}/api/categories`)
+    .then(() => {
+      store.dispatch(clearAction());
+    });
+};
+

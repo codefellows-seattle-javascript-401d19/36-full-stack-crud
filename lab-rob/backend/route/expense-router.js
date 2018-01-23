@@ -58,7 +58,7 @@ expenseRouter.delete('/api/expenses/:id', (request, response, next) => {
         return response.sendStatus(404);
       }
       
-      logger.info('Show found. Responding with a 204 status.');
+      logger.info('expense found. Responding with a 204 status.');
       return response.sendStatus(204);
     }).catch(next);
 });

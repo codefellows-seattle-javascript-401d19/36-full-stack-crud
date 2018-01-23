@@ -7,7 +7,7 @@ import autoBind from '../../lib/auto-bind';
 import CategoryForm from '../category-form';
 import ExpenseItem from '../expense-item';
 import ExpenseForm from '../expense-form';
-import {updateInDatabaseAction, destroyAction} from '../../action/category';
+import {updateInDatabaseAction, destroyInDatabaseAction} from '../../action/category';
 import {createAction, clearAction} from '../../action/expense';
 
 class CategoryItem extends React.Component {
@@ -102,7 +102,7 @@ let mapStateToProps = state => ({
 
 let mapDispatchToProps = dispatch => ({
   categoryUpdate: (data) => dispatch(updateInDatabaseAction(data)),
-  categoryDestroy: (data) => dispatch(destroyAction(data)),
+  categoryDestroy: (data) => dispatch(destroyInDatabaseAction(data)),
   expenseCreate: (data) => dispatch(createAction(data)),
   expenseClear: (data) => dispatch(clearAction(data)),
 });
