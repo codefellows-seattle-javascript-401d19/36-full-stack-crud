@@ -35,7 +35,7 @@ export const getSynthCompanies = () => dispatch => {
     .catch(err => console.log(err.message));
 };
 
-export const postSynthCompany = (synthCompany) => dispatch => {
+export const postSynthCompany = synthCompany => dispatch => {
   return superagent.post('http://localhost:3000/api/company/')
     .send({name: synthCompany.name, location: synthCompany.location})
     .then(response => {
@@ -49,7 +49,7 @@ export const postSynthCompany = (synthCompany) => dispatch => {
     .catch(err => console.log(err.message));
 };
 
-export const putSynthCompany = (synthCompany) => dispatch => {
+export const putSynthCompany = synthCompany => dispatch => {
   return superagent.put(`http://localhost:3000/api/company/${synthCompany.id}`)
     .send({name: synthCompany.name, location: synthCompany.location})
     .then(response => {
@@ -63,7 +63,7 @@ export const putSynthCompany = (synthCompany) => dispatch => {
     .catch(err => console.log(err.message));
 };
 
-export const deleteSynthCompany = (synthCompany) => dispatch => {
+export const deleteSynthCompany = synthCompany => dispatch => {
   return superagent.delete(`http://localhost:3000/api/company/${synthCompany.id}`)
     .then(response => {
       console.log(response);

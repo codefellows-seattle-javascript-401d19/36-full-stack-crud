@@ -7,6 +7,8 @@ import SynthCompanyForm from '../synthcompany-form';
 import * as synthActions from '../../action/synth';
 import * as synthCompanyActions from '../../action/synthcompany';
 
+import './synthcompany-item.scss';
+
 
 class SynthCompanyItem extends React.Component {
   constructor(props){

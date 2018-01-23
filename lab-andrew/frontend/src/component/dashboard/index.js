@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import SynthCompanyForm from '../synthcompany-form';
 import SynthCompanyItem from '../synthcompany-item';
 import * as synthCompanyAction from '../../action/synthcompany';
+import './dashboard.scss';
 
 class Dashboard extends React.Component {
   

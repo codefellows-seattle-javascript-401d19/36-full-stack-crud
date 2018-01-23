@@ -3,7 +3,6 @@ import ReactDom from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {Provider} from 'react-redux';
-import './style/reset.scss';
 import './style/main.scss';
 
 import App from './component/app';

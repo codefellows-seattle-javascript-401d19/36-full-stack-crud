@@ -11,12 +11,12 @@ export const createAction = ({name, polyphony, synthCompanyID}) => ({
   },
 });
 
-export const updateAction = (synth) => ({
+export const updateAction = synth => ({
   type: 'SYNTH_UPDATE',
   payload: synth,
 });
 
-export const removeAction = (synth) => ({
+export const removeAction = synth => ({
   type: 'SYNTH_REMOVE',
   payload: synth,
 });

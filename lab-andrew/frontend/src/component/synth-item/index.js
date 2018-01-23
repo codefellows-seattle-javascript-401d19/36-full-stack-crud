@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import SynthForm from '../synth-form';
 import * as synth from '../../action/synth';
+import './synth-item.scss';
 
 class SynthItem extends React.Component {
   constructor(props) {
