@@ -1,11 +1,12 @@
 import superagent from 'superagent';
 
-export const createAction = ({ name, budget }) => ({
+export const createAction = ({ name, budget, _id }) => ({
   type: 'CATEGORY_CREATE',
   payload: {
     name,
     budget,
     timestamp: new Date(),
+    _id,
   },
 });
 
@@ -27,6 +28,7 @@ export const getCategorys = () => dispatch => {
           name: category.name,
           budget: category.budget,
           timestamp: category.timestamp,
+          _id: category._id,
         }));
       });
     });

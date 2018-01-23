@@ -19,6 +19,7 @@ categoryRouter.post('/api/categorys', jsonParser, (request, response, next) => {
 
 categoryRouter.put('/api/categorys/:id', jsonParser, (request, response, next) => {
   let options = {new : true, runValidators : true};
+  console.log(request.params.id);
 
   Category.findByIdAndUpdate(request.params.id, request.body, options)
     .then(category => {
