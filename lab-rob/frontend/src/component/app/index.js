@@ -6,11 +6,13 @@ import {connect} from 'react-redux';
 
 import Landing from '../landing';
 import Dashboard from '../dashboard';
-import {reloadFromDatabaseAction} from '../../action/category';
+import {reloadFromDatabaseAction as reloadCategoriesAction} from '../../action/category';
+import {reloadFromDatabaseAction as reloadExpensesAction} from '../../action/expense';
 
 class App extends React.Component {
   componentWillMount() {
-    this.props.reloadFromDatabase();
+    this.props.reloadExpensesFromDB();
+    this.props.reloadCategoriesFromDB();
   }
 
   render() {
@@ -37,7 +39,8 @@ class App extends React.Component {
 }
 
 let mapDispatchToProps = dispatch => ({
-  reloadFromDatabase: () => dispatch(reloadFromDatabaseAction()),
+  reloadCategoriesFromDB: () => dispatch(reloadCategoriesAction()),
+  reloadExpensesFromDB: () => dispatch(reloadExpensesAction()),
 });
 
 export default connect(null, mapDispatchToProps)(App);
