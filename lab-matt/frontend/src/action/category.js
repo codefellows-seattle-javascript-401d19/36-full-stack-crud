@@ -3,13 +3,9 @@ import superagent from 'superagent';
 
 const API_URL = 'http://localhost:3000';
 
-export const createAction = ({ name, _id, timestamp }) => ({
+export const createAction = (category) => ({
   type: 'CATEGORY_CREATE',
-  payload: {
-    name,
-    _id,
-    timestamp,
-  },
+  payload: category,
 });
 
 export const updateAction = (category) => ({
@@ -22,6 +18,7 @@ export const removeAction = (category) => ({
   payload: category,
 });
 
+// routes
 export const getCategories = () => (store) => {
   return superagent.get(`${API_URL}/api/category`)
     .then(response => {
@@ -47,5 +44,14 @@ export const putCategories = (category) => (store) => {
     .then(response => {
       console.log('UPDATING CATEGORY', response.body);
       store.dispatch(updateAction(response.body));
+    });
+};
+
+export const deleteCategories = (category) => (store) => {
+  return superagent.delete(`${API_URL}/api/category/${category._id}`)
+    .then(response => {
+      console.log('DELETING CATEGORY?', 
+        response.body ? false : true);
+      store.dispatch(removeAction(category));
     });
 };

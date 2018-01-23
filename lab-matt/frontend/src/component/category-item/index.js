@@ -5,6 +5,7 @@ import * as expense from '../../action/expense';
 import CategoryForm from '../category-form';
 import ExpenseForm from '../expense-form';
 import ExpenseItem from '../expense-item';
+import { deleteCategories } from '../../action/category';
 
 class CategoryItem extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class CategoryItem extends React.Component {
 
 
   render() {
-    let { expenses, category, categoryRemove, expenseCreate } = this.props;
+    let { expenses, category, deleteCategories, expenseCreate } = this.props;
     let categoryExpenseList = expenses[category._id];
     let name = category.name !== '' ? category.name : `'no name'`;
 
@@ -43,7 +44,7 @@ class CategoryItem extends React.Component {
     </div>;
     let contentJSX = <div className='header'>
       <h2 onClick={this.openForm}> {name} </h2>
-      <button onClick={() => categoryRemove(category)}> X </button>
+      <button onClick={() => deleteCategories(category)}> X </button>
     </div>;
     let renderJSX = this.state.editing ? editingJSX : contentJSX;
 
@@ -71,9 +72,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    categoryUpdate: (data) => dispatch(category.updateAction(data)),
     putCategories: (data) => dispatch(category.putCategories(data)),
-    categoryRemove: (data) => dispatch(category.removeAction(data)),
+    deleteCategories: (data) => dispatch(category.deleteCategories(data)),
     expenseCreate: (data) => dispatch(expense.createAction(data)),
   };
 };
