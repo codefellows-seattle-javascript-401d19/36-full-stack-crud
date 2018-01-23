@@ -1,0 +1,35 @@
+{
+    "env": {
+      "browser": true,
+      "node": true,
+      "commonjs": true,
+      "jest": true,
+      "es6": true
+    },
+    "globals": {
+      "err": true,
+      "req": true,
+      "res": true,
+      "next": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "module": true,
+      "jsx": true
+    },
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-console": "off",
+      "indent": [ "error", 2 ],
+      "semi": [ "error", "always" ],
+      "react/prop-types": [0],
+      "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+      "comma-dangle": ["error", "always-multiline"]
+    },
+    
+    "plugins": [ "react" ]
+  }
