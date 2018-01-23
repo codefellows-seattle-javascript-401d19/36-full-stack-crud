@@ -51,9 +51,9 @@ let mapStateToProps = state => {
 let mapDispatchToProps = dispatch => {
   return {
     handleAJAX: () => dispatch(synthCompanyAction.getSynthCompanies()),
-    synthCompanyCreate: data => dispatch(synthCompanyAction.createAction(data)),
-    synthCompanyUpdate: data => dispatch(synthCompanyAction.updateAction(data)),
-    synthCompanyRemove: data => dispatch(synthCompanyAction.removeAction(data)),
+    synthCompanyCreate: data => dispatch(synthCompanyAction.postSynthCompany(data)),
+    synthCompanyUpdate: data => dispatch(synthCompanyAction.putSynthCompany(data)),
+    synthCompanyRemove: data => dispatch(synthCompanyAction.deleteSynthCompany(data)),
   };
 };
 

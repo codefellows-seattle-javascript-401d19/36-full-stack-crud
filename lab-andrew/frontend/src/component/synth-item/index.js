@@ -24,7 +24,7 @@ class SynthItem extends React.Component {
 
     const content = <React.Fragment>
       <h4> {synth.name} </h4>
-      <h4> ${synth.amount} </h4>
+      <h4> Polyphony: {synth.polyphony} </h4>
     </React.Fragment>;
     
     const editing = <SynthForm synth={synth} onComplete={this.update}/>;

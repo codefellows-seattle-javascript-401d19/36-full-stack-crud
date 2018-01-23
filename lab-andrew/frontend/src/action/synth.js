@@ -1,10 +1,10 @@
 import uuid from 'uuid';
 
-export const createAction = ({name, amount, synthCompanyID}) => ({
+export const createAction = ({name, polyphony, synthCompanyID}) => ({
   type: 'SYNTH_CREATE',
   payload: {
     name,
-    amount,
+    polyphony,
     synthCompanyID,
     id: uuid.v1(),
     createdOn: new Date(),

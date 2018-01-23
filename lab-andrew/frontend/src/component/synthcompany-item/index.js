@@ -26,6 +26,7 @@ class SynthCompanyItem extends React.Component {
 
   createSynth(synth) {
     this.props.synthCreate(synth);
+    // this.props.postAJAX();
     this.setState({adding: false});
   }
 
@@ -53,7 +54,7 @@ class SynthCompanyItem extends React.Component {
 
     const content = <React.Fragment>
       <h2 className='item-text'> {synthCompany.name} </h2>
-      <h2 className='item-text'> ${synthCompany.synth} </h2>
+      <h2 className='item-text'> {synthCompany.location} </h2>
     </React.Fragment>;
 
     const render = this.state.editing ? editing : content;
@@ -92,9 +93,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+
   synthCreate: data => dispatch(synthActions.createAction(data)),
-  synthCompanyUpdate: data => dispatch(synthCompanyActions.updateAction(data)),
-  synthCompanyRemove: data => dispatch(synthCompanyActions.removeAction(data)),
+  synthCompanyUpdate: data => dispatch(synthCompanyActions.putSynthCompany(data)),
+  synthCompanyRemove: data => dispatch(synthCompanyActions.deleteSynthCompany(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SynthCompanyItem);

@@ -2,7 +2,7 @@ import React from 'react';
 
 let emptyState = {
   name: '',
-  synth: '',
+  location: '',
 };
 
 class SynthCompanyForm extends React.Component {
@@ -52,11 +52,11 @@ class SynthCompanyForm extends React.Component {
           onChange={this.handleChange}
         /><br/>
         <input 
-          type='number'
-          name='synth'
-          placeholder='synth'
+          type='text'
+          name='location'
+          placeholder='location'
           required='true'
-          value={this.state.synth}
+          value={this.state.location}
           onChange={this.handleChange}
         /><br/>
         <button className='submit-button' type='submit'> {buttonText} </button>

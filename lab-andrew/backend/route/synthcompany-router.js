@@ -33,6 +33,17 @@ companyRouter.get('/api/company/:id', (request, response, next) => {
     .catch(next);
 });
 
+companyRouter.get('/api/company/', (request, response, next) => {
+
+  return Company.find({})
+    .then(company => {
+      logger.log('info', 'GET - Returning a 200 status code');
+      logger.log('info', company);
+      return response.json(company);
+    })
+    .catch(next);
+});
+
 companyRouter.put('/api/company/:id', jsonParser, (request, response, next) => {
 
   return Company.findById(request.params.id)

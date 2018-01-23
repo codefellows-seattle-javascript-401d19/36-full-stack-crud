@@ -1,6 +1,6 @@
 import React from 'react';
 
-let emptyState = {name: '', amount: ''};
+let emptyState = {name: '', polyphony: ''};
 
 class SynthForm extends React.Component {
   constructor(props) {
@@ -56,10 +56,10 @@ class SynthForm extends React.Component {
         <br/>
         <input
           type='number'
-          name='amount'
-          placeholder='amount'
+          name='polyphony'
+          placeholder='polyphony'
           required='true'
-          value={this.state.amount}
+          value={this.state.polyphony}
           onChange={this.handleChange}
         />
         <br/>
