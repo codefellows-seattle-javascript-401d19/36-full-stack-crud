@@ -8,9 +8,7 @@ const Category = require('../model/category');
 const categoryRouter = module.exports = new Router();
 
 categoryRouter.post('/api/categorys', jsonParser, (request, response, next) => {
-  console.log(request.body);
   if (!request.body.name || !request.body.budget) {
-    console.log('wtf');
     return next(httpErrors(400, 'category model requires a name'));
   }
 

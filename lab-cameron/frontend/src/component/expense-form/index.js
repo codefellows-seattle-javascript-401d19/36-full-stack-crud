@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import uuidv1 from 'uuid/v1';
 
 const emptyState = {
   name: '',
@@ -23,7 +22,7 @@ class ExpenseForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const categoryId = this.props.category ? this.props.category.uuid : this.props.expense.categoryId;
+    const categoryId = this.props.category ? this.props.category._id : this.props.expense.categoryId;
 
     this.props.onComplete({
       ...this.state,

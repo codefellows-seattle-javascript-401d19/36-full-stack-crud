@@ -1,4 +1,3 @@
-import uuidv1 from 'uuid/v1';
 import superagent from 'superagent';
 
 export const createAction = ({ name, price, categoryId }) => ({
@@ -6,7 +5,6 @@ export const createAction = ({ name, price, categoryId }) => ({
   payload: {
     name,
     price,
-    uuid: uuidv1(),
     categoryId,
     timestamp: new Date(),
   },
@@ -26,11 +24,9 @@ export const getExpenses = () => dispatch => {
   return superagent.get(`http://localhost:3000/api/expenses`)
     .then(response => {
       return response.body.forEach(expense => {
-        console.log(expense);
         return dispatch(createAction({
           name: expense.name,
           price: expense.price,
-          uuid: expense.uuid,
           categoryId: expense.categoryId,
           timestamp: expense.timestamp,
         }));

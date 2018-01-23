@@ -19,13 +19,11 @@ describe('/api/categorys', () => {
         .send({
           name: 'testing',
           budget: 10,
-          uuid: 'testing',
         })
         .then(response => {
           expect(response.status).toEqual(200);
           expect(response.body.name).toEqual('testing');
           expect(response.body.budget).toEqual(10);
-          expect(response.body.uuid).toEqual('testing');
         });
     });
 
@@ -47,7 +45,6 @@ describe('/api/categorys', () => {
             .send({
               name: category.name,
               budget: 10,
-              uuid: 'testing',
             });
         })
         .then(Promise.reject)

@@ -19,7 +19,6 @@ describe('action-creators test', () => {
         expect(createAction.type).toEqual('CATEGORY_CREATE');
         expect(createAction.payload.name).toEqual(name);
         expect(createAction.payload.budget).toEqual('100');
-        expect(createAction.payload.uuid).toBeTruthy();
         expect(createAction.payload.timestamp).toBeTruthy();
       });
     });
@@ -29,7 +28,6 @@ describe('action-creators test', () => {
         const category = {
           name: 'Test',
           budget: '100',
-          uuid: '123',
           timestamp: new Date(),
         };
 
@@ -45,7 +43,6 @@ describe('action-creators test', () => {
         const category = {
           name: 'Test',
           budget: '100',
-          uuid: '123',
           timestamp: new Date(),
         };
 
@@ -71,7 +68,6 @@ describe('action-creators test', () => {
         expect(createAction.payload.name).toEqual(name);
         expect(createAction.payload.price).toEqual(price);
         expect(createAction.payload.categoryId).toEqual(categoryId);
-        expect(createAction.payload.uuid).toBeTruthy();
         expect(createAction.payload.timestamp).toBeTruthy();
       });
     });

@@ -1,4 +1,3 @@
-import uuidv1 from 'uuid/v1';
 import superagent from 'superagent';
 
 export const createAction = ({ name, budget }) => ({
@@ -6,7 +5,6 @@ export const createAction = ({ name, budget }) => ({
   payload: {
     name,
     budget,
-    uuid: uuidv1(),
     timestamp: new Date(),
   },
 });
@@ -28,7 +26,6 @@ export const getCategorys = () => dispatch => {
         return dispatch(createAction({
           name: category.name,
           budget: category.budget,
-          uuid: category.uuid,
           timestamp: category.timestamp,
         }));
       });

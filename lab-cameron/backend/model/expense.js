@@ -13,11 +13,6 @@ const expenseSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  uuid: {
-    type: String,
-    required: true,
-    unique: true,
-  },
   timestamp: {
     type: Date,
     default: () => new Date(),

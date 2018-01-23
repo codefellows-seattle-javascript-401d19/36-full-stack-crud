@@ -5,10 +5,10 @@ export default (state = emptyState, { type, payload }) => {
 
   switch (type) {
     case 'CATEGORY_CREATE':
-      return {...state, [payload.uuid]: []};
+      return {...state, [payload._id]: []};
     case 'CATEGORY_DESTROY':
       updatedState = {...state};
-      delete updatedState[payload.uuid];
+      delete updatedState[payload._id];
 
       return updatedState;
     case 'EXPENSE_CREATE':
@@ -20,17 +20,17 @@ export default (state = emptyState, { type, payload }) => {
     case 'EXPENSE_UPDATE':
       categoryId = payload.categoryId;
       categoryExpenses = state[categoryId];
-      updatedExpenses = categoryExpenses.map(expense => expense.uuid === payload.uuid ? payload : expense);
+      updatedExpenses = categoryExpenses.map(expense => expense._id === payload._id ? payload : expense);
 
       return {...state, [categoryId]: updatedExpenses};
     case 'EXPENSE_DELETE':
       categoryId = payload.categoryId;
       categoryExpenses = state[categoryId];
-      updatedExpenses = categoryExpenses.filter(expense => expense.uuid !== payload.uuid);
+      updatedExpenses = categoryExpenses.filter(expense => expense._id !== payload._id);
 
       return {...state, [categoryId]: updatedExpenses};
     case 'INITIALIZE_EXPENSES':
-      categoryId = payload.uuid;
+      categoryId = payload._id;
       categoryExpenses = state[categoryId];
       console.log(categoryExpenses);
       updatedExpenses = [...categoryExpenses, payload];

@@ -12,9 +12,6 @@ const categorySchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  uuid: {
-    type: String,
-  },
   timeStamp: {
     type: Date,
     default: () => new Date(),

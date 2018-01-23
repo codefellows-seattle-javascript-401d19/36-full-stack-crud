@@ -21,7 +21,7 @@ class Dashboard extends Component {
         <CategoryForm onComplete={categoryCreate} />
         {
           categories.map(category => {
-            return <div key={category.uuid}>
+            return <div key={category._id}>
               <CategoryItem category={category} />
             </div>;
           })
