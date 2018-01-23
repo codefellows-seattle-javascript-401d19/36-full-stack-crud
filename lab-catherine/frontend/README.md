@@ -2,26 +2,18 @@
 
 ## Lab 36: Budget Tracker
 
-![Budget Tracker Overview](./asset/budget-tracker-overview.png)
-
 ### Author: 
 Catherine Looper
 
 ### Motivation
 
-In this project, I built a frontend Budget Tracker application. To create a new budget item, users can enter a name and a budget amount and click `create category`. Users can update a budget item by editing the information on the right-hand side of the corresponding budget item and clicking `update category`. Users also have the ability to remove any of their created budget items by clicking the `delete` button next to the budget item they would like to remove. 
+In this project, I built a frontend Continent/Forest Tracker application. To create a new continent item, users can enter a continent name and a population and click `create continent`. Users can update a continent item by double-clicking on the continent that they would like to update. Users also have the ability to remove any of their created continent items by clicking the `X` button next to the continent item they would like to remove. 
 
-Users can also add expenses to each category by entering an expense `name` and `price` and clicking the `create expense` button. Users can edit information and click `update expense` to update, and `delete` to remove the expense from the category.
+Users can also add forests to each continent by entering a forest `name` and `location` and clicking the `create forest` button. Users can edit information by double-clicking on the forest they want to update, and can click `X` to remove the forest from the continent.
 
 In this application, I configured webpack to compile JavaScript and SASS into a bundle and configured babel to transpile JSX and ES6 to ES5 JavaScript. I was able to create and render React components to the DOM, add event listeners to React components, and update React component state.
 
-
-### Build
-
-![Budget Tracker Tree](./asset/budget-tracker-tree.png)
-
-#### Sample Budget View:
-![Sample Budget Tracker](./asset/budget-tracker-example.png)
+This lab is using MongoDB for persistence.
 
 ### Limitations
 
@@ -49,8 +41,10 @@ Standard JavaScript with ES6, SASS, CSS, HTML, React
 * react-router-dom
 * redux
 * redux-devtools-extension
+* redux-thunk
 * resolve-url-loader
 * sass-loader
+* style-loader
 * superagent
 * uuid
 * webpack
@@ -63,10 +57,10 @@ Standard JavaScript with ES6, SASS, CSS, HTML, React
 * Step 2. `npm install`
 * Step 3. `npm run watch`
 * Step 4. You should now be able to visit: `http://localhost:8080/` to view the application
-* Step 5. To create a new budget item, enter a name and a budget amount and click the `create category` button. 
-* Step 6. Budget categories can be edited by changing the information on the right hand side and clicking the `update category` button. 
-* Step 7. Budget items can be removed by clicking the corresponding `delete` button.
-* Step 8. To create a new expense item, enter a name and a price and click the `create expense` button. Expenses can be updated with `update expense` or they can be deleted by clicking `delete`.
+* Step 5. To create a new continent item, enter a name and a population and click the `create continent` button. 
+* Step 6. Continents can be edited by double-clicking on the continent to be edited. 
+* Step 7. Continent items can be removed by clicking the corresponding `X` button.
+* Step 8. To create a new forest item, enter a name and a location and click the `create forest` button. Forests can be updated by double-clicking, updating, and clicking `update forest` or they can be deleted by clicking `X`.
 
 ### Credits
 

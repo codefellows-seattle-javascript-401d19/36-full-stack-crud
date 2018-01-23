@@ -22,7 +22,6 @@ class Dashboard extends React.Component {
 
     return (
       <div className='dashboard'>
-        <button className='ajax-button' onClick={handleAJAX}>AJAX YAY</button>
         <ContinentForm onComplete={continentCreate} />
         {
           continents.map((continent, index) => 
