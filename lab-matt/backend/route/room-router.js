@@ -15,7 +15,6 @@ roomRouter.post('/api/room', jsonParser, (request, response, next) => {
   log('info', `==SQUAREFEET==: ${request.body.squareFeet}`);
   log('info', `==FLOORING==: ${request.body.flooring}`);
   log('info', `==HOUSEID==: ${request.body.house}`);
-  
 
   if (!request.body.name || !request.body.squareFeet || !request.body.flooring) {
     return next(httpError(400), 'name, squareFeet and flooring are require');
@@ -35,12 +34,8 @@ roomRouter.post('/api/room', jsonParser, (request, response, next) => {
 // ===================== GET ROUTES =====================
 roomRouter.get('/api/room', (request, response, next) => {
   return Room.find({})
-    .limit(10)
     .then(allRooms => {
       log('info', `==ROOMS ARRAY==: ${allRooms}`);
-      if (allRooms.length === 0) {
-        throw httpError(404, 'no rooms listed');
-      }
       log('info', 'GET - responding with a 200 status');
       return response.json(allRooms);
     })

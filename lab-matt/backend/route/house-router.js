@@ -33,11 +33,8 @@ houseRouter.post('/api/house', jsonParser, (request, response, next) => {
 // ===================== GET ROUTES =====================
 houseRouter.get('/api/house', (request, response, next) => {
   return House.find({})
-    .limit(10)
+    .populate('rooms')
     .then(allHouses => {
-      if (allHouses.length === 0) {
-        throw httpError(404, 'no houses listed');
-      }
       log('info', 'GET - responding with a 200 status');
       return response.json(allHouses);
     })

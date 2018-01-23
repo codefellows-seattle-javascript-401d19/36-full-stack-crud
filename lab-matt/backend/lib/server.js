@@ -2,6 +2,7 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const log = require('./logger');
 
 // ================ ENV VALUES ===================
@@ -17,6 +18,7 @@ const server = module.exports = {};
 const app = express();
 
 // ================ ROUTE SETUP ===================
+app.use(cors());
 app.use(require('./logger-middleware'));
 app.use(require('../route/room-router'));
 app.use(require('../route/house-router'));
