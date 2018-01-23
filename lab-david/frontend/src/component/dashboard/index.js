@@ -51,7 +51,7 @@ let mapDispatchToProps = (dispatch) => {
   return{
     categoryCreate : (data) => dispatch(categoryActions.createAction(data)),
     categoryUpdate : (data) => dispatch(categoryActions.updateAction(data)),
-    handleAJAX : () => dispatch(categoryActions.getExpenses()),
+    handleAJAX : () => dispatch(categoryActions.getCategories()),
   };
 };
 

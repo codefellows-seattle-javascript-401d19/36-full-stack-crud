@@ -5,12 +5,12 @@ const Category = require('./category');
 const httpErrors = require('http-errors');
 
 const expenseSchema = mongoose.Schema({
-  title : {
+  name : {
     type: String,
     required: true,
     unique: true,
   },
-  year : {
+  price : {
     type : Number,
     required : true,
   },
@@ -27,13 +27,13 @@ const expenseSchema = mongoose.Schema({
 });
 
 expenseSchema.pre('save', function(done){
-  return Expense.findById(this.category)
-    .then(expenseLocated => {
-      if(!expenseLocated)
+  return Category.findById(this.category)
+    .then(categoryLocated => {
+      if(!categoryLocated)
         throw httpErrors(404, 'category not found');
 
-      expenseLocated.expenses.push(this._id);
-      return expenseLocated.save();
+      categoryLocated.categories.push(this._id);
+      return categoryLocated.save();
     })
     .then(() => done())
     .catch(done);

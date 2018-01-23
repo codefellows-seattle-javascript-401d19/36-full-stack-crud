@@ -9,8 +9,8 @@ const httpErrors = require('http-errors');
 const expenseRoute = module.exports = new Router();
 
 expenseRoute.post('/api/expenses', jsonParser, (request,response,next) => {
-  if(!request.body.year || !request.body.title) {
-    return next(httpErrors(400, 'year and title are required'));
+  if(!request.body.name || !request.body.price) {
+    return next(httpErrors(400, 'name and price are required'));
   }
 
   return new Expense(request.body).save()

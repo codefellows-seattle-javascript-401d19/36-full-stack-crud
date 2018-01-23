@@ -8,7 +8,7 @@ const categorySchema = mongoose.Schema({
     type : String,
     required : true,
   },
-  age : {
+  budgetTotal : {
     type : Number,
   },
   timeStamp : {type : Date,
@@ -19,4 +19,4 @@ const categorySchema = mongoose.Schema({
   usePushEach : true,
 });
 
-module.exports = mongoose.model('category', categorySchema);
+module.exports = mongoose.model('categorie', categorySchema);

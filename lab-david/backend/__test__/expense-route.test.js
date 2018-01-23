@@ -24,10 +24,8 @@ describe('/api/expenses', () => {
           tempCategoryMock = mock;
 
           let expenseToPost = {
-            title : faker.company.bsNoun(2),
-            year : 2017,
-            languages : faker.database.engine(3).split(' '),
-            description : faker.company.catchPhrase(10).split(' '),
+            name : faker.lorem.words(2),
+            price : faker.random.number(1),
             category : mock._id,
           };
           return superagent.post(`${apiURL}`)
@@ -44,10 +42,8 @@ describe('/api/expenses', () => {
     test('should respond with a 404 if the category id is not present', () => {
       return superagent.post(apiURL)
         .send({
-          title : 'Awesome Expense',
-          year : '2017',
-          languages : 'CSS',
-          description : faker.company.catchPhrase(10).split(' '),
+          name : faker.lorem.words(2),
+          price : faker.random.number(1),   
           category : 'FAKE_ID',
         })
         .then(Promise.reject)
@@ -58,8 +54,8 @@ describe('/api/expenses', () => {
 
     test('should respond with a 400 code if we send an incomplete expense', () => {
       let expenseToPost = {
-        title : faker.lorem.words(2),
-        year : faker.date.soon,        
+        name : faker.lorem.words(2),
+        price : faker.random.number(1),        
       };
       return superagent.post(`${apiURL}`)
         .send(expenseToPost)

@@ -28,8 +28,19 @@ categoryRoute.put('/api/categories/:id', jsonParser,(request,response,next) => {
     .catch(next);
 });
 
+
 categoryRoute.get('/api/categories/:id', (request,response,next) => {
   return Category.findById(request.params.id)
+    .then(category => {
+      if(!category)
+        throw httpErrors(404,`category not found`);
+      return response.json(category);
+    })
+    .catch(next);
+});
+
+categoryRoute.get('/api/categories', (request,response,next) => {
+  return Category({})
     .then(category => {
       if(!category)
         throw httpErrors(404,`category not found`);

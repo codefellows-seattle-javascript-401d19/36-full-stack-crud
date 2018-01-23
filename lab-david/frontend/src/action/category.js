@@ -27,7 +27,7 @@ export const removeAction = (category) => ({
 });
 
 // asynch action creator
-export const getExpenses = () => (dispatch) => {
+export const getCategories = () => (dispatch) => {
   console.log('DISPATCH', dispatch);
   console.log('DOING AJAX');
   return superagent.get('http://localhost:3000/api/categories')
@@ -35,6 +35,18 @@ export const getExpenses = () => (dispatch) => {
       console.log('AJAX DONE', response);
       let count = response.body.count;
       let data = response.body.data;
-      dispatch(createAction({title: 'Woot!'}));
+      dispatch(createAction({name: 'Woot!'}));
+    });
+};
+
+export const deleteCategory = () => (dispatch) => {
+  console.log('DISPATCH delete category', dispatch);
+  console.log('DOING AJAX on delete category');
+  return superagent.delete('http://localhost:3000/api/categories/:id')
+    .then((response) => {
+      console.log('AJAX DONE', response);
+      let count = response.body.count;
+      let data = response.body.data;
+      dispatch(removeAction({}));
     });
 };

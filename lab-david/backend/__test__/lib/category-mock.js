@@ -8,7 +8,7 @@ const categoryMock = module.exports = {};
 categoryMock.create = () => {
   return new Category({
     name : faker.internet.userName(1),
-    age : faker.random.number(1),
+    budgetTotal : faker.random.number(1),
   }).save();
 };
 
