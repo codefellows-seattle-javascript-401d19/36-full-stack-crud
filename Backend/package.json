@@ -10,7 +10,8 @@
     "test": "jest -i --coverage",
     "lint": "eslint",
     "dbon": "mkdir -p ./db && mongod --dbpath ./db",
-    "dboff": "killall mongod"
+    "dboff": "killall mongod",
+    "start": "nodemon --ignore log.json"
   },
   "repository": {
     "type": "git",

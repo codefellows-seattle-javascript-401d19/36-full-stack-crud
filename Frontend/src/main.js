@@ -10,6 +10,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import session from './lib/redux-session';
 import reporter from './lib/redux-reporter';
+import thunk from './lib/redux-thunk';
 
 let middleware = {};
 const store = createStore(reducer, composeWithDevTools(

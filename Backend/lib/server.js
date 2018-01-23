@@ -20,9 +20,9 @@ mongoose.Promise = Promise;
 // -----------------------------------
 app.use(require('./logger-middleware'));
 
-app.use(require('../route/discipline-router'));
+app.use(require('../route/category-router'));
 
-app.use(require('../route/cyclist-router'));
+app.use(require('../route/expense-router'));
 
 //the catch-all should be at the end of all routes
 

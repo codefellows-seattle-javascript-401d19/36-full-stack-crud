@@ -50,7 +50,8 @@ class CategoryItem extends React.Component {
 		return (
 			
 			<div className='category'>
-				{renderJSX}
+				<main onDoubleClick={() => this.setState({ editing: true })}>{renderJSX}
+				</main>
 				<ExpenseForm 
 				category={category}
 				onComplete={expenseCreate} />

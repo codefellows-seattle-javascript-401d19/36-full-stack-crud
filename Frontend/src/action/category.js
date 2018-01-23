@@ -1,4 +1,5 @@
 import uuid from 'uuid';
+import superagent from 'superagent';
 
 export const createAction = ({name, budget}) => ({
 	type: 'CATEGORY_CREATE',
@@ -23,8 +24,9 @@ export const removeAction = (category) => ({
 export const getExpenses = () => (dispatch) => {
 	return superagent.get('http://localhost:7000/api/expenses')
 	.then((response) => {
+		console.log(response);
 		let count = response.body.count;
 		let data = response.body.data;
-		dispatch(createAction({name: 'Hooray!!!'}))
+		dispatch(createAction({name: data}))
 	})
 }
