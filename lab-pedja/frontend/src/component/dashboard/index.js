@@ -18,12 +18,14 @@ class Dashboard extends React.Component {
       categoryCreate,
       categoryUpdate,
       categoryDestroy,
-      handleAJAX,
+      countryCreateAjax,
+      countryDestroyAjax,
     } = this.props;
     
     return (
       <div className="dashboard">
-        <button onClick={handleAJAX}> do AJAX </button>
+        <button onClick={countryCreateAjax}> Ajax Create Country </button>
+        <button onClick={countryDestroyAjax}> Ajax Destroy Country </button>
         <CategoryForm onComplete={categoryCreate} />
         <div className="categories">
           {categories.map((category, index) => (
@@ -51,7 +53,8 @@ let mapDispatchToProps = (dispatch) => {
     categoryCreate: (data) => dispatch(category.createAction(data)),
     categoryUpdate: (data) => dispatch(category.updateAction(data)),
     categoryDestroy: (data) => dispatch(category.destroyAction(data)),
-    handleAJAX: () => dispatch(category.postCountries()),
+    countryCreateAjax: () => dispatch(category.postCountry()),
+    countryDestroyAjax: () => dispatch(category.deleteCountry()),
   }
 };
 

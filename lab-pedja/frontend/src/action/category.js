@@ -21,12 +21,22 @@ export const destroyAction = category => ({
   payload: category,
 });
 
-export const postCountries = () => dispatch => {
+export const postCountry = () => dispatch => {
   return superagent.post('http://localhost:3000/api/countries')
     .send({
-      name : 'Canada'
+      name : 'Costa Rica'
     })
     .then((response) => {
       dispatch(createAction({name: response.body.name}));
     });
+}
+
+
+// TODO: change category to country
+export const deleteCountry = (country) => dispatch => {
+  return superagent.delete(`http://localhost:3000/api/countries/${country._id}`)
+    .then((response) => {
+      dispatch(destroyAction(country));
+      return response;
+    })
 }

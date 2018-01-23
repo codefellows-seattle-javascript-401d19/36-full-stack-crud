@@ -474,3 +474,10 @@
 {"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-22T23:42:51.217Z"}
 {"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"Canada\" }","op":{"name":"Canada","_id":"5a6676fb2d7bb3797910b6b0","languages":[],"timeStamp":"2018-01-22T23:42:51.216Z","keywords":[],"__v":0}}
 {"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-22T23:42:51.217Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-23T00:53:24.243Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-23T00:53:24.248Z"}
+{"level":"info","message":"Processing: OPTIONS on: /api/countries","timestamp":"2018-01-23T00:54:39.341Z"}
+{"level":"info","message":"Processing: POST on: /api/countries","timestamp":"2018-01-23T00:54:39.345Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-23T00:54:39.347Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.countries index: name_1 dup key: { : \"Costa Rica\" }","op":{"name":"Costa Rica","_id":"5a6687cf2d7bb3797910b6b2","languages":[],"timeStamp":"2018-01-23T00:54:39.345Z","keywords":[],"__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-23T00:54:39.348Z"}
