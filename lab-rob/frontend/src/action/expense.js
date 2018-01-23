@@ -3,15 +3,9 @@ import superagent from 'superagent';
 
 const apiUrl = 'http://localhost:3000';
 
-export const createAction = ({name, price, categoryId}) => ({
+export const createAction = (expense) => ({
   type: 'EXPENSE_CREATE',
-  payload: {
-    name,
-    price,
-    categoryId,
-    timestamp: new Date(),
-    id: uuid(),
-  },
+  payload: expense,
 });
 
 export const updateAction = expense => ({
@@ -48,5 +42,39 @@ export const reloadFromDatabaseAction = () => (store) => {
       });
 
       store.dispatch(reloadAction(mappedExpenses));
+    });
+};
+
+export const createInDatabaseAction = (expense) => (store) => {
+  return superagent.post(`${apiUrl}/api/expenses`)
+    .send(expense)
+    .then(response => {
+      let {expense} = response.body;
+
+      store.dispatch(createAction(expense));
+    });
+};
+
+export const updateInDatabaseAction = (expense) => (store) => {
+  return superagent.put(`${apiUrl}/api/expenses/${expense.id}`)
+    .send(expense)
+    .then(response => {
+      let {expense} = response.body;
+
+      store.dispatch(updateAction(expense));
+    });
+};
+
+export const destroyInDatabaseAction = (expense) => (store) => {
+  return superagent.delete(`${apiUrl}/api/expenses/${expense.id}`)
+    .then(() => {
+      store.dispatch(destroyAction(expense));
+    });
+};
+
+export const clearExpensesForCategoryInDatabaseAction = (categoryId) => (store) => {
+  return superagent.delete(`${apiUrl}/api/expenses?category=${categoryId}`)
+    .then(() => {
+      store.dispatch(clearAction(categoryId));
     });
 };

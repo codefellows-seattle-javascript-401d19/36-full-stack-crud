@@ -23,11 +23,12 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let categoryId = this.props.categoryId || this.props.expense.categoryId;
+    // language here is strange because of model property 'category' really requiring an id
+    let category = this.props.categoryId || this.props.expense.category;
 
     this.props.onComplete({
       ...this.state,
-      categoryId,
+      category,
     });
 
     this.setState(emptyState);

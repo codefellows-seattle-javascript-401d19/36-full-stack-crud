@@ -5,6 +5,7 @@ const jsonParser = require('express').json();
 const httpErrors = require('http-errors');
 const logger = require('../lib/logger');
 const Expense = require('../model/expense');
+const Category = require('../model/category');
 
 const expenseRouter = module.exports = new Router();
 
@@ -46,6 +47,31 @@ expenseRouter.get('/api/expenses/:id', (request, response, next) => {
       }
 
       return response.json({expense: repackExpense(expense)});
+    })
+    .catch(next);
+});
+
+expenseRouter.delete('/api/expenses', (request, response, next) => {
+  if(!request.query.category)
+    return next(new httpErrors(400, 'Bad request. query string required.'));
+  
+  return Category.findById(request.query.category)
+    .then(category => {
+      if(!category)
+        throw new httpErrors(404, 'Not found. Bad category id.');
+
+      return Promise.all(category.expenses.map(expenseId => Expense.findByIdAndRemove(expenseId)));
+    })
+    .then(() => {
+      return Category.findById(request.query.category)
+    })
+    .then(category => {
+      category.expenses = [];
+      return category.save();
+    })
+    .then(() => {
+      logger.info('removed all expenses from category ' + request.query.category);
+      return response.sendStatus(204);
     })
     .catch(next);
 });

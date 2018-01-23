@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 import autoBind from '../../lib/auto-bind';
 import ExpenseForm from '../expense-form';
-import {updateAction, destroyAction} from '../../action/expense';
+import {updateInDatabaseAction, destroyInDatabaseAction} from '../../action/expense';
 
 class ExpenseItem extends React.Component {
   constructor(props) {
@@ -52,8 +52,8 @@ class ExpenseItem extends React.Component {
 }
 
 let mapDispatchToProps = dispatch => ({
-  expenseUpdate: (data) => dispatch(updateAction(data)),
-  expenseDestroy: (data) => dispatch(destroyAction(data)),
+  expenseUpdate: (data) => dispatch(updateInDatabaseAction(data)),
+  expenseDestroy: (data) => dispatch(destroyInDatabaseAction(data)),
 });
 
 export default connect(null, mapDispatchToProps)(ExpenseItem);

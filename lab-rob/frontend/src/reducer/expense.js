@@ -25,6 +25,9 @@ export default (state = emptyState, {type, payload}) => {
     case 'CATEGORY_CLEAR':
       return emptyState;
     case 'EXPENSE_CREATE':
+      // this if is needed to avoid a type error after removing all expenses
+      if(!categoryExpenses)
+        categoryExpenses = [];
       updatedExpenses = [...categoryExpenses, payload];
       return {...state, [categoryId]: updatedExpenses};
     case 'EXPENSE_UPDATE':

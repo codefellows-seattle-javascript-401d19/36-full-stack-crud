@@ -8,7 +8,7 @@ import CategoryForm from '../category-form';
 import ExpenseItem from '../expense-item';
 import ExpenseForm from '../expense-form';
 import {updateInDatabaseAction, destroyInDatabaseAction} from '../../action/category';
-import {createAction, clearAction} from '../../action/expense';
+import {createInDatabaseAction, clearExpensesForCategoryInDatabaseAction} from '../../action/expense';
 
 class CategoryItem extends React.Component {
   constructor(props) {
@@ -103,8 +103,8 @@ let mapStateToProps = state => ({
 let mapDispatchToProps = dispatch => ({
   categoryUpdate: (data) => dispatch(updateInDatabaseAction(data)),
   categoryDestroy: (data) => dispatch(destroyInDatabaseAction(data)),
-  expenseCreate: (data) => dispatch(createAction(data)),
-  expenseClear: (data) => dispatch(clearAction(data)),
+  expenseCreate: (data) => dispatch(createInDatabaseAction(data)),
+  expenseClear: (data) => dispatch(clearExpensesForCategoryInDatabaseAction(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryItem);

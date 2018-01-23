@@ -3,29 +3,35 @@ import superagent from 'superagent';
 
 const apiUrl = 'http://localhost:3000';
 
-export const createAction = category => ({
+// State Actions
+// ----------------------------------
+const createAction = category => ({
   type: 'CATEGORY_CREATE',
   payload: category,
 });
 
-export const updateAction = category => ({
+const updateAction = category => ({
   type: 'CATEGORY_UPDATE',
   payload: category,
 });
 
-export const destroyAction = category => ({
+const destroyAction = category => ({
   type: 'CATEGORY_DESTROY',
   payload: category,
 });
 
-export const clearAction = () => ({
+const clearAction = () => ({
   type: 'CATEGORY_CLEAR',
 });
 
-export const reloadAction = categories => ({
+const reloadAction = categories => ({
   type: 'CATEGORY_RELOAD',
   payload: categories,
 });
+
+
+// Database Actions
+// ----------------------------------
 
 export const reloadFromDatabaseAction = () => (store) => {
   return superagent.get(`${apiUrl}/api/categories`)
@@ -69,4 +75,3 @@ export const clearDatabaseAction = () => (store) => {
       store.dispatch(clearAction());
     });
 };
-
