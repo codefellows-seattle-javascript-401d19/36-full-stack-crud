@@ -8,7 +8,7 @@ import './dashboard.scss';
 class Dashboard extends React.Component {
   
   componentWillMount(){
-    this.props.handleAJAX();
+    this.props.synthCompanyGetRequest();
   }
 
   render(){
@@ -51,7 +51,7 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
   return {
-    handleAJAX: () => dispatch(synthCompanyAction.getSynthCompanies()),
+    synthCompanyGetRequest: () => dispatch(synthCompanyAction.getSynthCompanies()),
     synthCompanyCreate: data => dispatch(synthCompanyAction.postSynthCompany(data)),
     synthCompanyUpdate: data => dispatch(synthCompanyAction.putSynthCompany(data)),
     synthCompanyRemove: data => dispatch(synthCompanyAction.deleteSynthCompany(data)),

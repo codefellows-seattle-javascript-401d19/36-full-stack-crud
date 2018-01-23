@@ -1,12 +1,13 @@
 import superagent from 'superagent';
 
-export const createAction = ({name, location, id}) => ({
+export const createAction = ({name, location, id, synths}) => ({
   type: 'SYNTHCOMPANY_CREATE',
   payload: {
     name,
     location,
     id,
     createdOn: new Date(),
+    synths,
   },
 });
 
@@ -24,11 +25,12 @@ export const getSynthCompanies = () => dispatch => {
   return superagent.get('http://localhost:3000/api/company/')
     .then(response => {
       console.log(response);
-      response.body.forEach(e => {
+      response.body.forEach(company => {
         dispatch(createAction({
-          name: e.name, 
-          location: e.location, 
-          id: e._id,
+          name: company.name, 
+          location: company.location, 
+          id: company._id,
+          synths: company.synths,
         }));
       });
     })

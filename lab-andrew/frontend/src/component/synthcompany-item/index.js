@@ -21,6 +21,14 @@ class SynthCompanyItem extends React.Component {
     this.createSynth = this.createSynth.bind(this);
   }
 
+  componentWillMount(){
+    if (this.props.synthCompany.synths){
+      this.props.synthCompany.synths.forEach(e => {
+        this.props.synthGet(e);
+      });
+    }
+  }
+
   update(synthCompany){
     this.props.synthCompanyUpdate(synthCompany);
     this.setState({editing: false});
@@ -94,8 +102,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
-  synthCreate: data => dispatch(synthActions.createAction(data)),
+  synthGet: data => dispatch(synthActions.getSynth(data)),
+  synthCreate: data => dispatch(synthActions.postSynth(data)),
   synthCompanyUpdate: data => dispatch(synthCompanyActions.putSynthCompany(data)),
   synthCompanyRemove: data => dispatch(synthCompanyActions.deleteSynthCompany(data)),
 });

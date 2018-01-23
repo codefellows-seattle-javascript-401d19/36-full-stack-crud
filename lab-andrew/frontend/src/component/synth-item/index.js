@@ -43,8 +43,8 @@ class SynthItem extends React.Component {
 }
 
 let mapDispatchToProps = dispatch => ({
-  synthRemove: data => dispatch(synth.removeAction(data)),
-  synthUpdate: data => dispatch(synth.updateAction(data)),
+  synthRemove: data => dispatch(synth.deleteSynth(data)),
+  synthUpdate: data => dispatch(synth.putSynth(data)),
 });
 
 export default connect(null, mapDispatchToProps)(SynthItem);
