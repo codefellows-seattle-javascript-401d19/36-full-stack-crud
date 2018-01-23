@@ -28,9 +28,18 @@ export const getExpenses = () => (dispatch) => {
   return superagent.get('http://localhost:7000/api/expenses')
     .then((response) => {
       console.log('AJAX DONE', response);
-      let count = response.body.count;
+      // let count = response.body.count;
       let data = response.body.data;
-      dispatch(createAction({ name: 'Sample', budget: 50, period: 'month' }));
+      if(!data){
+        dispatch(createAction({ name: 'Sample', budget: 50, period: 'month' }));
+        console.log('No Data From DB, returning Sample');
+      }
+      else{
+        //Map over data to append each one to the page?
+        // dispatch(createAction({ name: 'Sample', budget: 50, period: 'month' }));
+        console.log('Need to get data!');
+      }
+        
     });
 };
 
