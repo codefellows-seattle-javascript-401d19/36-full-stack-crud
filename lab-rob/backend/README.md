@@ -1,8 +1,8 @@
 # Code Fellows: Code 401d19: Full-Stack JavaScript
 
-## Lab 13/14: Express and Mongo REST API
+## Lab 36: Full Stack Crud
 
-The purpose of this lab is to get practice building an additional Express rest server, and to practice querying Mongo using mongoose. Additionally, we will be using a two-resource scheme.
+This is the backend RESTful API to the budget calculator app, which handles all data persistence.
 
 ## Tech/frameworks/packages
 
@@ -22,94 +22,90 @@ The purpose of this lab is to get practice building an additional Express rest s
 - mongodb
 
 ## How to use?
-Clone this repo, `cd` into `lab-rob`, run `npm install`. 
+Clone this repo, `cd` into `lab-rob/backend`, run `npm install`. 
 
-Touch `.env` in `lab-rob` and add `PORT=<you-desired-port>` and `MONGODB_URI=mongodb://localhost/<desired database name>`.
+Touch `.env` in `lab-rob` and add `PORT=3000` and `MONGODB_URI=mongodb://localhost/<desired database name>`.
 
-Run `npm start` to start the server.
+Run `npm run watch` to start the server with nodemon.
 
 Make sure you have MongoDb installed (`brew install mongo`), and then run `npm run dbon` to start the database.
 
-Make POST/GET/DELETE/PUT requests to the server to interact with the database, try using httpie (`brew install httpie`).
-
-Make sure to add a show to the database before adding any episodes. See below for further instructions.
+Start the front end and make POST/GET/DELETE/PUT requests to the server to interact with the database.
 
 When finished, run `npm run dboff` to terminate the database.
 
 ## Routes
 
-### Shows
+### Categories
 
-#### `POST /api/shows`
+#### `POST /api/categories`
 
-Send a JSON object with the properties `title` (String, required, unique), `seasons` (Number, required), `releaseYear` (Number, optional), `ongoing` (Boolean, optional).
+Requires `name` and `budget`.
 
-Throws an error if any of the required properties are missing.
+#### `GET /api/categories`
 
-Adds a new tv show to the database. Returns the added show object with `timestamp`, `_id`, and `episodes` properties.
+Returns all categories (name, budget, timestamp, id)
 
-#### `GET /api/shows`
+#### `GET /api/categories/<category id>`
 
-Get an array of all shows in the database.
+Return a specific category as requested by the <category id>.
 
-#### `GET /api/shows/<show id>?populate=<boolean>`
+#### `DELETE /api/categories/<category id>`
 
-Return a specific show as requested by the <show id>.
+Delete a specific category as requested by the <category id>. If successful, a 204 code is sent.
 
-If a show with that id is not found, a 404 is returned.
+If a category has linked expenses, all linked expenses are also removed.
 
-Add a query string of `?populate=true` if you want the show to return episode objects instead of episode ids. If you just want episode ids there is no need to send a query string.
+If a category with that id is not found, a 404 is returned.
 
-#### `DELETE /api/shows/<show id>`
+#### `DELETE /api/categories`
 
-Delete a specific show as requested by the <show id>. If successful, a 204 code is sent.
+Delete all categories and expenses. If successful, a 204 code is sent.
 
-If a show has linked episodes, all linked episodes are also removed.
+#### `PUT /api/categories/<category id>`
 
-If a show with that id is not found, a 404 is returned.
+Update a specific category's properties by id. You can only change the original properties listed in the POST notes above.
 
-#### `PUT /api/shows/<show id>`
+If successful, the new category is returned with a 200 status.
 
-Update a specific show's properties by id. You can only change the original properties listed in the POST notes above.
-
-If successful, the new show is returned with a 200 status.
-
-If a show with that id is not found, a 404 status is returned.
-
-If a you change the `title` to a title that is already in the database a 409 status is thrown.
+If a category with that id is not found, a 404 status is returned.
 
 
-### Episodes
+### Expenses
 
-#### `POST /api/episodes`
+#### `POST /api/expenses`
 
-Send a JSON object with the properties `name` (String, required, unique), `number` (Number, required), `duration` (Number, optional), `stars` (number, optional 0 - 5), `actors` (Array, strings, optional), `show` (ObjectID, required)
+Requires `name` and `price`.
 
 Throws an error if any of the required properties are missing.
 
-Adds a new episode to the database and establishes a connection to the specified show. Returns the added episode object with `timestamp` and `_id` properties.
+Adds a new expense to the database and establishes a connection to the specified category. Returns the added expense object with `timestamp` and `id` properties.
 
-#### `GET /api/episodes/<episode id>`
+#### `GET /api/expenses/<expense id>`
 
-Return a specific episode as requested by the <episode id>.
+Return a specific expense as requested by the <expense id>.
 
-If a episode with that id is not found, a 404 is returned.
+If a expense with that id is not found, a 404 is returned.
 
-#### `DELETE /api/episode/<episode id>`
+#### `DELETE /api/expense/<expense id>`
 
-Delete a specific episode as requested by the <episode id>. If successful, a 204 code is sent. The episode is also removed from the `episodes` array in the `show` document that it is linked to.
+Delete a specific expense as requested by the <expense id>. If successful, a 204 code is sent. The expense is also removed from the `expenses` array in the `category` document that it is linked to.
 
-If a episode with that id is not found, a 404 is returned.
+If a expense with that id is not found, a 404 is returned.
 
-#### `PUT /api/episodes/<episode id>`
+#### `DELETE /api/expense?category=<category id>`
 
-Update a specific episode's properties by id. You can only change the original properties listed in the POST notes above.
+Delete all expenses for a specific category, specified by the <category id>. If successful, a 204 code is sent.
 
-If successful, the new episode is returned with a 200 status.
+If a category with that id is not found, a 404 is returned.
 
-If an episode with that id is not found, a 404 status is returned.
+#### `PUT /api/expenses/<expense id>`
 
-If a you change the `name` to a name that is already in the database a 409 status is thrown.
+Update a specific expense's properties by id. You can only change the original properties listed in the POST notes above.
+
+If successful, the new expense is returned with a 200 status.
+
+If an expense with that id is not found, a 404 status is returned.
 
 ## Modules
 
@@ -129,40 +125,36 @@ Exports an instance of a Winston logger that should be used for all info and err
 
 Exports an object with two methods, `start()` and `stop`. Both have an arity of zero and return promises.
 
-### `show.js`
+### `category.js`
 
-Exports a mongoose model for a show. Schema is as follows:
+Exports a mongoose model for a category. Schema is as follows:
 
-    `title: String` (required, unique)
-    `seasons: Number` (required)
-    `releaseYear: number` (optional)
-    `ongoing: Boolean` (optional)
+    `name: String` (required)
+    `budget: Number` (required)
     `timestamp` (auto generated)
-    `episodes` (auto generated)
+    `expenses` (auto generated)
     `_id` (auto generated)
 
 
-### `show-router.js`
+### `category-router.js`
 
-Exports an instance of a new `Express` Router object specifying routes for all show related HTTP requests. 
+Exports an instance of a new `Express` Router object specifying routes for all category related HTTP requests. 
 
 Should be required into server.js `app.use`.
 
-### `episode.js`
+### `expense.js`
 
-Exports a mongoose model for an episode. Schema is as follows:
+Exports a mongoose model for an expense. Schema is as follows:
 
-    `name: String` (required, unique)
-    `number: Number` (required)
-    `duration: Number` (optional, min 0, max 5)
-    `actors: Array of Strings` (optional)
-    `show` Show ObjectId (required)
+    `name: String` (required)
+    `price: Number` (required)
+    `category` Show ObjectId (required)
     `timestamp` (auto generated)
     `_id` (auto generated)
 
-### `episode-router.js`
+### `expense-router.js`
 
-Exports an instance of a new `Express` Router object specifying routes for all episode related HTTP requests. 
+Exports an instance of a new `Express` Router object specifying routes for all expense related HTTP requests. 
 
 Should be required into server.js `app.use`.
 
@@ -170,21 +162,21 @@ Should be required into server.js `app.use`.
 
 When executed, starts the server.
 
-### episode-mock.js
+### expense-mock.js
 
 Exports an object with three methods.
 
-1. `episodeMock.create()` has an arity of zero and adds a mock show and episode to the database.
-1. `episodeMock.createMany(number)` has an arity of one and adds a mock show and a given number of mock episodes to the database.
-1. `episodeMock.remove()` has an arity of zero and removes all episodes from the database and the mock show.
+1. `expenseMock.create()` has an arity of zero and adds a mock category and expense to the database.
+1. `expenseMock.createMany(number)` has an arity of one and adds a mock category and a given number of mock expenses to the database.
+1. `expenseMock.remove()` has an arity of zero and removes all expenses from the database and the mock category.
 
-### show-mock.js
+### category-mock.js
 
 Exports an object with two methods.
 
-1. `showMock.create()` has an arity of zero and adds a mock show to the database.
-1. `episodeMock.createMany(number)` has an arity of one and adds a mock show and a given number of mock episodes to the database.
-1. `showMock.remove()` has an arity of zero and removes all shows from the database.
+1. `categoryMock.create()` has an arity of zero and adds a mock category to the database.
+1. `expenseMock.createMany(number)` has an arity of one and adds a mock category and a given number of mock expenses to the database.
+1. `categoryMock.remove()` has an arity of zero and removes all categories from the database.
 
 ### setup.js
 
@@ -194,77 +186,9 @@ When required into the test files, environment variables are established.
 
 run `npm test` to check all tests. Test data saved to `testing` collection.
 
-### `show-router.js`
-
-Run tests for shows only with `npm run test-shows`
-
-#### POST
-
-1. should respond with a 200 status and the sent object when successful.
-1. should respond with a 400 status if schema validation fails, for example a missing title.
-1. should respond with a 409 status if an object with a duplicate title is sent.
-
-#### GET
-
-1. should respond with a 200 status and the requested object.
-1. should respond with a 404 status if a show with the given id is not found.
-1. should respond with an array of objects from the requested page if the requested page exists, and a 200 status.
-1. should respond with a 400 status if route is hit without a query string.
-1. should respond with a 400 status if query string cannot be cast as a number.
-1. should respond with a 404 status if page query is < 1.
-1. should respond with a 404 status if page query is > last page.
-
-#### DELETE
-
-1. should respond with a 204 status if show is deleted.
-1. should respond with a 404 status if a show with the given id is not found.
-
-
-#### PUT
-
-1. should respond with a 200 and updated object if no errors.
-1. should respond with a 409 if data validation fails, for example if you change the title to a preexisting title.
-1. should respond with a 404 if a bad id is requested.
-1. should respond with a 400 if no body sent.
-
-
-### `episode-router.js`
-
-Run tests for episodes only with `npm run test-episodes`
-
-#### POST
-
-1. should respond with a 200 status code and the sent object if no errors.
-1. should respond with a 400 status if missing episode name.
-1. should respond with a 400 status if missing episode number.
-1. should respond with a 400 status if missing show id.
-1. should respond with a 404 status if an incorrect show id is used.
-1. should respond with a 409 status if an object with a duplicate episode name is sent.
-
-#### GET
-
-1. should respond with a 200 status code and the requested object.
-1. should respond with a 404 status code if id is not in database.
-
-#### DELETE
-
-1. should respond with a 204 when removing an episode successfully.
-1. should respond with a 204 when removing an episode successfully.
-
-#### PUT
-
-1. should respond with a 200 and updated object if no errors.
-1. should respond with a 409 if data validation fails, for example if you change the name to a preexisting name.
-1. should respond with a 404 if a bad id is requested.
-1. should respond with a 400 if no body sent.
-
 ## Contribute
 
 You can totally contribute to this project if you want. Fork the repo, make some cool changes and then submit a PR.
-
-## Credits
-
-Initial codebase created by Vinicio Vladimir Sanchez Trejo.
 
 ## License
 
