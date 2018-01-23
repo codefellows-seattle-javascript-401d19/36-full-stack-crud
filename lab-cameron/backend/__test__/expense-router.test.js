@@ -27,7 +27,7 @@ describe('/api/expenses', () => {
             name: 'test',
             price: 10,
             uuid: 'test description',
-            category: mock._id,
+            categoryId: mock._id,
           };
           return superagent.post(`${apiURL}`)
             .send(expenseToPost)
@@ -35,7 +35,7 @@ describe('/api/expenses', () => {
               expect(response.status).toEqual(200);
               expect(response.body._id).toBeTruthy();
               expect(response.body.timestamp).toBeTruthy();
-              expect(response.body.category).toEqual(tempCategoryMock._id.toString());
+              expect(response.body.categoryId).toEqual(tempCategoryMock._id.toString());
 
               expect(response.body.name).toEqual(expenseToPost.name);
               expect(response.body.price).toEqual(expenseToPost.price);
@@ -64,7 +64,7 @@ describe('/api/expenses', () => {
           name: 'testing',
           price: 10,
           uuid: 'testing description',
-          category: 'invalidId',
+          categoryId: 'invalidId',
         })
         .then(Promise.reject)
         .catch(response => {
@@ -79,7 +79,7 @@ describe('/api/expenses', () => {
             name: 'test',
             price: 10,
             uuid: 'test description',
-            category: mock._id,
+            categoryId: mock._id,
           };
           return superagent.post(`${apiURL}`)
             .send(expenseToPost)

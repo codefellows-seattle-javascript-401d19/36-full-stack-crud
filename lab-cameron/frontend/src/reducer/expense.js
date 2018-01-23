@@ -29,6 +29,8 @@ export default (state = emptyState, { type, payload }) => {
       updatedExpenses = categoryExpenses.filter(expense => expense.uuid !== payload.uuid);
 
       return {...state, [categoryId]: updatedExpenses};
+    case 'GET_EXPENSES':
+      return payload;
     default:
       return state;
   }

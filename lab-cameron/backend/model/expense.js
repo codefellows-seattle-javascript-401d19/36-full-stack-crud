@@ -22,7 +22,7 @@ const expenseSchema = mongoose.Schema({
     type: Date,
     default: () => new Date(),
   },
-  category: {
+  categoryId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'category',
@@ -30,7 +30,7 @@ const expenseSchema = mongoose.Schema({
 });
 
 expenseSchema.pre('save', function(done) {
-  return Category.findById(this.category)
+  return Category.findById(this.categoryId)
     .then(categoryFound => {
       if (!categoryFound) {
         throw httpErrors(404, 'category not found');
@@ -44,7 +44,7 @@ expenseSchema.pre('save', function(done) {
 });
 
 expenseSchema.post('remove', (document, done) => {
-  return Category.findById(document.category)
+  return Category.findById(document.categoryId)
     .then(categoryFound => {
       if (!categoryFound) {
         throw httpErrors(404, 'category not found');

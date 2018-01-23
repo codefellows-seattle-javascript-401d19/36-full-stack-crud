@@ -21,7 +21,7 @@ expenseRouter.post('/api/expenses', jsonParser, (request, response, next) => {
 
 expenseRouter.get('/api/expenses/:id', (request, response, next) => {
   Expense.findById(request.params.id)
-    .populate('category')
+    .populate('categoryId')
     .then(expense => {
       if (!expense) {
         throw httpErrors(404, 'expense not found');

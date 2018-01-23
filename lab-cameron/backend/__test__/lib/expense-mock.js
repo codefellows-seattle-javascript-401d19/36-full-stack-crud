@@ -17,7 +17,7 @@ expenseMock.create = () => {
         name: faker.lorem.words(2),
         price: faker.random.number(1),
         uuid: faker.lorem.words(1),
-        category: category._id,
+        categoryId: category._id,
       }).save();
     })
     .then(expense => {
@@ -39,7 +39,7 @@ expenseMock.createMany = howMany => {
             name: faker.lorem.words(2),
             price: faker.random.number(1),
             uuid: faker.lorem.words(1),
-            category: category._id,
+            categoryId: category._id,
           }).save();
         });
     });

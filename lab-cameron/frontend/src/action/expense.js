@@ -25,6 +25,9 @@ export const removeAction = expense => ({
 export const getExpenses = () => dispatch => {
   return superagent.get(`http://localhost:3000/api/expenses`)
     .then(response => {
-      console.log('DONE', response);
+      dispatch(createAction({
+        type: 'GET_EXPENSES',
+        payload: response.body,
+      }));
     });
 };
