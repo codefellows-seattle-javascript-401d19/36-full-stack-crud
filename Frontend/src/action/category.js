@@ -24,33 +24,60 @@ export const removeAction = (category) => ({
 export const getCategories = () => (dispatch) => {
 	return superagent.get('http://localhost:7000/api/categories')
 		.then((response) => {
-			let data = response.body
-			console.log('data', data);
-			data.map(data => dispatch(createAction({name: data.name, budget: data.budget, id: data._id}))
-		)
+			let categories = response.body
+			categories.forEach(category => {
+				dispatch(createAction({
+				name: category.name, 
+				budget: category.budget, 
+				id: category._id
+			}));
 		});
-}
+		})
+		.catch(error => console.log(error));
+};
 
-export const postCategories = (data) => (dispatch) => {
+export const postCategories = (category) => (dispatch) => {
 	return superagent.post('http://localhost:7000/api/categories')
 		.send({
-			name: data.name,
-			budget: data.budget,
+			name: category.name,
+			budget: category.budget,
 		})
 		.then((response) => {
-			if (data) {
-			let data = response.body
-			dispatch(createAction({name: data.name, budget: data.budget}))
-			} else {
-				console.log('Nothing posted.');
-			}
+			let categories = response.body
+			dispatch(createAction({
+				name: categories.name, 
+				budget: categories.budget,
+				id: categories._id}))
 		})
-		.catch(error);
+		.catch(error => console.log(error));
 	};
 
-// export const deleteCategories = () => (dispatch) => {
-// 	return superagent.delete('http://localhost:7000/api/categories')
-// 		.then((response) => {
-// 			dispatch(createAction({}))
-// 		});
-// };
+export const updateCategories = (category) => (dispatch) => {
+	return superagent.put(`http://localhost:7000/api/categories/${category.id}`)
+		.send({
+			name: category.name,
+			budget: category.budget,
+		})
+		.then((response) => {
+			let category = response.body
+			dispatch(updateAction({
+				name: category.name,
+				budget: category.budget,
+				id: category._id
+			}));
+		})
+		.catch(error => console.log(error));
+};
+
+export const deleteCategories = (category) => (dispatch) => {
+	return superagent.delete(`http://localhost:7000/api/categories/${category.id}`)
+		.send({
+			name: category.name,
+			budget: category.budget,
+		})
+		.then((response) => {
+			let category = response.body
+			dispatch(removeAction(category));
+		})
+		.catch(error => console.log(error));
+};

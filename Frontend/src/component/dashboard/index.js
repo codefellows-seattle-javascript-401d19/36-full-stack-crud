@@ -61,7 +61,6 @@ let mapDispatchToProps = (dispatch) => {
 		handleAJAXCategoryGet: () => dispatch(categoryActions.getCategories()),
 		handleAJAXExpenseGet: () => dispatch(expenseActions.getExpenses()),
 		handleAJAXExpenseDelete: (data) => dispatch(expenseActions.postExpenses(data)),
-		handleAJAXCategoryDelete: (data) => dispatch(categoryActions.postCategories(data)),
 	}
 };
 
