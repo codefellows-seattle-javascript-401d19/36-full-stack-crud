@@ -3,7 +3,7 @@ import React from 'react';
 
 let emptyState = {
   name : '',
-  price: '',
+  location: '',
 };
 
 class ForestForm extends React.Component {
@@ -23,8 +23,8 @@ class ForestForm extends React.Component {
     this.setState({name: event.target.value});
   }
 
-  handlePriceChange(event) {
-    this.setState({price: event.target.value});
+  handleLocationChange(event) {
+    this.setState({location: event.target.value});
   }
 
   handleSubmit(event) {
@@ -62,10 +62,10 @@ class ForestForm extends React.Component {
 
         <textarea
           type='number'
-          name='price'
-          placeholder='price'
-          value={this.state.price}
-          onChange={this.handlePriceChange}
+          name='location'
+          placeholder='location'
+          value={this.state.location}
+          onChange={this.handleLocationChange}
         />
           
         <button type='submit'>{buttonText}</button>

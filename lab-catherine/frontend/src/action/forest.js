@@ -1,10 +1,10 @@
 import uuidv1 from 'uuid/v1';
 
-export const createAction = ({name, price, continentID}) => ({
+export const createAction = ({name, population, continentID}) => ({
   type: 'FOREST_CREATE',
   payload: {
     name,
-    price,
+    population,
     continentID,
     id: uuidv1(),
     timestamp: new Date(),

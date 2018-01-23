@@ -1,12 +1,12 @@
-import uuidv1 from 'uuid/v1';
+// import uuidv1 from 'uuid/v1';
 import superagent from 'superagent';
 
-export const createAction = ({name, population}) => ({
+export const createAction = ({name, population, id}) => ({
   type: 'CONTINENT_CREATE',
   payload: {
     name,
     population,
-    id: uuidv1(),
+    id,
     timestamp: new Date(),
   },
 });
@@ -21,15 +21,30 @@ export const destroyAction = (continent) => ({
   payload: continent,
 });
 
-// asynchronous action creators
 export const getContinents = () => (dispatch) => {
-  console.log('DISPATCH:', dispatch);
-  console.log('DOING AJAX');
-  return superagent.get('http://localhost:3000/api/forests')
+  return superagent.get('http://localhost:3000/api/continents')
+    .then((response) => {
+      response.body.forEach(continent => {
+        dispatch(createAction({
+          name: continent.name, 
+          population: continent.population,
+          id: continent._id,
+        }));
+      });
+    })
+    .catch(error => console.log(error.message));
+};
+
+export const postContinents = (continent) => (dispatch) => {
+  return superagent.post('http://localhost:3000/api/continents')
+    .send({name: continent.name, population: continent.population})
     .then((response) => {
       console.log('AJAX DONE', response);
-      let count = response.body.count;
-      let data = response.body.data;
-      dispatch(createAction({name: 'Whoville', population: 25}));
-    });
+      dispatch(createAction({
+        name: response.body.name, 
+        population: response.body.population,
+        id: response.body._id,
+      }));
+    })
+    .catch(error => console.log(error.message));
 };

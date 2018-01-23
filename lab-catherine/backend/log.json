@@ -3480,3 +3480,52 @@
 {"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T00:50:16.933Z"}
 {"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T00:51:06.048Z"}
 {"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T00:52:16.152Z"}
+{"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T01:01:41.190Z"}
+{"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T01:06:49.588Z"}
+{"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T01:14:32.497Z"}
+{"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T01:26:50.088Z"}
+{"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T01:27:23.230Z"}
+{"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T01:27:46.329Z"}
+{"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T01:27:47.341Z"}
+{"level":"info","message":"Processing : GET on : /api/forests","timestamp":"2018-01-23T01:31:24.633Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T01:32:51.543Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T01:32:51.543Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T01:35:35.386Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T01:35:35.386Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T01:40:11.807Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T01:40:11.807Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T01:41:29.242Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T01:41:29.243Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T01:41:38.406Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T01:41:38.406Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T01:42:26.462Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T01:42:26.463Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T01:42:39.830Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T01:42:39.831Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T01:44:07.334Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2018-01-23T01:44:07.334Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-01-23T02:08:18.833Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:08:29.764Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:08:56.544Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:12:30.270Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:13:08.170Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:13:19.521Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:13:57.086Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:14:28.792Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:14:34.142Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:16:23.729Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:16:40.687Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:17:49.953Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:17:56.989Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:28:11.172Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:28:36.137Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:29:33.695Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:30:03.139Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:30:11.139Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:30:24.948Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:30:37.051Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:32:00.739Z"}
+{"level":"info","message":"Processing : POST on : /api/continents","timestamp":"2018-01-23T02:32:11.750Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:32:14.056Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:32:16.227Z"}
+{"level":"info","message":"Processing : GET on : /api/continents","timestamp":"2018-01-23T02:32:23.418Z"}

@@ -38,6 +38,14 @@ continentRouter.get('/api/continents/:id', (request, response, next) => {
     .catch(next);
 });
 
+continentRouter.get('/api/continents/', (request, response, next) => {
+  return Continent.find({})
+    .then(continent => {
+      return response.json(continent);
+    })
+    .catch(next);
+});
+
 
 continentRouter.delete('/api/continents/:id',(request, response, next) => {
   return Continent.findByIdAndRemove(request.params.id)

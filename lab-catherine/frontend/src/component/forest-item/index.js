@@ -31,7 +31,7 @@ class ForestItem extends React.Component {
     let contentJSX = 
     <div> 
       <h2>{forest.name}</h2>
-      <h2>${forest.price}</h2>
+      <h2>${forest.location}</h2>
     </div>;  
     let editingJSX = 
     <ForestForm forest={forest} onComplete={this.handleUpdate}/>;

@@ -45,7 +45,7 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    continentCreate: (data) => dispatch(continent.createAction(data)),
+    continentCreate: (data) => dispatch(continent.postContinents(data)),
     continentUpdate: (data) => dispatch(continent.updateAction(data)),
     continentDestroy: (data) => dispatch(continent.destroyAction(data)),
     handleAJAX: () => dispatch(continent.getContinents()),
