@@ -2,7 +2,7 @@ import React from 'react';
 
 let emptyState = {
   name: '',
-  budget: '',
+  city: '',
 };
 
 class SchoolForm extends React.Component {
@@ -52,7 +52,7 @@ class SchoolForm extends React.Component {
           type="text"
           name="city"
           placeholder="city"
-          value={this.state.budget}
+          value={this.state.city}
           onChange={this.handleChange}
         />
         <button type="submit">{buttonText} </button>

@@ -461,3 +461,83 @@
 {"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:35:46.504Z"}
 {"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:41:33.249Z"}
 {"level":"info","message":"GET - processing a request","timestamp":"2018-01-22T23:41:36.619Z"}
+{"level":"info","message":"Server is listening on port 3000","timestamp":"2018-01-23T03:25:48.512Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:26:08.117Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:27:37.625Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:28:51.828Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:29:08.564Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:36:40.727Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:38:37.601Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T03:38:43.208Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:41:25.026Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T03:41:35.873Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:44:07.901Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T03:44:10.947Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:45:21.528Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:54:05.248Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T03:54:13.588Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T03:54:40.784Z"}
+{"level":"info","message":"__ERROR_MIDDLEWARE__","timestamp":"2018-01-23T03:54:40.792Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.schools index: name_1 dup key: { : \"dsfa\" }","op":{"name":"dsfa","city":"fdsaf","_id":"5a66b2007c2122b1d252a3d7","id":"1b165570-ffed-11e7-ab10-f1fffa58c450","students":[],"timestamp":"2018-01-23T03:54:40.784Z","__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2018-01-23T03:54:40.793Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T03:54:55.492Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:01:04.610Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:06:30.800Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:07:12.984Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:11:08.039Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:14:43.252Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T04:14:50.227Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:17:17.823Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:18:42.970Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T04:19:10.593Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:21:56.401Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:27:33.700Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:28:39.098Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:30:33.558Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T04:30:53.009Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:32:47.773Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:38:22.951Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T04:38:50.205Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T04:39:06.334Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T04:39:14.268Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:42:06.577Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:42:11.308Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:43:09.582Z"}
+{"level":"info","message":"DELETE - processing a request","timestamp":"2018-01-23T04:43:11.632Z"}
+{"level":"info","message":"DELETE - Returning a 204 status code","timestamp":"2018-01-23T04:43:11.641Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:43:17.907Z"}
+{"level":"info","message":"DELETE - processing a request","timestamp":"2018-01-23T04:43:49.205Z"}
+{"level":"info","message":"DELETE - Returning a 204 status code","timestamp":"2018-01-23T04:43:49.207Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:43:57.853Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:44:42.958Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:44:45.433Z"}
+{"level":"info","message":"DELETE - processing a request","timestamp":"2018-01-23T04:44:47.327Z"}
+{"level":"info","message":"DELETE - Returning a 204 status code","timestamp":"2018-01-23T04:44:47.328Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:44:47.338Z"}
+{"level":"info","message":"DELETE - processing a request","timestamp":"2018-01-23T04:44:49.994Z"}
+{"level":"info","message":"DELETE - Returning a 204 status code","timestamp":"2018-01-23T04:44:49.995Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:44:50.007Z"}
+{"level":"info","message":"DELETE - processing a request","timestamp":"2018-01-23T04:44:51.743Z"}
+{"level":"info","message":"DELETE - Returning a 204 status code","timestamp":"2018-01-23T04:44:51.744Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:44:51.752Z"}
+{"level":"info","message":"DELETE - processing a request","timestamp":"2018-01-23T04:44:53.812Z"}
+{"level":"info","message":"DELETE - Returning a 204 status code","timestamp":"2018-01-23T04:44:53.813Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:44:53.821Z"}
+{"level":"info","message":"POST - processing a request","timestamp":"2018-01-23T04:45:07.433Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:53:06.803Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:53:12.639Z"}
+{"level":"info","message":"PUT - processing a request","timestamp":"2018-01-23T04:53:19.966Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:53:19.980Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:53:19.986Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:53:24.279Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:54:00.885Z"}
+{"level":"info","message":"PUT - processing a request","timestamp":"2018-01-23T04:54:05.465Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:54:05.467Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:54:05.478Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:54:27.543Z"}
+{"level":"info","message":"PUT - processing a request","timestamp":"2018-01-23T04:54:31.472Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:54:31.474Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:54:31.486Z"}
+{"level":"info","message":"PUT - processing a request","timestamp":"2018-01-23T04:54:35.479Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T04:54:35.481Z"}
+{"level":"info","message":"GET - processing a request","timestamp":"2018-01-23T04:54:35.491Z"}

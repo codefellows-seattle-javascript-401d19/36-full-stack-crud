@@ -28,7 +28,7 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let schoolID = this.props.school ? this.props.school.id : this.props.expense.schoolID;
+    let schoolID = this.props.school ? this.props.school._id : this.props.expense.schoolID;
 
     this.props.onComplete({
       ...this.state,

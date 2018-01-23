@@ -31,7 +31,7 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
   return {
-    schoolCreate: data => dispatch(schoolActions.createAction(data)),
+    schoolCreate: data => dispatch(schoolActions.createSchool(data)),
     schoolUpdate: data => dispatch(schoolActions.updateAction(data)),
     schoolRemove: data => dispatch(schoolActions.removeAction(data)),
     handleAJAX: () => dispatch(schoolActions.getSchools()),

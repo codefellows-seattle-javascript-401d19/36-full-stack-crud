@@ -26,13 +26,13 @@ class SchoolItem extends React.Component {
   render() {
     let { school, schoolRemove, schoolUpdate, expenses, expenseCreate } = this.props;
 
-    let schoolExpenses = expenses[school.id];
+    let schoolExpenses = expenses[school._id];
 
     let editingJSX = <SchoolForm onComplete={this.handleUpdate} school={school} />;
     let contentJSX = (
       <div onDoubleClick={() => this.setState({ editing: true })}>
-        <h2> Title: {school.name} </h2>
-        <p> Budget: ${school.city} </p>
+        <h2> {school.name} </h2>
+        <p> City: {school.city} </p>
         <button
           onClick={() => {
             schoolRemove(school);
@@ -66,8 +66,8 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => ({
   expenseCreate: data => dispatch(expenseActions.createAction(data)),
-  schoolUpdate: data => dispatch(schoolActions.updateAction(data)),
-  schoolRemove: data => dispatch(schoolActions.removeAction(data)),
+  schoolUpdate: data => dispatch(schoolActions.updateSchool(data)),
+  schoolRemove: data => dispatch(schoolActions.removeSchool(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SchoolItem);

@@ -7,7 +7,7 @@ const validateSchool = school => {
 export default (state = emptyState, { type, payload }) => {
   switch (type) {
     case 'SCHOOL_CREATE':
-      validateSchool(payload);
+      // validateSchool(payload);
       return [...state, payload];
     case 'SCHOOL_UPDATE':
       return state.map(school => (school.id === payload.id ? payload : school));

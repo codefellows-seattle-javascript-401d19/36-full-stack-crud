@@ -10,7 +10,7 @@ export default (state = emptyState, { type, payload }) => {
 
   switch (type) {
     case 'SCHOOL_CREATE':
-      return { ...state, [payload.id]: [] };
+      return { ...state, [payload._id]: [] };
 
     case 'SCHOOL_REMOVE':
       updatedState = { ...state };
