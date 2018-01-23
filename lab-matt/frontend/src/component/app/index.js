@@ -27,7 +27,6 @@ class App extends React.Component {
 
   componentWillMount() {
     console.log('MOUNTING DATABASE');
-    
     this.props.getCategories();
   }
 

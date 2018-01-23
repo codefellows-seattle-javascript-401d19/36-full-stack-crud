@@ -2,30 +2,24 @@
 
 const mongoose = require('mongoose');
 
-const houseSchema = mongoose.Schema({
+const categorySchema = mongoose.Schema({
   name: {
     type: String,
     require: true,
-    unique: true,
   },
-  stories: {
-    type: Number,
-    require: true,
-  },
-  climate: {
+  uuid: {
     type: String,
-    require: true,
   },
   timestamp: {
     type: Date,
     default: () => new Date(),  
   },
-  rooms: [{
+  expenses: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'room',
-  }], 
+    ref: 'expense',
+  }],
 },{
   usePushEach: true,
 });
 
-module.exports = mongoose.model('house', houseSchema);
+module.exports = mongoose.model('category', categorySchema);

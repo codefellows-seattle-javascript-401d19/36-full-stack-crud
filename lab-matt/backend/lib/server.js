@@ -21,7 +21,7 @@ const app = express();
 app.use(cors());
 app.use(require('./logger-middleware'));
 app.use(require('../route/room-router'));
-app.use(require('../route/house-router'));
+app.use(require('../route/category-router'));
 
 app.all('*', (request, response) => {
   log('info', 'Returning a 404 from the catch-all route');

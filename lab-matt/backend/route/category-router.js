@@ -4,13 +4,13 @@ const {Router} = require('express');
 const jsonParser = require('express').json();
 const httpError = require('http-errors');
 
-const House = require('../model/house');
+const Category = require('../model/category');
 const log = require('../lib/logger');
 
-const houseRouter = module.exports = new Router();
+const categoryRouter = module.exports = new Router();
 
 // ===================== POST ROUTES =====================
-houseRouter.post('/api/house', jsonParser, (request, response, next) => {
+categoryRouter.post('/api/category', jsonParser, (request, response, next) => {
   log('info', `==NAME==: ${request.body.name}`);
   log('info', `==STORIES==: ${request.body.stories}`);
   log('info', `==CLIMATE==: ${request.body.climate}`);
@@ -19,70 +19,70 @@ houseRouter.post('/api/house', jsonParser, (request, response, next) => {
     return next(httpError(400), 'name, stories and climate are require');
   }
 
-  new House(request.body).save()
-    .then(house => {
-      log('info', `==_ID==: ${house._id}`);
-      log('info', `==TIMESTAMP==: ${house.timestamp}`);
+  new Category(request.body).save()
+    .then(category => {
+      log('info', `==_ID==: ${category._id}`);
+      log('info', `==TIMESTAMP==: ${category.timestamp}`);
       log('info', 'POST - responding with a 200 status');
-      response.json(house);
+      response.json(category);
       return;
     })
     .catch(next);
 });
 
 // ===================== GET ROUTES =====================
-houseRouter.get('/api/house', (request, response, next) => {
-  return House.find({})
-    .populate('rooms')
-    .then(allHouses => {
+categoryRouter.get('/api/category', (request, response, next) => {
+  return Category.find({})
+    .populate('expenses')
+    .then(allCategories => {
       log('info', 'GET - responding with a 200 status');
-      return response.json(allHouses);
+      return response.json(allCategories);
     })
     .catch(next);
 });
 
-houseRouter.get('/api/house/:id', (request, response, next) => {
-  return House.findById(request.params.id)
-    .then(house => {
-      log('info', `==HOUSE==: ${house}`);
-      if (!house) {
-        throw httpError(404, 'house not found');
+categoryRouter.get('/api/category/:id', (request, response, next) => {
+  return Categorys.findById(request.params.id)
+    .then(category => {
+      log('info', `==CATEGORY==: ${category}`);
+      if (!category) {
+        throw httpError(404, 'category not found');
       }
       log('info', 'GET - responding with a 200 status');
-      return response.json(house);
+      return response.json(category);
     })
     .catch(next);
 });
 
 // ===================== PUT ROUTES =====================
-houseRouter.put('/api/house/:id', jsonParser, (request, response, next) => {
+categoryRouter.put('/api/category/:id', jsonParser, (request, response, next) => {
   if (!request.params.id) {
     throw httpError(400, 'no ID given');
   }
   let updateOptions = {runValidators: true, new: true};
 
-  return House.findByIdAndUpdate(request.params.id, request.body, updateOptions)
-    .then(house => {
-      if (!house) {
-        throw httpError(404, 'house not found');
+  return Category.findByIdAndUpdate(request.params.id, request.body, updateOptions)
+    .then(category => {
+      if (!category) {
+        throw httpError(404, 'category not found');
       } else {
         log('info', 'PUT - responding with a 200 status');
-        return response.json(house);
+        return response.json(category);
       }
     })
     .catch(next);
 });
 
 // ===================== DELETE ROUTES =====================
-houseRouter.delete('/api/house/:id', (request, response, next) => {
+categoryRouter.delete('/api/category/:id', (request, response, next) => {
   if (!request.params.id) {
     throw httpError(400, 'no ID given');
   }
 
-  return House.findByIdAndRemove(request.params.id)
-    .then(house => {
-      if (!house) {
-        throw httpError(404, 'house not found');
+  return Category.findByIdAndRemove(request.params.id)
+    .then(category => {
+      if (!category) {
+        throw httpError(404, 'category not found');
       } else {
         log('info', 'DELETE - responding with a 204 status');
         return response.sendStatus(204);
