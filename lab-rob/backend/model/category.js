@@ -2,30 +2,27 @@
 
 const mongoose = require('mongoose');
 
-const showSchema = mongoose.Schema({
-  title: {
+const categorySchema = mongoose.Schema({
+  name: {
     type: String,
     required: true,
-    unique: true,
   },
-  seasons: {
+  budget: {
     type: Number,
     required: true,
   },
-  releaseYear: Number,
-  ongoing: Boolean,
   timestamp: {
     type: Date,
     default: () => new Date(),
   },
-  episodes: [
+  expenses: [
     {
       type: mongoose.Schema.Types.ObjectId, 
-      ref: 'episode',
+      ref: 'expense',
     },
   ],
 }, {
   usePushEach: true,
 });
 
-module.exports = mongoose.model('show', showSchema);
+module.exports = mongoose.model('category', categorySchema);

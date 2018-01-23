@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const logger = require('./logger');
 const app = express();
 
-
 const PORT = process.env.PORT;
 
 let isServerOn = false;
@@ -17,8 +16,8 @@ mongoose.Promise = Promise;
 app.use(cors());
 
 app.use(require('./logger-middleware'));
-app.use(require('../route/show-router'));
-app.use(require('../route/episode-router'));
+app.use(require('../route/category-router'));
+app.use(require('../route/expense-router'));
 
 app.all('*', (request, response) => {
   logger.error(`Bad endpoint with a ${request.method} request. Sending a 404 status.`);
@@ -42,7 +41,7 @@ server.start = () => {
       return resolve();
     });
   })
-    .then(() => mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true }));
+    .then(() => mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true}));
 };
 
 server.stop = () => {

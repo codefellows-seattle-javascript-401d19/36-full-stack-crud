@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "jest -i --coverage",
-    "test-episodes": "jest -i --coverage episode-router.test.js",
-    "test-shows": "jest -i --coverage show-router.test.js",
+    "test-episodes": "jest -i --coverage expense-router.test.js",
+    "test-shows": "jest -i --coverage category-router.test.js",
+    "test-watch": "jest -i --coverage --watch",
     "start": "node index.js",
     "lint": "eslint .",
     "dbon": "mkdir -p ./db && mongod --dbpath ./db",

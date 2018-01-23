@@ -27,9 +27,9 @@ export const clearAction = () => ({
   type: 'CATEGORY_CLEAR',
 });
 
-export const reloadAction = catagories => ({
+export const reloadAction = categories => ({
   type: 'CATEGORY_RELOAD',
-  payload: catagories,
+  payload: categories,
 });
 
 export const getCategoriesAction = () => (store) => {

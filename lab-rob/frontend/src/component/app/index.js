@@ -6,17 +6,20 @@ import {connect} from 'react-redux';
 
 import Landing from '../landing';
 import Dashboard from '../dashboard';
-import {reloadAction as categoryReload} from '../../action/category';
-import {reloadAction as expenseReload} from '../../action/expense';
+import {getCategoriesAction} from '../../action/category';
+// import {reloadAction as categoryReload} from '../../action/category';
+// import {reloadAction as expenseReload} from '../../action/expense';
 
 class App extends React.Component {
   componentWillMount() {
-    if(localStorage.categories && localStorage.expenses) {
-      let categories = JSON.parse(localStorage.categories);
-      let expenses = JSON.parse(localStorage.expenses);
-      this.props.reloadCategories(categories);
-      this.props.reloadExpenses(expenses);
-    }
+    // if(localStorage.categories && localStorage.expenses) {
+    //   let categories = JSON.parse(localStorage.categories);
+    //   let expenses = JSON.parse(localStorage.expenses);
+    //   this.props.reloadCategories(categories);
+    //   this.props.reloadExpenses(expenses);
+    // }
+    this.props.getCategories();
+
   }
 
   render() {
@@ -43,8 +46,9 @@ class App extends React.Component {
 }
 
 let mapDispatchToProps = dispatch => ({
-  reloadCategories: (data) => dispatch(categoryReload(data)),
-  reloadExpenses: (data) => dispatch(expenseReload(data)),
+  // reloadCategories: (data) => dispatch(categoryReload(data)),
+  // reloadExpenses: (data) => dispatch(expenseReload(data)),
+  getCategories: () => dispatch(getCategoriesAction()),
 });
 
 export default connect(null, mapDispatchToProps)(App);
