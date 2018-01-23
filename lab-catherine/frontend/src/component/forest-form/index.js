@@ -1,4 +1,4 @@
-import './_expense-form.scss';
+import './_forest-form.scss';
 import React from 'react';
 
 let emptyState = {
@@ -6,12 +6,12 @@ let emptyState = {
   price: '',
 };
 
-class ExpenseForm extends React.Component {
+class ForestForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.expense || emptyState;
+    this.state = props.forest || emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(ForestForm.prototype);
     for(let functionName of memberFunctions) {
       if(functionName.startsWith('handle')) {
         this[functionName] = this[functionName].bind(this);
@@ -29,26 +29,26 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
+    let continentID = this.props.continent ? this.props.continent.id : this.props.forest.continentID;
 
     this.props.onComplete({
       ...this.state,
-      categoryID,
+      continentID,
     });
 
     this.setState(emptyState);
   }
   componentWillReceiveProps(nextProps) {
-    if(nextProps.expense)
-      this.setState(nextProps.expense);
+    if(nextProps.forest)
+      this.setState(nextProps.forest);
   }
   
   render() {
-    let buttonText = this.props.expense ? 'update expense' : 'create expense';
+    let buttonText = this.props.forest ? 'update forest' : 'create forest';
 
     return (
       <form
-        className='expense-form'
+        className='forest-form'
         onSubmit={this.handleSubmit}
       >
 
@@ -75,4 +75,4 @@ class ExpenseForm extends React.Component {
   }
 }
 
-export default ExpenseForm;
+export default ForestForm;

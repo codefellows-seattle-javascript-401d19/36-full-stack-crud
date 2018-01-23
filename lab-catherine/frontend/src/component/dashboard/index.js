@@ -1,27 +1,34 @@
 import './_dashboard.scss';
 import React from 'react';
 import {connect} from 'react-redux';
-import CategoryForm from '../category-form';
-import CategoryItem from '../category-item';
-import * as category from '../../action/category';
+import ContinentForm from '../continent-form';
+import ContinentItem from '../continent-item';
+import * as continent from '../../action/continent';
 
 class Dashboard extends React.Component {
+  componentWillMount() {
+    console.log('component will mount');
+    this.props.handleAJAX();
+  }
+
   render() {
     let {
-      categories, 
-      categoryCreate,
-      categoryUpdate,
-      categoryDestroy,
+      continents, 
+      continentCreate,
+      continentUpdate,
+      continentDestroy,
+      handleAJAX,
     } = this.props;
 
     return (
       <div className='dashboard'>
-        <CategoryForm onComplete={categoryCreate} />
+        <button className='ajax-button' onClick={handleAJAX}>AJAX YAY</button>
+        <ContinentForm onComplete={continentCreate} />
         {
-          categories.map((category, index) => 
+          continents.map((continent, index) => 
             <div key={index}>
-              <CategoryItem
-                category={category}
+              <ContinentItem
+                continent={continent}
               />
             </div>
           )}
@@ -32,15 +39,16 @@ class Dashboard extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    categories: state.categories,
+    continents: state.continents,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    categoryCreate: (data) => dispatch(category.createAction(data)),
-    categoryUpdate: (data) => dispatch(category.updateAction(data)),
-    categoryDestroy: (data) => dispatch(category.destroyAction(data)),
+    continentCreate: (data) => dispatch(continent.createAction(data)),
+    continentUpdate: (data) => dispatch(continent.updateAction(data)),
+    continentDestroy: (data) => dispatch(continent.destroyAction(data)),
+    handleAJAX: () => dispatch(continent.getContinents()),
   };
 };
 

@@ -1,4 +1,4 @@
-import './_category-form.scss';
+import './_continent-form.scss';
 import React from 'react';
 
 let emptyState = {
@@ -6,12 +6,12 @@ let emptyState = {
   budget: '',
 };
 
-class CategoryForm extends React.Component {
+class ContinentForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.category || emptyState;
+    this.state = this.props.continent || emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(ContinentForm.prototype);
     for(let functionName of memberFunctions) {
       if(functionName.startsWith('handle')) {
         this[functionName] = this[functionName].bind(this);
@@ -36,19 +36,19 @@ class CategoryForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.category)
-      this.setState(nextProps.category);
+    if(nextProps.continent)
+      this.setState(nextProps.continent);
   }
 
   render() {
-    let buttonText = this.props.category ? 'update category' : 'create category';
-    // let classNameGenerator = this.props.category ? 'update-category' : 'create-category';
+    let buttonText = this.props.continent ? 'update continent' : 'create continent';
+    // let classNameGenerator = this.props.continent ? 'update-continent' : 'create-continent';
 
     return (
     
       <form
         onSubmit={this.handleSubmit}
-        className='category-form'>
+        className='continent-form'>
 
         <input
           type='text'
@@ -71,4 +71,4 @@ class CategoryForm extends React.Component {
   }
 }
 
-export default CategoryForm;
+export default ContinentForm;

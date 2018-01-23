@@ -1,31 +1,40 @@
 @import 'vars';
 
 .landing {
-  .section-form:first-child {
+  .continent-form:first-child {
     padding: $pad;
     border: 1px solid $color-secondary;
     margin-bottom: $pad;
   }
 
-  .section-container {
+  .continent-container {
     height: calc(100vh - 8em);
     border: 1px solid $color-secondary;
     padding: $pad;
 
-    .section {
+    .continent {
       padding-bottom: $pad;
       margin-bottom: $pad;
     }
   }
 }
 
+.ajax-button {
+  background-color: lightcoral;
+}
+
+.ajax-button:hover {
+  background-color: salmon;
+  color: cornsilk;
+}
+
 @media screen and (min-width: 700px){
-  .section-container {
+  .continent-container {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
 
-    .section {
+    .continent {
       white-space: normal;
       display: inline-block;
       width: 250px;

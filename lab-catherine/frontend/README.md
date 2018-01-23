@@ -1,6 +1,6 @@
 # Code Fellows: Seattle 401 JavaScript - 401d19
 
-## Lab 31-34: Budget Tracker
+## Lab 36: Budget Tracker
 
 ![Budget Tracker Overview](./asset/budget-tracker-overview.png)
 

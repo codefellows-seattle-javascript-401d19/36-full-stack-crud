@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 
-import categories from './categories';
-import expenses from './expenses';
+import continents from './continents';
+import forests from './forests';
 
 export default combineReducers ({
-  categories,
-  expenses,
+  continents,
+  forests,
 });
