@@ -15,12 +15,12 @@ export default (state = emptyState, action) => {
     
     case 'CATEGORY_UPDATE':
       return state.map((category) => {
-        return category.id === payload.id ? payload : category;
+        return category._id === payload._id ? payload : category;
       });
   
     case 'CATEGORY_REMOVE':
       return state.filter((category) => {
-        return category.id !== payload.id;
+        return category._id !== payload._id;
       });
       
     case 'CATEGORY_CLEAR':

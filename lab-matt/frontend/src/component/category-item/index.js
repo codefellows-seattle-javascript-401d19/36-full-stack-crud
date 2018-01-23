@@ -13,7 +13,7 @@ class CategoryItem extends React.Component {
     this.state = { editing: false };
 
     this.handleForm = (category) => {
-      this.props.categoryUpdate(category);
+      this.props.putCategories(category);
       this.setState({editing: false});
       document.removeEventListener('mousedown', this.handleClickOutside);
     };
@@ -35,14 +35,14 @@ class CategoryItem extends React.Component {
 
   render() {
     let { expenses, category, categoryRemove, expenseCreate } = this.props;
-    let categoryExpenseList = expenses[category.id];
-    let title = category.title !== '' ? category.title : `'no title'`;
+    let categoryExpenseList = expenses[category._id];
+    let name = category.name !== '' ? category.name : `'no name'`;
 
     let editingJSX =  <div ref={this.setRef} >
       <CategoryForm category={category} onComplete={this.handleForm} />
     </div>;
     let contentJSX = <div className='header'>
-      <h2 onClick={this.openForm}> {title} </h2>
+      <h2 onClick={this.openForm}> {name} </h2>
       <button onClick={() => categoryRemove(category)}> X </button>
     </div>;
     let renderJSX = this.state.editing ? editingJSX : contentJSX;
@@ -72,6 +72,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     categoryUpdate: (data) => dispatch(category.updateAction(data)),
+    putCategories: (data) => dispatch(category.putCategories(data)),
     categoryRemove: (data) => dispatch(category.removeAction(data)),
     expenseCreate: (data) => dispatch(expense.createAction(data)),
   };

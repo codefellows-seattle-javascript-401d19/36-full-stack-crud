@@ -3,11 +3,11 @@ import superagent from 'superagent';
 
 const API_URL = 'http://localhost:3000';
 
-export const createAction = ({ title, id, timestamp }) => ({
+export const createAction = ({ name, _id, timestamp }) => ({
   type: 'CATEGORY_CREATE',
   payload: {
-    title,
-    id,
+    name,
+    _id,
     timestamp,
   },
 });
@@ -23,26 +23,29 @@ export const removeAction = (category) => ({
 });
 
 export const getCategories = () => (store) => {
-  console.log('DISPATCHING', store);
   return superagent.get(`${API_URL}/api/category`)
     .then(response => {
-      console.log('AJAX DONE', response.body);
+      console.log('GETTING CATEGORIES', response.body);
       response.body.forEach(category => {
-        store.dispatch(createAction({
-          title: category.name, 
-          id: category._id, 
-          timestamp: category.timestamp,
-        }));
+        store.dispatch(createAction(category));
       });
     });
 };
 
 export const postCategories = (category) => (store) => {
-  console.log('DISPATCHING', store);
   return superagent.post(`${API_URL}/api/category`)
     .send({name: category.name})
     .then(response => {
-      console.log('AJAX DONE', response.body);
-      store.dispatch(createAction(response.body[0]));
+      console.log('CREATING CATEGORY', response.body);
+      store.dispatch(createAction(response.body));
+    });
+};
+
+export const putCategories = (category) => (store) => {
+  return superagent.put(`${API_URL}/api/category/${category._id}`)
+    .send(category)
+    .then(response => {
+      console.log('UPDATING CATEGORY', response.body);
+      store.dispatch(updateAction(response.body));
     });
 };
