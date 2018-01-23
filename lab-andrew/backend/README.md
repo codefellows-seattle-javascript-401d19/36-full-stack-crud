@@ -1,5 +1,3 @@
-# Lab 14 Express and Mongo two resource RESTful API
-
 ## Overview
 
 This API is a RESTful Synth API. It exists so you can create virtual companies and retrieve and delete them from memory as well as synthesizers made by that company. They will have a one to many relationship (one company may potentially make many synths). It is built using express and mongo.
