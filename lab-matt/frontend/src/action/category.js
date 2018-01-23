@@ -1,14 +1,14 @@
 import v1 from 'uuid';
 import superagent from 'superagent';
 
-const API_URL = 'http://localhost:3000/api/house';
+const API_URL = 'http://localhost:3000';
 
-export const createAction = ({ title }) => ({
+export const createAction = ({ title, id, timestamp }) => ({
   type: 'CATEGORY_CREATE',
   payload: {
     title,
-    id: v1(),
-    timestamp: new Date(),
+    id,
+    timestamp,
   },
 });
 
@@ -24,9 +24,25 @@ export const removeAction = (category) => ({
 
 export const getCategories = () => (store) => {
   console.log('DISPATCHING', store);
-  return superagent.get(API_URL)
+  return superagent.get(`${API_URL}/api/category`)
     .then(response => {
       console.log('AJAX DONE', response.body);
-      store.dispatch(createAction({title: 'AJAX IT UP!'}));
+      response.body.forEach(category => {
+        store.dispatch(createAction({
+          title: category.name, 
+          id: category._id, 
+          timestamp: category.timestamp,
+        }));
+      });
+    });
+};
+
+export const postCategories = (category) => (store) => {
+  console.log('DISPATCHING', store);
+  return superagent.post(`${API_URL}/api/category`)
+    .send({name: category.name})
+    .then(response => {
+      console.log('AJAX DONE', response.body);
+      store.dispatch(createAction(response.body[0]));
     });
 };

@@ -6,10 +6,10 @@ import CategoryItem from '../category-item';
 
 class Dashboard extends React.Component {
   render() {
-    let { categories, categoryCreate, getCategories } = this.props;
+    let { categories, categoryCreate, postCategories } = this.props;
     return (
       <div className='dashboard'>
-        <CategoryForm onComplete={categoryCreate} />
+        <CategoryForm onComplete={postCategories} />
         {
           categories.map((category, index) => {
             return <CategoryItem key={index} category={category} />;
@@ -29,6 +29,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: (data) => dispatch(category.createAction(data)),
+    postCategories: (data) => dispatch(category.postCategories(data)),
   };
 };
 

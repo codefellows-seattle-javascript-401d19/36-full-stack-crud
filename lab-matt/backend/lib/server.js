@@ -20,7 +20,7 @@ const app = express();
 // ================ ROUTE SETUP ===================
 app.use(cors());
 app.use(require('./logger-middleware'));
-app.use(require('../route/room-router'));
+app.use(require('../route/expense-router'));
 app.use(require('../route/category-router'));
 
 app.all('*', (request, response) => {

@@ -1,10 +1,11 @@
-let emptyState;
-try {
-  emptyState = JSON.parse(localStorage.expenses) || {};
-  console.log('__LOCALSTORAGE__ expenses retrieved');
-} catch(e) {
-  emptyState = {};
-}
+// let emptyState;
+// try {
+//   emptyState = JSON.parse(localStorage.expenses) || {};
+//   console.log('__LOCALSTORAGE__ expenses retrieved');
+// } catch(e) {
+//   emptyState = {};
+// }
+const emptyState = {};
 
 export default (state = emptyState, action) => {
   let { type, payload } = action;

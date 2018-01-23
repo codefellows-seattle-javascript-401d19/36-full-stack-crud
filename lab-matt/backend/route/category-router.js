@@ -12,10 +12,8 @@ const categoryRouter = module.exports = new Router();
 // ===================== POST ROUTES =====================
 categoryRouter.post('/api/category', jsonParser, (request, response, next) => {
   log('info', `==NAME==: ${request.body.name}`);
-  log('info', `==STORIES==: ${request.body.stories}`);
-  log('info', `==CLIMATE==: ${request.body.climate}`);
 
-  if (!request.body.name || !request.body.stories || !request.body.climate) {
+  if (!request.body.name) {
     return next(httpError(400), 'name, stories and climate are require');
   }
 
