@@ -2,15 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
-import * as category from '../../action/category';
+import * as categoryActions from '../../action/category';
 
 import './landing.scss';
 
 class Landing extends React.Component{
 
   componentWillMount() {
-    console.log('component will mount');
-    this.props.handleAJAX();
+    this.props.handleGetCategory();
   }
   
   render() {
@@ -19,7 +18,7 @@ class Landing extends React.Component{
       categoryCreate,
       categoryUpdate,
       categoryDestroy,
-      handleAJAX,
+      handleGetCategory,
     } = this.props;
 
     return (
@@ -50,10 +49,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   // Creating props in landing that allow us to create update and remove
   return {
-    categoryCreate: (data) => dispatch(category.createAction(data)),
-    categoryUpdate: (data) => dispatch(category.updateAction(data)),
-    categoryDestroy: (data) => dispatch(category.removeAction(data)),
-    handleAJAX: () => dispatch(category.getExpenses()),
+    categoryCreate: (data) => dispatch(categoryActions.postCategories(data)),
+    categoryUpdate: (data) => dispatch(categoryActions.updateAction(data)),
+    categoryDestroy: (data) => dispatch(categoryActions.removeAction(data)),
+    handleGetCategory: () => dispatch(categoryActions.getCategories()),
   }
 };
 

@@ -6,19 +6,20 @@ const superagent = require('superagent');
 const server = require('../lib/server');
 const categoryMock = require('./lib/category-mock');
 
-const apiURL = `http://localhost:${process.env.PORT}/api/categorys`;
+const apiURL = `http://localhost:${process.env.PORT}/api/categories`;
 
-describe('/api/categorys', () => {
+describe('/api/categories', () => {
   beforeAll(server.start);
   afterAll(server.stop);
   afterEach(categoryMock.remove);
 
-  describe('POST /api/categorys', () => {
+  describe('POST /api/categories', () => {
     test('This POST should return a 200 and a category if there are no errors', () => {
       return superagent.post(apiURL)
         .send({
-          name: 'K-1234',
-          budget: 3,
+          name: 'SampleBudget',
+          budget: 999,
+          period: 'month',
         })
         .then(response => {
           expect(response.status).toEqual(200);
@@ -46,7 +47,7 @@ describe('/api/categorys', () => {
 
   });
 
-  describe('GET /api/categorys/:id', () => {
+  describe('GET /api/categories/:id', () => {
     test('This GET should respond with a 200 status and a category if there are no errors', () => {
       let tempcategoryMock = null;
 
@@ -71,7 +72,7 @@ describe('/api/categorys', () => {
 
   //TODO: ADD ENTIRE PUT TEST
 
-  describe('PUT /api/categorys/', () => {
+  describe('PUT /api/categories/', () => {
     test('This PUT should respond with a 200 status if there are no errors', () => {
 
       return categoryMock.create()

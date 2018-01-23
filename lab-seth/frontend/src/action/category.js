@@ -1,13 +1,12 @@
-import uuid from 'uuid/v1';
 import superagent from 'superagent';
 
-export const createAction = ({name, budget, period}) => ({
+export const createAction = ({ name, budget, period, id}) => ({
   type: 'CATEGORY_CREATE',
   payload: {
     name,
     budget,
     period,
-    uuid: uuid(),
+    id: id,
     timeStamp: new Date(),
   },
 });
@@ -19,27 +18,44 @@ export const removeAction = (category) => ({
   type: 'CATEGORY_DESTROY',
   payload: category,
 });
- 
 
 // asynchronous action creators
-export const getExpenses = () => (dispatch) => {
-  console.log('DISPATCH:', dispatch);
-  console.log('DOING AJAX');
-  return superagent.get('http://localhost:7000/api/expenses')
+export const postCategories = (data) => (dispatch) => {
+  return superagent.post('http://localhost:7000/api/categories')
+    .send({
+      name: data.name,
+      budget: data.budget,
+      period: data.period,
+    })
     .then((response) => {
-      console.log('AJAX DONE', response);
-      // let count = response.body.count;
-      let data = response.body.data;
-      if(!data){
-        dispatch(createAction({ name: 'Sample', budget: 50, period: 'month' }));
-        console.log('No Data From DB, returning Sample');
+      console.log('CATEGORY POST Response:', response);
+      let data = response.body;
+      if (data) {
+        dispatch(createAction({ name: data.name, budget: data.budget, period: data.period, id: data._id }));
       }
-      else{
-        //Map over data to append each one to the page?
-        // dispatch(createAction({ name: 'Sample', budget: 50, period: 'month' }));
-        console.log('Need to get data!');
+      else {
+        console.log('NO RESPONSE DATA SENT BACK FROM DB');
+        throw new TypeError('__ERROR__ No Response back From Database!');
       }
-        
-    });
+    })
+    .catch(next);
 };
 
+export const getCategories = () => (dispatch) => {
+  console.log('DISPATCH:', dispatch);
+  return superagent.get('http://localhost:7000/api/categories')
+    .then((response) => {
+      console.log('CATEGORY GET DONE', response);
+      let data = response.body;
+      if (data) {
+        data.map(category => {
+          dispatch(createAction({ name: category.name, budget: category.budget, period: category.period, id: category._id }));
+        });
+      }
+      else {
+        console.log('NO RESPONSE DATA SENT BACK FROM DB');
+        throw new TypeError('__ERROR__ No Response back From Database!');
+      }
+    })
+    .catch(next);
+};
