@@ -18,7 +18,7 @@ class ForestItem extends React.Component {
   }
 
   handleUpdate(forest) {
-    this.props.Update(forest);
+    this.props.forestUpdate(forest);
     this.setState({editing: false});
   }
   render() {

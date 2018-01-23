@@ -35,7 +35,7 @@ class ContinentItem extends React.Component {
     <div className='new-item'>
       <div onDoubleClick={() => this.setState({editing: true})} className='headers'>
         <h2>Name: {continent.name}</h2>
-        <h2>Budget: ${continent.budget}</h2>
+        <h2>Population: {continent.population}</h2>
       </div>
       <button className='delete' onClick={() => continentDestroy(continent)}>X</button>
     </div>;

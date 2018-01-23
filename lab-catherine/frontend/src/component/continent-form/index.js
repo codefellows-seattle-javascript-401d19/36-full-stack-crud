@@ -3,7 +3,7 @@ import React from 'react';
 
 let emptyState = {
   name: '',
-  budget: '',
+  population: '',
 };
 
 class ContinentForm extends React.Component {
@@ -24,9 +24,9 @@ class ContinentForm extends React.Component {
     this.setState({name: value});
   }
 
-  handleBudgetChange(event) {
+  handlePopulationChange(event) {
     let {value} = event.target;
-    this.setState({budget: value});
+    this.setState({population: value});
   }
 
   handleSubmit(event) {
@@ -60,10 +60,10 @@ class ContinentForm extends React.Component {
 
         <input
           type='number'
-          name='budget'
-          placeholder='budget'
-          value={this.state.budget}
-          onChange={this.handleBudgetChange}
+          name='population'
+          placeholder='population'
+          value={this.state.population}
+          onChange={this.handlePopulationChange}
         />
         <button type='submit'>{buttonText}</button>
       </form>

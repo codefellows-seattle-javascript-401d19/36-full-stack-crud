@@ -1,11 +1,11 @@
 import uuidv1 from 'uuid/v1';
 import superagent from 'superagent';
 
-export const createAction = ({name, budget}) => ({
+export const createAction = ({name, population}) => ({
   type: 'CONTINENT_CREATE',
   payload: {
     name,
-    budget,
+    population,
     id: uuidv1(),
     timestamp: new Date(),
   },
@@ -30,6 +30,6 @@ export const getContinents = () => (dispatch) => {
       console.log('AJAX DONE', response);
       let count = response.body.count;
       let data = response.body.data;
-      dispatch(createAction({name: 'Celebration!'}));
+      dispatch(createAction({name: 'Whoville', population: 25}));
     });
 };
