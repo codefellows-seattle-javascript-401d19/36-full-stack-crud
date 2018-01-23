@@ -1,7 +1,7 @@
 {
   "name": "lab-andrew",
   "version": "1.0.0",
-  "description": "budget-tracker-app",
+  "description": "synth-tracker-app",
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ALB37/31-34-budget-tracker.git"
+    "url": "git+https://github.com/ALB37/31-34-synth-tracker.git"
   },
   "keywords": [
     "react",
@@ -21,9 +21,9 @@
   "author": "Andrew Bloom",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ALB37/31-34-budget-tracker/issues"
+    "url": "https://github.com/ALB37/31-34-synth-tracker/issues"
   },
-  "homepage": "https://github.com/ALB37/31-34-budget-tracker#readme",
+  "homepage": "https://github.com/ALB37/31-34-synth-tracker#readme",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

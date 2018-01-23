@@ -2,12 +2,12 @@ import React from 'react';
 
 let emptyState = {name: '', amount: ''};
 
-class ExpenseForm extends React.Component {
+class SynthForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.expense || emptyState;
+    this.state = this.props.synth || emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(SynthForm.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
         this[functionName] = this[functionName].bind(this);
@@ -21,27 +21,27 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
+    let synthCompanyID = this.props.synthCompany ? this.props.synthCompany.id : this.props.synth.synthCompanyID;
 
     this.props.onComplete({
       ...this.state,
-      categoryID,
+      synthCompanyID,
     });
 
     this.setState(emptyState);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.expense)
-      this.setState(nextProps.expense);
+    if (nextProps.synth)
+      this.setState(nextProps.synth);
   }
 
   render() {
-    let buttonText = this.props.expense ? 'Update Expense' : 'Create New Expense';
+    let buttonText = this.props.synth ? 'Update Synth' : 'Create New Synth';
 
     return (
       <form
-        className='expense-form'
+        className='synth-form'
         onSubmit={this.handleSubmit}
       >
 
@@ -69,4 +69,4 @@ class ExpenseForm extends React.Component {
   }
 }
 
-export default ExpenseForm;
+export default SynthForm;

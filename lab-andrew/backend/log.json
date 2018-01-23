@@ -6079,3 +6079,54 @@
 {"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-22T23:43:15.913Z"}
 {"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-22T23:43:15.915Z"}
 []
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-22T23:51:31.653Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-22T23:51:31.661Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:02:41.852Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:02:41.854Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:30:34.297Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:30:34.305Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:32:11.909Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:32:11.911Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:32:18.111Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:32:18.113Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:33:48.558Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:33:48.559Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:42:30.352Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:42:30.354Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:42:53.362Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:42:53.364Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:43:10.166Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:43:10.167Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:44:06.141Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:44:06.144Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:44:46.819Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:44:46.821Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:45:05.451Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:45:05.453Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:45:16.310Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:45:16.311Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:47:23.232Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:47:23.234Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:48:49.490Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:48:49.491Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:48:52.416Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:48:52.418Z"}
+[]
+{"level":"info","message":"Processing : GET on : /api/synth/","timestamp":"2018-01-23T00:49:17.818Z"}
+{"level":"info","message":"GET - Returning a 200 status code","timestamp":"2018-01-23T00:49:17.819Z"}
+[]

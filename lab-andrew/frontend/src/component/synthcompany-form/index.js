@@ -2,14 +2,14 @@ import React from 'react';
 
 let emptyState = {
   name: '',
-  budget: '',
+  synth: '',
 };
 
-class CategoryForm extends React.Component {
+class SynthCompanyForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.category || emptyState;
-    let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
+    this.state = this.props.synthCompany || emptyState;
+    let memberFunctions = Object.getOwnPropertyNames(SynthCompanyForm.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
         this[functionName] = this[functionName].bind(this);
@@ -29,19 +29,19 @@ class CategoryForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.category)
-      this.setState(nextProps.category);
+    if (nextProps.synthCompany)
+      this.setState(nextProps.synthCompany);
   }
 
   render() {
-    const buttonText = this.props.category ? 'Update Category' : 'Create New Category';
-    const formCategory = this.props.category ? 'update-form' : 'create-form';
-    const header = !this.props.category ? <h2>Create New Budget Category</h2> : null;
+    const buttonText = this.props.synthCompany ? 'Update Synth Company' : 'Create New Synth Company';
+    const formSynthCompany = this.props.synthCompany ? 'update-form' : 'create-form';
+    const header = !this.props.synthCompany ? <h2>Create New Synth Company</h2> : null;
 
     return (
       <form
         onSubmit={this.handleSubmit}
-        className={formCategory}>
+        className={formSynthCompany}>
         {header}
         <input
           type='text'
@@ -53,10 +53,10 @@ class CategoryForm extends React.Component {
         /><br/>
         <input 
           type='number'
-          name='budget'
-          placeholder='budget'
+          name='synth'
+          placeholder='synth'
           required='true'
-          value={this.state.budget}
+          value={this.state.synth}
           onChange={this.handleChange}
         /><br/>
         <button className='submit-button' type='submit'> {buttonText} </button>
@@ -65,4 +65,4 @@ class CategoryForm extends React.Component {
   }
 }
 
-export default CategoryForm;
+export default SynthCompanyForm;

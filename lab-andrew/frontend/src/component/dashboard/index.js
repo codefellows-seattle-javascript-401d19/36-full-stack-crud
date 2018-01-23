@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import CategoryForm from '../category-form';
-import CategoryItem from '../category-item';
-import * as categoryAction from '../../action/category';
+import SynthCompanyForm from '../synthcompany-form';
+import SynthCompanyItem from '../synthcompany-item';
+import * as synthCompanyAction from '../../action/synthcompany';
 
 class Dashboard extends React.Component {
   
@@ -12,25 +12,25 @@ class Dashboard extends React.Component {
 
   render(){
     let {
-      categories,
-      categoryCreate,
-      categoryUpdate,
-      categoryRemove,
+      synthCompanies,
+      synthCompanyCreate,
+      synthCompanyUpdate,
+      synthCompanyRemove,
     } = this.props;
 
-    const header = categories.length ? <h2>Categories:</h2> : null;
+    const header = synthCompanies.length ? <h2>Synth Companies:</h2> : null;
     return (
       <div className='landing'>
-        <CategoryForm onComplete={categoryCreate}/>
+        <SynthCompanyForm onComplete={synthCompanyCreate}/>
         {header}
         <ul>
           {
-            categories.map((category) =>
-              <li key={category.id}>
-                <CategoryItem
-                  category={category}
-                  categoryRemove={categoryRemove}
-                  categoryUpdate={categoryUpdate}
+            synthCompanies.map((synthCompany) =>
+              <li key={synthCompany.id}>
+                <SynthCompanyItem
+                  synthCompany={synthCompany}
+                  synthCompanyRemove={synthCompanyRemove}
+                  synthCompanyUpdate={synthCompanyUpdate}
                 />
               </li>
             )
@@ -44,16 +44,16 @@ class Dashboard extends React.Component {
 
 let mapStateToProps = state => {
   return {
-    categories: state.categories,
+    synthCompanies: state.synthCompanies,
   };
 };
 
 let mapDispatchToProps = dispatch => {
   return {
-    handleAJAX: () => dispatch(categoryAction.getSynth()),
-    categoryCreate: data => dispatch(categoryAction.createAction(data)),
-    categoryUpdate: data => dispatch(categoryAction.updateAction(data)),
-    categoryRemove: data => dispatch(categoryAction.removeAction(data)),
+    handleAJAX: () => dispatch(synthCompanyAction.getSynthCompanies()),
+    synthCompanyCreate: data => dispatch(synthCompanyAction.createAction(data)),
+    synthCompanyUpdate: data => dispatch(synthCompanyAction.updateAction(data)),
+    synthCompanyRemove: data => dispatch(synthCompanyAction.removeAction(data)),
   };
 };
 

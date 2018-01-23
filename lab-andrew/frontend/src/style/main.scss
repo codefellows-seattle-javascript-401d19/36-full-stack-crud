@@ -91,7 +91,7 @@ li {
   margin-bottom: 3%;
 }
 
-.category-item {
+.synthCompany-item {
   border: 2px solid $dark;
   width: 95%;
   margin: calc(5% / 3);
@@ -102,7 +102,7 @@ li {
   }
 }
 
-.expense {
+.synth {
   border: 1px solid $gold;
   margin: 10% auto;
   width: 75%;
@@ -114,7 +114,7 @@ li {
 }
 
 @media only screen and (min-width: 760px) {
-  .category-item {
+  .synthCompany-item {
     width: 45%;
   }
   h1 {
@@ -135,7 +135,7 @@ li {
 }
 
 @media only screen and (min-width: 1024px) {
-  .category-item {
+  .synthCompany-item {
     width: calc((100% / 3) - 3.9%);
   }
 }

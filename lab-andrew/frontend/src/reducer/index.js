@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
 
-import categories from './categories';
-import expenses from './expenses';
+import synthCompanies from './synthcompanies';
+import synths from './synths';
 
 export default combineReducers({
-  categories,
-  expenses,
+  synthCompanies,
+  synths,
 });
