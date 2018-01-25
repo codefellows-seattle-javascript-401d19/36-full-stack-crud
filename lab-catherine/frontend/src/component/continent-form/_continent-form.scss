@@ -1,0 +1,9 @@
+@import 'module';
+
+.continent-form {
+  @include normalize;
+
+  input { 
+    margin-bottom: $pad; 
+  }
+}
