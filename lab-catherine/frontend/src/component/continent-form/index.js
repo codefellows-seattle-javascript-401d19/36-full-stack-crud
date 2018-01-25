@@ -42,7 +42,6 @@ class ContinentForm extends React.Component {
 
   render() {
     let buttonText = this.props.continent ? 'update continent' : 'create continent';
-    // let classNameGenerator = this.props.continent ? 'update-continent' : 'create-continent';
 
     return (
     
