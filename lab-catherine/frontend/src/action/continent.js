@@ -1,4 +1,3 @@
-// import uuidv1 from 'uuid/v1';
 import superagent from 'superagent';
 
 export const createAction = ({name, population, id}) => ({
