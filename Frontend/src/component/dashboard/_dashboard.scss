@@ -1,0 +1,41 @@
+@import '_vars';
+
+.dashboard {
+	.category-form:first-child {
+		padding: $pad;
+		border: 1px solid $color-tertiary;
+		margin-bottom: $pad;
+	}
+
+	.category-container {
+		height: calc(100vh - 8em);
+		border: 1px solid $color-tertiary;
+		padding: $pad;
+	
+
+		.category {
+			padding-bottom: $pad;
+			margin-bottom: $pad;
+		}
+
+	}
+
+}
+
+@media screen and (min-width: 700px) {
+	.category-container {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+
+		.category {
+			white-space: normal;
+			display: inline-block;
+			width: 250px;
+			height: 100%;
+			margin: 0;
+			margin-right: $pad;
+		}
+	}
+}
+
